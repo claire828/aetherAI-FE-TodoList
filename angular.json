@@ -2,12 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "fe": "apps/fe",
-    "fe-e2e": "apps/fe-e2e",
     "tailwind-preset": "libs/tailwind-preset",
     "todolist": "apps/todolist",
     "todolist-assets": "libs/todolist/assets",
-    "todolist-auth-data-access-store": "libs/todolist/auth/data-access/store",
     "todolist-e2e": "apps/todolist-e2e",
     "todolist-home-data-access-models": "libs/todolist/home/data-access/models",
     "todolist-home-data-access-store": "libs/todolist/home/data-access/store",
@@ -23,7 +20,6 @@
     "web-shared-directives": "libs/web/shared/directives",
     "web-shared-pipes": "libs/web/shared/pipes",
     "web-shared-services-dialog": "libs/web/shared/services/dialog",
-    "web-shared-services-storage": "libs/web/shared/services/storage",
-    "web-shared-ui-button": "libs/web/shared/ui/button"
+    "web-shared-services-storage": "libs/web/shared/services/storage"
   }
 }

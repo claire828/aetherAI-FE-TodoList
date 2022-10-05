@@ -19,9 +19,6 @@
         "libs/todolist/shared/app-config/src/index.ts"
       ],
       "@monorepo/todolist/assets": ["libs/todolist/assets/src/index.ts"],
-      "@monorepo/todolist/auth/data-access/store": [
-        "libs/todolist/auth/data-access/store/src/index.ts"
-      ],
       "@monorepo/todolist/home/data-access/models": [
         "libs/todolist/home/data-access/models/src/index.ts"
       ],
@@ -59,9 +56,6 @@
       ],
       "@monorepo/web/shared/services/storage": [
         "libs/web/shared/services/storage/src/index.ts"
-      ],
-      "@monorepo/web/shared/ui/button": [
-        "libs/web/shared/ui/button/src/index.ts"
       ]
     }
   },
