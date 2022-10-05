@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'todolist-home-data-access-store',
+  displayName: 'todolist-main-data-access-store',
   preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {

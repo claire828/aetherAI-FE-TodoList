@@ -1,7 +1,7 @@
-# todolist-home-data-access-store
+# todolist-main-data-access-store
 
 This library was generated with [Nx](https://nx.dev).
 
 ## Running unit tests
 
-Run `nx test todolist-home-data-access-store` to execute the unit tests.
+Run `nx test todolist-main-data-access-store` to execute the unit tests.
