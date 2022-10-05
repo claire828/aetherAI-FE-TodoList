@@ -1,0 +1,11 @@
+/*
+label{
+  color:#737373;
+  &::before{
+    content:'❯';
+    font-size:22px;
+    display:inline-block;
+    transform:rotate(90deg);
+    @apply absolute bottom-5 left-4;
+  }
+}*/

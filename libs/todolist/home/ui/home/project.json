@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/todolist/home/ui/home/src",
+  "prefix": "monorepo",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/todolist/home/ui/home"],
+      "options": {
+        "jestConfig": "libs/todolist/home/ui/home/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/todolist/home/ui/home/**/*.ts",
+          "libs/todolist/home/ui/home/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

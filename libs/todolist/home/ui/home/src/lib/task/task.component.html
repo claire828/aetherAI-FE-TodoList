@@ -1,0 +1,25 @@
+<div class="wrap" >
+  <input #check 
+    [type]="'checkbox'" 
+    [class.opacity-0]="(editMode$|async)"
+    [checked]="task.complete">
+  
+  <div 
+    class="task relative cursor-default "
+    [class.line-through]="task.complete"
+    (dblclick)="switchEditMode(true)"  >
+    {{task.name}}
+    <input #edit 
+      type="text" name="task"
+      [value]="task.name"
+      [class.shadow-sm]="(editMode$|async)"
+      [class.border]="(editMode$|async)"
+      [class.cursor-default]="(editMode$|async) === false"
+      [class.readonly]="(editMode$|async)===false"
+      [class.opacity-0]="(editMode$|async)===false"
+     >
+  </div>
+
+  <button monorepoInputAutofocus
+   (click)="onRemoveTask()" >ｘ</button>
+</div>

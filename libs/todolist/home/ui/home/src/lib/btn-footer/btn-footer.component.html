@@ -1,0 +1,9 @@
+<button class="py-[0.1em] px-2 box-border mx-2 transition-all duration-100 border-pink rounded-md "
+  [class.border]="isHoverBoder || isSelect"
+  [class.border-transparent]="isHoverBoder"  
+  [class.border-pink-200]="isSelect"
+  [class.hover:border-pink-200]="isHoverBoder"
+  [class.hover:underline]="isHoverUnderline"
+  (click)="onSelect()">
+  <ng-content></ng-content>
+</button>

@@ -1,0 +1,69 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@monorepo/todolist-shared-app-config": [
+        "libs/todolist/shared/app-config/src/index.ts"
+      ],
+      "@monorepo/todolist/assets": ["libs/todolist/assets/src/index.ts"],
+      "@monorepo/todolist/auth/data-access/store": [
+        "libs/todolist/auth/data-access/store/src/index.ts"
+      ],
+      "@monorepo/todolist/home/data-access/models": [
+        "libs/todolist/home/data-access/models/src/index.ts"
+      ],
+      "@monorepo/todolist/home/data-access/store": [
+        "libs/todolist/home/data-access/store/src/index.ts"
+      ],
+      "@monorepo/todolist/home/feature/home": [
+        "libs/todolist/home/feature/home/src/index.ts"
+      ],
+      "@monorepo/todolist/home/ui/home": [
+        "libs/todolist/home/ui/home/src/index.ts"
+      ],
+      "@monorepo/todolist/shared/api": [
+        "libs/todolist/shared/api/src/index.ts"
+      ],
+      "@monorepo/todolist/shell/feature/shell": [
+        "libs/todolist/shell/feature/shell/src/index.ts"
+      ],
+      "@monorepo/todolist/shell/ui/header": [
+        "libs/todolist/shell/ui/header/src/index.ts"
+      ],
+      "@monorepo/todolist/shell/ui/layout": [
+        "libs/todolist/shell/ui/layout/src/index.ts"
+      ],
+      "@monorepo/web/settings/hmr": ["libs/web/settings/hmr/src/index.ts"],
+      "@monorepo/web/shared/data-access/models": [
+        "libs/web/shared/data-access/models/src/index.ts"
+      ],
+      "@monorepo/web/shared/directives": [
+        "libs/web/shared/directives/src/index.ts"
+      ],
+      "@monorepo/web/shared/pipes": ["libs/web/shared/pipes/src/index.ts"],
+      "@monorepo/web/shared/services/dialog": [
+        "libs/web/shared/services/dialog/src/index.ts"
+      ],
+      "@monorepo/web/shared/services/storage": [
+        "libs/web/shared/services/storage/src/index.ts"
+      ],
+      "@monorepo/web/shared/ui/button": [
+        "libs/web/shared/ui/button/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

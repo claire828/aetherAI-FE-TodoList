@@ -1,0 +1,6 @@
+$max:5;
+$height:44px;
+.wrap{
+  max-height: $max * $height;
+  @apply overflow-y-auto;
+}

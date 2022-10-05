@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/todolist/home/data-access/models/src",
+  "prefix": "monorepo",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/todolist/home/data-access/models"],
+      "options": {
+        "jestConfig": "libs/todolist/home/data-access/models/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/todolist/home/data-access/models/**/*.ts",
+          "libs/todolist/home/data-access/models/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
