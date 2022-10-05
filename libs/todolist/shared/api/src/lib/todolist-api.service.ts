@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { AppConfig, APP_CONFIG } from '@monorepo/todolist-shared-app-config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ITask } from '@monorepo/todolist/home/data-access/models';
+import { ITask } from '@monorepo/todolist/main/data-access/models';
 import { shareReplay } from 'rxjs';
 
 

@@ -19,17 +19,17 @@
         "libs/todolist/shared/app-config/src/index.ts"
       ],
       "@monorepo/todolist/assets": ["libs/todolist/assets/src/index.ts"],
-      "@monorepo/todolist/home/data-access/models": [
-        "libs/todolist/home/data-access/models/src/index.ts"
+      "@monorepo/todolist/main/data-access/models": [
+        "libs/todolist/main/data-access/models/src/index.ts"
       ],
-      "@monorepo/todolist/home/data-access/store": [
-        "libs/todolist/home/data-access/store/src/index.ts"
+      "@monorepo/todolist/main/data-access/store": [
+        "libs/todolist/main/data-access/store/src/index.ts"
       ],
-      "@monorepo/todolist/home/feature/home": [
-        "libs/todolist/home/feature/home/src/index.ts"
+      "@monorepo/todolist/main/feature/home": [
+        "libs/todolist/main/feature/home/src/index.ts"
       ],
-      "@monorepo/todolist/home/ui/home": [
-        "libs/todolist/home/ui/home/src/index.ts"
+      "@monorepo/todolist/main/ui/home": [
+        "libs/todolist/main/ui/home/src/index.ts"
       ],
       "@monorepo/todolist/shared/api": [
         "libs/todolist/shared/api/src/index.ts"
