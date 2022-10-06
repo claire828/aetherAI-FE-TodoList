@@ -34,6 +34,9 @@
       "@monorepo/todolist/shared/api": [
         "libs/todolist/shared/api/src/index.ts"
       ],
+      "@monorepo/todolist/shared/ui/icon": [
+        "libs/todolist/shared/ui/icon/src/index.ts"
+      ],
       "@monorepo/todolist/shared/ui/toggle-arrow": [
         "libs/todolist/shared/ui/toggle-arrow/src/index.ts"
       ],

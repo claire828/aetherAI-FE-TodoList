@@ -12,6 +12,7 @@
     "todolist-main-data-access-store": "libs/todolist/main/data-access/store",
     "todolist-shared-api": "libs/todolist/shared/api",
     "todolist-shared-app-config": "libs/todolist/shared/app-config",
+    "todolist-shared-ui-icon": "libs/todolist/shared/ui/icon",
     "todolist-shared-ui-toggle-arrow": "libs/todolist/shared/ui/toggle-arrow",
     "todolist-shell-feature-shell": "libs/todolist/shell/feature/shell",
     "todolist-shell-ui-layout": "libs/todolist/shell/ui/layout",
