@@ -1,6 +1,6 @@
 
 import { createReducer, on} from "@ngrx/store";
-import { loadTasks,loadTasksSuccess, loadTasksFail, addTask, addTaskSuccess, addTaskFail, deleteTask, deleteTaskSuccess ,deleteTaskFail, deleteTasksSuccess,  editTask, editTaskSuccess, editTaskFail, swichMenu} from "./tasks.action";
+import { loadTasks,loadTasksSuccess, loadTasksFail, addTask, addTaskSuccess, addTaskFail, deleteTask, deleteTaskSuccess ,deleteTaskFail,  editTask, editTaskSuccess, editTaskFail, swichMenu} from "./tasks.action";
 import {ICommonState} from '@monorepo/web/shared/data-access/models';
 import { ITask, tasksMenuType } from "@monorepo/todolist/main/data-access/models";
 
@@ -84,19 +84,6 @@ export const tasksReducer = createReducer(
         error
       })
     ),
-
-  /* delete tasks */
-
-  on(deleteTasksSuccess,(state)=>
-    {
-      const data = state.data.filter(x=> !x.complete)
-      return {
-          ...state,
-          status:'success',
-          data
-      }
-    }
-  ),
 
 
 

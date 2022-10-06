@@ -11,6 +11,7 @@ export class ToggleArrowComponent implements OnInit {
 
   @Output() clickToggle = new EventEmitter<boolean>();
   @Input() defaultState = false;
+  
   private isToggle = new BehaviorSubject<boolean>(this.defaultState);
   isToggle$ = this.isToggle.asObservable();
 

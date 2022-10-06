@@ -7,7 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TodolistHomeUiHomeModule } from '@monorepo/todolist/main/ui/home';
 import { WebSharedPipesModule } from '@monorepo/web/shared/pipes';
 import { TodolistSharedUiToggleArrowModule } from '@monorepo/todolist/shared/ui/toggle-arrow';
-
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   imports: [
@@ -15,9 +15,14 @@ import { TodolistSharedUiToggleArrowModule } from '@monorepo/todolist/shared/ui/
     WebSharedPipesModule,
     RouterModule.forChild([{ path: '', component: HomeComponent }]),
     TodolistHomeUiHomeModule,
-    TodolistSharedUiToggleArrowModule
+    TodolistSharedUiToggleArrowModule,
   ],
-  declarations: [HomeComponent, TasksComponent, FooterComponent],
-  exports: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    TasksComponent,
+    FooterComponent,
+    SearchComponent,
+  ],
+  exports: [HomeComponent, SearchComponent],
 })
 export class TodolistHomeFeatureHomeModule {}

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { tasksMenuType ,tasksMenus} from '@monorepo/todolist/main/data-access/models';
-import { deleteTasks, getCurrMenu, getTasks, swichMenu } from '@monorepo/todolist/main/data-access/store';
+import {  getCurrMenu, getTasks, swichMenu } from '@monorepo/todolist/main/data-access/store';
 import { Store } from '@ngrx/store';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 
@@ -37,8 +37,5 @@ export class FooterComponent implements OnInit {
     this.store.dispatch(swichMenu({menu}));
   }
 
-  onDeleteTasks(){
-    this.store.dispatch(deleteTasks())
-  }
 
 }

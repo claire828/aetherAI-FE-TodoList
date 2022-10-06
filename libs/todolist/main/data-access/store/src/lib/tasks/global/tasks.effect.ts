@@ -3,7 +3,7 @@ import { select, Store } from "@ngrx/store";
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { TodolistApiService } from '@monorepo/todolist/shared/api';
-import { addTask, addTaskFail, addTaskSuccess, deleteTask, deleteTaskFail, deleteTasks, deleteTasksFail, deleteTasksSuccess, deleteTaskSuccess, editTask, editTaskFail, editTaskSuccess, loadTasks, loadTasksFail, loadTasksSuccess } from './tasks.action';
+import { addTask, addTaskFail, addTaskSuccess, deleteTask, deleteTaskFail,  deleteTaskSuccess, editTask, editTaskFail, editTaskSuccess, loadTasks, loadTasksFail, loadTasksSuccess } from './tasks.action';
 import { EMPTY, of } from 'rxjs';
 import { getTasks } from './tasks.selector';
 
@@ -61,14 +61,6 @@ export class TaskEffect{
         })
       )
   )
-
-  deleteTasks$ = createEffect( ()=> this.action$.pipe(
-    ofType(deleteTasks),
-    withLatestFrom(this.store.pipe(select(getTasks))),
-    tap(([_,tasks])=> tasks.filter(x=>x.complete).forEach( task=> this.store.dispatch(deleteTask({id:task.id}))) ),
-    map(()=> deleteTasksSuccess()),
-    catchError((err)=>of(deleteTasksFail({error:err.message})))
-  ))
 
 
 }

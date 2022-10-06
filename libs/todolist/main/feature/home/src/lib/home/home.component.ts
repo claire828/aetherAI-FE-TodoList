@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
 import { addTask, loadTasks } from '@monorepo/todolist/main/data-access/store';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'monorepo-todolist-home',

@@ -21,10 +21,6 @@ export const deleteTask = createAction('[home/deleteTask]', props<{id:string}>()
 export const deleteTaskSuccess = createAction('[home/deleteTaskSuccess]', props<{id:string}>());
 export const deleteTaskFail = createAction('[home/deleteTaskFail]',props<{error:string}>());
 
-export const deleteTasks = createAction('[home/deleteTasks]');
-export const deleteTasksSuccess = createAction('[home/deleteTasksSuccess]' );
-export const deleteTasksFail = createAction('[home/deleteTasksFail]', props<{error:string}>());
-
 
 //更改
 export const editTask = createAction('[home/editTask]',props<{task:ITask}>());
