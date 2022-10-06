@@ -31,9 +31,9 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   ngAfterViewInit(): void {
     this.sub.sink = merge(
       fromEvent<MouseEvent>(this.inputHeader.nativeElement, WebEventUtil.Mouse.Type.Click),
-      fromEvent<KeyboardEvent>(this.inputHeader.nativeElement,WebEventUtil.Keyboard.Key.Enter)
+      fromEvent<KeyboardEvent>(this.inputHeader.nativeElement, WebEventUtil.Keyboard.Type.KeyPress)
       .pipe(
-        filter(x=>x.key === WebEventUtil.Keyboard.Key.Enter))
+        filter(x=>x.key === 'Enter'))
     ).pipe(
       map(()=>this.inputHeader.nativeElement.value),
       filter(Boolean),
