@@ -18,10 +18,7 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('inputHeader') inputHeader!:ElementRef<HTMLInputElement>;
 
   private sub = new SubSink();
-  private isToggle = new BehaviorSubject<boolean>(true);
-  isToggle$ = this.isToggle.asObservable();
 
-  
 
   constructor() {}
 
@@ -52,8 +49,8 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     ).subscribe();
   }
 
-  onSort(){
-   this.isToggle.next(!this.isToggle.value);
+  onSort(toggle:boolean){
+   console.log(`current state:${toggle}`)
   }
  
 

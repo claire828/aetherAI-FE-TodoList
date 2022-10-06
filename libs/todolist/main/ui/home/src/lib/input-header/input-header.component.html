@@ -1,11 +1,6 @@
 
+<monorepo-toggle-arrow (OnToggleEvent)="onSort($event)" ></monorepo-toggle-arrow>    
 
- <button (click)="onSort()"
-    [style.transform]="(isToggle$ | async) ? 'rotate(90deg)' : 'rotate(-90deg)'"
-    monorepoClickStopPropagation> ❯</button>
- 
- <input #inputHeader
-          monorepoInputAutofocus
-          type="text" 
-          placeholder="What needs to be done?" >
+ <input #inputHeader monorepoInputAutofocus
+   type="text" placeholder="What needs to be done?" >
 
