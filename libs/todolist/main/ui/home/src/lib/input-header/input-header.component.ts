@@ -17,10 +17,11 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   @Output() addNewTaskEvent = new EventEmitter<ITask>();
   @ViewChild('inputHeader') inputHeader!:ElementRef<HTMLInputElement>;
 
+  private sub = new SubSink();
   private isToggle = new BehaviorSubject<boolean>(true);
   isToggle$ = this.isToggle.asObservable();
 
-  private sub = new SubSink();
+  
 
   constructor() {}
 
@@ -42,7 +43,8 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
         const task:ITask = {
           id: uuid(),
           name:x,
-          complete:false
+          complete:false,
+          ts: +new Date()
         }
         this.addNewTaskEvent.emit(task);
         this.inputHeader.nativeElement.value = "";
