@@ -2,6 +2,7 @@ import { AfterViewInit, OnDestroy, ChangeDetectionStrategy, Component, ElementRe
 import { ITask } from '@monorepo/todolist/main/data-access/models';
 import { filter, fromEvent, merge, map, tap,throttleTime, BehaviorSubject } from 'rxjs';
 import { SubSink } from 'subsink';
+import {WebEventUtil} from '@monorepo/web/utils';
 
 @Component({
   selector: 'monorepo-todolist-task',
@@ -31,8 +32,11 @@ export class TaskComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(){
 
     const editEvents$ = merge(
-      fromEvent<KeyboardEvent>(this.editElm.nativeElement, 'keypress').pipe(filter(x=>x.key ==='Enter')),
-      fromEvent<FocusEvent>(this.editElm.nativeElement,'focusout'),
+      fromEvent<KeyboardEvent>(this.editElm.nativeElement, WebEventUtil.Keyboard.Type.KeyPress)
+        .pipe(
+          filter(x=>x.key === WebEventUtil.Keyboard.Key.Enter)
+        ),
+      fromEvent<FocusEvent>(this.editElm.nativeElement, WebEventUtil.Focus.Type.FocusOut),
     ).pipe(
       throttleTime(300),
       map(()=>this.editElm.nativeElement.value),
@@ -47,7 +51,7 @@ export class TaskComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.subs.sink = merge(
       editEvents$,
-      fromEvent<MouseEvent>(this.checkElm.nativeElement,'click').pipe(
+      fromEvent<MouseEvent>(this.checkElm.nativeElement, WebEventUtil.Mouse.Type.Click).pipe(
         tap(()=>this.switchEditMode(false)),
         map(()=> {
           return{

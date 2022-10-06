@@ -26,4 +26,11 @@ export class WebEventUtil{
     }
   }
 
+
+  static Focus = {
+    Type:{
+      FocusOut:'focusout'
+    }
+  }
+
 }
