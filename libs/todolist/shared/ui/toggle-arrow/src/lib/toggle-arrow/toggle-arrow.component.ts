@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -9,8 +9,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ToggleArrowComponent implements OnInit {
 
-  @Output() OnToggleEvent = new EventEmitter<boolean>();
-  private isToggle = new BehaviorSubject<boolean>(false);
+  @Output() clickToggle = new EventEmitter<boolean>();
+  @Input() defaultState = false;
+  private isToggle = new BehaviorSubject<boolean>(this.defaultState);
   isToggle$ = this.isToggle.asObservable();
 
   constructor() {}
@@ -20,7 +21,7 @@ export class ToggleArrowComponent implements OnInit {
 
   onToggle(){
     this.isToggle.next(!this.isToggle.value);
-    this.OnToggleEvent.emit(this.isToggle.value);
+    this.clickToggle.emit(this.isToggle.value);
   }
   
 }

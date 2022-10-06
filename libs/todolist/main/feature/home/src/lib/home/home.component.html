@@ -1,6 +1,6 @@
 
 <div class="header">
-  <monorepo-toggle-arrow (OnToggleEvent)="onSort($event)" ></monorepo-toggle-arrow>    
+  <monorepo-toggle-arrow [defaultState]="this.DefaultState" (clickToggle)="onSort($event)" ></monorepo-toggle-arrow>    
   <monorepo-input-header (addNewTaskEvent)="onAddTask($event)" ></monorepo-input-header>
 </div>
 

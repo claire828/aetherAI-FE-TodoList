@@ -15,9 +15,8 @@ import { SubSink } from 'subsink';
 export class TasksComponent implements OnInit, OnDestroy {
 
   private isSort$ = new BehaviorSubject<boolean>(false);
-  @Input() set isSortByTime(bSort:boolean) {
-    this.isSort$.next(bSort);
-    console.log(`receive from parent:${bSort}`)
+  @Input() set isSortByTime(sort:boolean) {
+    this.isSort$.next(sort);
   }
   private subSink = new SubSink();
   @ViewChildren(TaskComponent) taskUIs!: QueryList<TaskComponent>;

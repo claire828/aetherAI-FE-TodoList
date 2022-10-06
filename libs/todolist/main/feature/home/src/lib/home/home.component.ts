@@ -12,7 +12,8 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  sort$ = new BehaviorSubject<boolean>(false);
+  readonly DefaultState = false;
+  sort$ = new BehaviorSubject<boolean>(this.DefaultState);
 
   constructor(private store:Store) {}
 
@@ -25,7 +26,6 @@ export class HomeComponent implements OnInit {
   }
 
   onSort(toggle:boolean){
-    console.log(`home:${toggle}`)
     this.sort$.next(toggle);
   }
 }
