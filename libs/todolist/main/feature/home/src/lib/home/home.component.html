@@ -4,6 +4,5 @@
   <monorepo-input-header (addNewTaskEvent)="onAddTask($event)" ></monorepo-input-header>
 </div>
 
-
-<monorepo-tasks ></monorepo-tasks>
+<monorepo-tasks [isSortByTime]="(sort$ | async) || false"  ></monorepo-tasks>
 <monorepo-footer></monorepo-footer>

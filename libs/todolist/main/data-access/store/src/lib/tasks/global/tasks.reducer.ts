@@ -100,33 +100,33 @@ export const tasksReducer = createReducer(
 
 
 
-    /* edit status */
-  
-    on(editTask,(state)=>{
-      return {...state, status:"loading"}
-    }),
+  /* edit status */
 
-    on(editTaskSuccess,(state, {task})=>{
-      const data = state.data.map(x=>{
-        return x.id === task.id ? task : x;
-      })
-      return {
-        ...state,
-         status:"success",
-         data
-        }
-    }),
+  on(editTask,(state)=>{
+    return {...state, status:"loading"}
+  }),
 
-    on(editTaskFail,(state, {error})=>{
-      return {...state, status:'error', error}
-    }),
+  on(editTaskSuccess,(state, {task})=>{
+    const data = state.data.map(x=>{
+      return x.id === task.id ? task : x;
+    })
+    return {
+      ...state,
+        status:"success",
+        data
+      }
+  }),
+
+  on(editTaskFail,(state, {error})=>{
+    return {...state, status:'error', error}
+  }),
 
 
-     /* change menu */
+    /* change menu */
 
-     on(swichMenu, (state,{menu})=>{
-      return {...state, menu}
-     })
+    on(swichMenu, (state,{menu})=>{
+    return {...state, menu}
+    })
 
 
 )

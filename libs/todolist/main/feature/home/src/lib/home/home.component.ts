@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
-import { addTask, deleteTask, loadTasks } from '@monorepo/todolist/main/data-access/store';
+import { addTask, loadTasks } from '@monorepo/todolist/main/data-access/store';
 import { Store } from '@ngrx/store';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'monorepo-todolist-home',
@@ -10,6 +11,9 @@ import { Store } from '@ngrx/store';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
+
+  sort$ = new BehaviorSubject<boolean>(false);
+
   constructor(private store:Store) {}
 
   ngOnInit(): void {
@@ -21,6 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSort(toggle:boolean){
-    //todo 
+    console.log(`home:${toggle}`)
+    this.sort$.next(toggle);
   }
 }

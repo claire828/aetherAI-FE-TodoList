@@ -12,7 +12,6 @@ import {WebEventUtil} from '@monorepo/web/utils';
 })
 export class TaskComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() task!:ITask;
-  @Input() isLast = false;
   @Output() removeTask = new EventEmitter();
   @Output() editTask = new EventEmitter();
   @ViewChild('edit') editElm!:ElementRef<HTMLInputElement>;
@@ -30,16 +29,16 @@ export class TaskComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
   ngAfterViewInit(){
-
+    const editElem = this.editElm.nativeElement;
     const editEvents$ = merge(
-      fromEvent<KeyboardEvent>(this.editElm.nativeElement, WebEventUtil.Keyboard.Type.KeyPress)
+      fromEvent<KeyboardEvent>(editElem, WebEventUtil.Keyboard.Type.KeyPress)
         .pipe(
           filter(x=>x.key === WebEventUtil.Keyboard.Key.Enter)
         ),
-      fromEvent<FocusEvent>(this.editElm.nativeElement, WebEventUtil.Focus.Type.FocusOut),
+      fromEvent<FocusEvent>(editElem, WebEventUtil.Focus.Type.FocusOut),
     ).pipe(
       throttleTime(300),
-      map(()=>this.editElm.nativeElement.value),
+      map(()=>editElem.value),
       tap(()=>this.switchEditMode(false)),
       map(x=>{
         return {

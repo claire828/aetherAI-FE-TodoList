@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ToggleArrowComponent implements OnInit {
 
   @Output() OnToggleEvent = new EventEmitter<boolean>();
-  private isToggle = new BehaviorSubject<boolean>(true);
+  private isToggle = new BehaviorSubject<boolean>(false);
   isToggle$ = this.isToggle.asObservable();
 
   constructor() {}

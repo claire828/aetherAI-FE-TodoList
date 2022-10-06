@@ -1,9 +1,9 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component,ElementRef,OnDestroy,OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, Component,ElementRef,Input,OnDestroy,OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
 import { deleteTask, editTask, getCurrMenu, getTasks } from '@monorepo/todolist/main/data-access/store';
 import { TaskComponent } from '@monorepo/todolist/main/ui/home';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, combineLatest , debounceTime, distinctUntilChanged, filter, map, of, pairwise, startWith, Subject, tap, withLatestFrom} from 'rxjs';
+import { BehaviorSubject, combineLatest , map,  tap, withLatestFrom} from 'rxjs';
 import { SubSink } from 'subsink';
 
 @Component({
@@ -14,16 +14,18 @@ import { SubSink } from 'subsink';
 })
 export class TasksComponent implements OnInit, OnDestroy {
 
+  private isSort$ = new BehaviorSubject<boolean>(false);
+  @Input() set isSortByTime(bSort:boolean) {
+    this.isSort$.next(bSort);
+    console.log(`receive from parent:${bSort}`)
+  }
   private subSink = new SubSink();
   @ViewChildren(TaskComponent) taskUIs!: QueryList<TaskComponent>;
   @ViewChild("scrollArea") scrollArea!:ElementRef<HTMLElement>;
-  public readonly loadedMax = 6;
 
-  private paging = new BehaviorSubject<number>(1);
   private menu$ = this.store.select(getCurrMenu);
   
-
-  tasks$ =  combineLatest([this.store.select(getTasks),this.menu$])
+  data$ = combineLatest([this.store.select(getTasks),this.menu$,this.isSort$])
     .pipe(
       map(([tasks, menu] )=>{
           if(menu==='all') return tasks;
@@ -31,7 +33,11 @@ export class TasksComponent implements OnInit, OnDestroy {
           const result = tasks.filter(task=>task.complete === complete);
           return result;
         }
-      )
+      ),
+      withLatestFrom(this.isSort$),
+      map(([tasks, sort])=>{
+        return {tasks, sort}
+      })
   );
   
 
@@ -53,10 +59,7 @@ export class TasksComponent implements OnInit, OnDestroy {
  
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
-  ngOnInit(): void {
-   
-  }
-
+  ngOnInit(): void {}
 
   ngOnDestroy(){
     this.subSink.unsubscribe();

@@ -1,13 +1,16 @@
 
 <div class="wrap" #scrollArea>
-  <ng-container *ngFor="let task of tasks$ | async; index as i; last as isLast; count as length; trackBy:trackByIdentity " >
+  <ng-container *ngIf="data$ | async as data">
+    <ng-container *ngFor="let task of data.tasks| reverse:data.sort; index as i; last as isLast; count as length; trackBy:trackByIdentity " >
       <monorepo-todolist-task
-        [isLast]="length>=loadedMax && isLast"
         [task]="task"
         (removeTask) = "onRemoveTask($event)"
         (editTask)="onEditTask($event)" >
-    </monorepo-todolist-task>
+      </monorepo-todolist-task>
+    </ng-container>
   </ng-container>
+
+  
 </div>
 
 
