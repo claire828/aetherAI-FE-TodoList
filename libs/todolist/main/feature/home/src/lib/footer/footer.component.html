@@ -1,5 +1,5 @@
- <div class="footer space-x-2 ">
-  <div class="pl-4" >{{strItemLeft$ | async}}</div>
+
+  <span>{{strItemLeft$ | async}}</span>
 
   <ng-container *ngFor="let menuKey of menuTypes" > 
     <monorepo-btn-footer
@@ -13,12 +13,11 @@
 
 
   <monorepo-btn-footer monorepoClickDebounceStopPropagation
-    class="" 
     [isHoverUnderline]="true"
     (beClicked)="onDeleteTasks()">
       clear completed
     </monorepo-btn-footer>
- </div>
+
 
 
 

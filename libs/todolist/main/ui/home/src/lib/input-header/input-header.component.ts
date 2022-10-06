@@ -1,6 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
-import { BehaviorSubject } from 'rxjs';
 import { filter, fromEvent, merge , map, throttleTime, tap} from 'rxjs';
 import { SubSink } from 'subsink';
 import {v4 as uuid} from 'uuid';
@@ -18,8 +17,6 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('inputHeader') inputHeader!:ElementRef<HTMLInputElement>;
 
   private sub = new SubSink();
-
-
   constructor() {}
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
@@ -27,13 +24,14 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    const elem = this.inputHeader.nativeElement;
     this.sub.sink = merge(
-      fromEvent<MouseEvent>(this.inputHeader.nativeElement, WebEventUtil.Mouse.Type.Click),
-      fromEvent<KeyboardEvent>(this.inputHeader.nativeElement, WebEventUtil.Keyboard.Type.KeyPress)
+      fromEvent<MouseEvent>(elem, WebEventUtil.Mouse.Type.Click),
+      fromEvent<KeyboardEvent>(elem, WebEventUtil.Keyboard.Type.KeyPress)
       .pipe(
         filter(x=>x.key === WebEventUtil.Keyboard.Key.Enter))
     ).pipe(
-      map(()=>this.inputHeader.nativeElement.value),
+      map(()=>elem.value),
       filter(Boolean),
       throttleTime(300),
       tap(x=>{
@@ -44,14 +42,11 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
           ts: +new Date()
         }
         this.addNewTaskEvent.emit(task);
-        this.inputHeader.nativeElement.value = "";
+        elem.value = "";
       })
     ).subscribe();
   }
 
-  onSort(toggle:boolean){
-   console.log(`current state:${toggle}`)
-  }
  
 
   ngOnDestroy(): void {

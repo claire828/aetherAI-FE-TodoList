@@ -1,6 +1,9 @@
 
-<monorepo-input-header (addNewTaskEvent)="onAddTask($event)"  ></monorepo-input-header>
+<div class="header">
+  <monorepo-toggle-arrow (OnToggleEvent)="onSort($event)" ></monorepo-toggle-arrow>    
+  <monorepo-input-header (addNewTaskEvent)="onAddTask($event)" ></monorepo-input-header>
+</div>
+
 
 <monorepo-tasks ></monorepo-tasks>
-
 <monorepo-footer></monorepo-footer>

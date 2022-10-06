@@ -1,16 +1,8 @@
 :host{
-  @apply text-[#777] text-center ;
+  @apply text-[#777] text-center flex justify-center  w-full cursor-default items-center relative h-10;
 }
 
-.footer{
-  @apply flex justify-between w-full cursor-default items-center relative h-10 ;
-  &::before{
-    content:'';
-    box-shadow: 0 1px 1px rgb(0 0 0 / 20%),
-    0 8px 0 -3px #f6f6f6, 
-    0 9px 1px -3px rgb(0 0 0 / 20%), 
-    0 16px 0 -6px #f6f6f6, 
-    0 17px 2px -6px rgb(0 0 0 / 20%);
-    @apply overflow-hidden h-4 absolute top-6 right-0 left-0 w-full;
-  }
+span{
+  @apply ml-4;
 }
+

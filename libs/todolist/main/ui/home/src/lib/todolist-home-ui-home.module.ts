@@ -5,10 +5,9 @@ import { BtnFooterComponent } from './btn-footer/btn-footer.component';
 import { WebSharedDirectivesModule } from '@monorepo/web/shared/directives';
 import { TaskComponent } from './task/task.component';
 import { WebSharedPipesModule } from '@monorepo/web/shared/pipes';
-import { TodolistSharedUiToggleArrowModule } from '@monorepo/todolist/shared/ui/toggle-arrow';
 
 @NgModule({
-  imports: [CommonModule, WebSharedDirectivesModule,WebSharedPipesModule, TodolistSharedUiToggleArrowModule],
+  imports: [CommonModule, WebSharedDirectivesModule,WebSharedPipesModule],
   exports: [InputHeaderComponent, BtnFooterComponent, TaskComponent],
   declarations: [InputHeaderComponent, BtnFooterComponent, TaskComponent],
 })

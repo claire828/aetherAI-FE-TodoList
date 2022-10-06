@@ -19,4 +19,8 @@ export class HomeComponent implements OnInit {
   onAddTask(task:ITask){
     this.store.dispatch(addTask({task}));
   }
+
+  onSort(toggle:boolean){
+    //todo 
+  }
 }
