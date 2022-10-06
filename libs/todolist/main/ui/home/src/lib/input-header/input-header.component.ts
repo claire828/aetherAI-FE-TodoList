@@ -52,7 +52,7 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
     ).subscribe();
   }
 
-  onToggleAll(){
+  onSort(){
    this.isToggle.next(!this.isToggle.value);
   }
  

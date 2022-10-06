@@ -1,17 +1,11 @@
 
 
-<div class="bg-white flex items-center justify-start border border-gray-200" >
-  <button 
-    class=" transform rotate-90 text-2xl cursor-default text-[#737373] w-10 ml-3"
-    [class.text-gray-100]=" this.isToggle$ | async"
+ <button (click)="onSort()"
+    [style.transform]="(isToggle$ | async) ? 'rotate(90deg)' : 'rotate(-90deg)'"
     monorepoClickStopPropagation> ❯</button>
  
-  <input #inputHeader
+ <input #inputHeader
           monorepoInputAutofocus
           type="text" 
-          placeholder="What needs to be done?" 
-          class=" 
-           outline-none py-4 px-4 text-gray-400 w-full text-2xl 
-          placeholder:text-gray-200 placeholder:italic "
-          >
-</div>
+          placeholder="What needs to be done?" >
+

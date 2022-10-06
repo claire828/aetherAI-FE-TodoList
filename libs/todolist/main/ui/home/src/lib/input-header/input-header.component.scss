@@ -1,11 +1,11 @@
-/*
-label{
-  color:#737373;
-  &::before{
-    content:'❯';
-    font-size:22px;
-    display:inline-block;
-    transform:rotate(90deg);
-    @apply absolute bottom-5 left-4;
-  }
-}*/
+:host{
+  @apply bg-white flex items-center justify-start border border-gray-200;
+}
+
+button{
+  @apply text-2xl cursor-default text-gray-600 w-10 ml-3;
+}
+
+input{
+  @apply outline-none py-4 px-4 text-gray-400 w-full text-2xl placeholder:text-gray-200 placeholder:italic ;
+}
