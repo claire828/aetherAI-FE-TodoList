@@ -19,6 +19,7 @@
     "web-shared-directives": "libs/web/shared/directives",
     "web-shared-pipes": "libs/web/shared/pipes",
     "web-shared-services-dialog": "libs/web/shared/services/dialog",
-    "web-shared-services-storage": "libs/web/shared/services/storage"
+    "web-shared-services-storage": "libs/web/shared/services/storage",
+    "web-utils": "libs/web/utils"
   }
 }

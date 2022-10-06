@@ -53,7 +53,8 @@
       ],
       "@monorepo/web/shared/services/storage": [
         "libs/web/shared/services/storage/src/index.ts"
-      ]
+      ],
+      "@monorepo/web/utils": ["libs/web/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

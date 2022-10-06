@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { filter, fromEvent, merge , map, throttleTime, tap} from 'rxjs';
 import { SubSink } from 'subsink';
 import {v4 as uuid} from 'uuid';
+import {WebEventUtil} from '@monorepo/web/utils';
 
 @Component({
   selector: 'monorepo-input-header',
@@ -24,15 +25,15 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor() {}
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
   ngAfterViewInit(): void {
     this.sub.sink = merge(
-      fromEvent<MouseEvent>(this.inputHeader.nativeElement, 'click'),
-      fromEvent<KeyboardEvent>(this.inputHeader.nativeElement,'keypress')
+      fromEvent<MouseEvent>(this.inputHeader.nativeElement, WebEventUtil.Mouse.Type.Click),
+      fromEvent<KeyboardEvent>(this.inputHeader.nativeElement,WebEventUtil.Keyboard.Key.Enter)
       .pipe(
-        filter(x=>x.key === "Enter"))
+        filter(x=>x.key === WebEventUtil.Keyboard.Key.Enter))
     ).pipe(
       map(()=>this.inputHeader.nativeElement.value),
       filter(Boolean),
