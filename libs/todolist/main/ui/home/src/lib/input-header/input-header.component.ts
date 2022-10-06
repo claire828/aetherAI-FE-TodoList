@@ -33,7 +33,7 @@ export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
       fromEvent<MouseEvent>(this.inputHeader.nativeElement, WebEventUtil.Mouse.Type.Click),
       fromEvent<KeyboardEvent>(this.inputHeader.nativeElement, WebEventUtil.Keyboard.Type.KeyPress)
       .pipe(
-        filter(x=>x.key === 'Enter'))
+        filter(x=>x.key === WebEventUtil.Keyboard.Key.Enter))
     ).pipe(
       map(()=>this.inputHeader.nativeElement.value),
       filter(Boolean),
