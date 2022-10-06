@@ -37,9 +37,6 @@
       "@monorepo/todolist/shell/feature/shell": [
         "libs/todolist/shell/feature/shell/src/index.ts"
       ],
-      "@monorepo/todolist/shell/ui/header": [
-        "libs/todolist/shell/ui/header/src/index.ts"
-      ],
       "@monorepo/todolist/shell/ui/layout": [
         "libs/todolist/shell/ui/layout/src/index.ts"
       ],
