@@ -1,16 +1,15 @@
 
-<div class="relative w-full mb-4">
+<div class="relative w-full mb-4" >
   <input #searchInput class="pos" type="text" [placeholder]="'search'" >
   <svg-icon [key]="'search'" [size]="'lg'"></svg-icon>
 
-  <div name="panel" id="panel" class="panel pos" [class.inactive]="focusOut$|async"  *ngIf="(searchWord$ | async) as word">
-    <ng-container *ngFor="let task of tasks$| async | filter:FilterKey:word ; " >
-      <monorepo-todolist-task
-        [task]="task" >
-      </monorepo-todolist-task>
+  <div class="panel pos" *ngIf="(searchWord$ | async) as word" [class.inactive]="focusOut$|async" >
+    <ng-container *ngFor="let task of tasks$| async | filter:FilterKey:word; " >
+      <monorepo-todolist-task [task]="task" > </monorepo-todolist-task>
     </ng-container>
   </div>
 
+  <div #mask [id]="MaskName" *ngIf="(focusOut$|async) === false"  class="fixed z-0  w-screen h-screen left-0 top-0" ></div>
 </div>
 
 
