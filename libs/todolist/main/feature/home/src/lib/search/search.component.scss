@@ -1,0 +1,24 @@
+:host{
+  @apply w-[600px];
+}
+
+input{
+  @apply z-10 bg-white py-2 shadow-md outline-none rounded-2xl focus:shadow-none w-full px-16;
+}
+
+svg-icon{
+  @apply absolute top-2 left-4 z-10;
+}
+
+.panel{
+  @apply bg-gray-300 mt-4 rounded-xl pt-4 h-60 overflow-y-auto shadow-2xl;
+
+  &.inactive{
+    display:none;
+  }
+}
+
+.pos{
+  @apply absolute top-0 left-0  w-full;
+}
+

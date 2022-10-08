@@ -1,7 +1,11 @@
 :host{
-  @apply bg-white w-full shadow-lg ;
+  @apply bg-white w-full shadow-lg relative ;
 }
 
 .header{
-  @apply flex justify-start w-full items-center bg-white border border-gray-200 px-2 w-[600px];
+  @apply relative flex justify-start items-center bg-white border border-gray-200 px-2 w-[600px] mt-10 ;
+}
+
+monorepo-search{
+  @apply absolute -top-10 left-0 z-10;
 }

@@ -4,7 +4,8 @@ export class WebEventUtil{
     Type: {
       KeyPress:'keypress',
       KeyUp:'keyup',
-      KeyDown:'keydown'
+      KeyDown:'keydown',
+      Input:'input'
     },
     Key :{
       Enter:'Enter',
@@ -29,6 +30,8 @@ export class WebEventUtil{
 
   static Focus = {
     Type:{
+      Focus:'focus',
+      Blur:'blur',
       FocusOut:'focusout'
     }
   }
