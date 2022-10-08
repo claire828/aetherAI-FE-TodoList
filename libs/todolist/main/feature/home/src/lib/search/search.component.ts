@@ -1,10 +1,11 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { getTasks } from '@monorepo/todolist/main/data-access/store';
+import { deleteTask, editTask, getTasks } from '@monorepo/todolist/main/data-access/store';
 import { WebEventUtil } from '@monorepo/web/utils';
 import { Store } from '@ngrx/store';
 import { debounceTime, distinctUntilChanged, exhaustMap, filter,  fromEvent, map, Subject,  tap } from 'rxjs';
 import { SubSink } from 'subsink';
 import { MaskComponent} from '@monorepo/todolist/main/ui/home';
+import { ITask } from '@monorepo/todolist/main/data-access/models';
 
 @Component({
   selector: 'monorepo-search',
@@ -57,5 +58,12 @@ export class SearchComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {}
   constructor(private store:Store) {}
 
+  onRemoveTask(task:ITask){
+    this.store.dispatch(deleteTask({id:task.id}));
+  }
+
+  onEditTask(task:ITask){
+    this.store.dispatch(editTask({task}));
+  }
 }
 

@@ -47,12 +47,10 @@ export class TasksComponent implements OnInit, OnDestroy {
 
 
   onRemoveTask(task:ITask){
-    console.log(`remove`)
     this.store.dispatch(deleteTask({id:task.id}));
   }
 
   onEditTask(task:ITask){
-    console.log(`onEditTask`)
     this.store.dispatch(editTask({task}));
   }
 

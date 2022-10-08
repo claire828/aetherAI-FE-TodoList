@@ -5,7 +5,11 @@
 
   <div class="panel pos" *ngIf="(searchWord$ | async) as word" [class.inactive]="focusOut$|async" >
     <ng-container *ngFor="let task of tasks$| async | filter:FilterKey:word; " >
-      <monorepo-todolist-task [task]="task" > </monorepo-todolist-task>
+        <monorepo-todolist-task 
+          [task]="task" 
+          (removeTask) = "onRemoveTask($event)"
+          (editTask)="onEditTask($event)" >
+       </monorepo-todolist-task>
     </ng-container>
   </div>
   <monorepo-mask *ngIf="(focusOut$|async) === false" ></monorepo-mask>
