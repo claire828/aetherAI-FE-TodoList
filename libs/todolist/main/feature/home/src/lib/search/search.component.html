@@ -8,8 +8,7 @@
       <monorepo-todolist-task [task]="task" > </monorepo-todolist-task>
     </ng-container>
   </div>
-
-  <div #mask [id]="MaskName" *ngIf="(focusOut$|async) === false"  class="fixed z-0  w-screen h-screen left-0 top-0" ></div>
+  <monorepo-mask [id]="MaskName" *ngIf="(focusOut$|async) === false" ></monorepo-mask>
 </div>
 
 
