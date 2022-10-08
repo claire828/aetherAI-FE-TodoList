@@ -1,10 +1,10 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { ITask } from '@monorepo/todolist/main/data-access/models';
 import { getTasks } from '@monorepo/todolist/main/data-access/store';
 import { WebEventUtil } from '@monorepo/web/utils';
 import { Store } from '@ngrx/store';
-import { debounceTime, distinctUntilChanged, exhaustMap, filter, from, fromEvent, map, merge, Subject, takeUntil, tap, zip } from 'rxjs';
+import { debounceTime, distinctUntilChanged, exhaustMap, filter,  fromEvent, map, Subject,  tap } from 'rxjs';
 import { SubSink } from 'subsink';
+import { MaskComponent} from '@monorepo/todolist/main/ui/home';
 
 @Component({
   selector: 'monorepo-search',
@@ -16,12 +16,11 @@ export class SearchComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @ViewChild('searchInput') searchInput!:ElementRef<HTMLInputElement>;
   readonly FilterKey = "name";
-  readonly MaskName = 'searchMask';
+
 
   private sub = new SubSink();
   focusOut$ = new Subject<boolean>();
   searchWord$ = new Subject<string>();
-
   tasks$ = this.store.select(getTasks);
 
 
@@ -29,8 +28,7 @@ export class SearchComponent implements OnInit, OnDestroy, AfterViewInit {
     const elem = this.searchInput.nativeElement;
     const lostFocus$ = fromEvent<MouseEvent>(document, WebEventUtil.Mouse.Type.Click).pipe(
       map(x=> (x.target as Element).id),
-      tap(x=> console.log(x)),
-      map(x=> x === this.MaskName),
+      map(x=> x === MaskComponent.MaskName),
       filter(Boolean),
     );
 

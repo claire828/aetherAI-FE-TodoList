@@ -13,7 +13,7 @@ import { SubSink } from 'subsink';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TasksComponent implements OnInit, OnDestroy {
-  
+
   private subSink = new SubSink();
   private isSort$ = new BehaviorSubject<boolean>(false);
   @Input() set isSortByTime(sort:boolean) {this.isSort$.next(sort);}
@@ -47,10 +47,12 @@ export class TasksComponent implements OnInit, OnDestroy {
 
 
   onRemoveTask(task:ITask){
+    console.log(`remove`)
     this.store.dispatch(deleteTask({id:task.id}));
   }
 
   onEditTask(task:ITask){
+    console.log(`onEditTask`)
     this.store.dispatch(editTask({task}));
   }
 

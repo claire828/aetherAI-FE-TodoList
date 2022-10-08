@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+
 @Component({
   selector: 'monorepo-mask',
   templateUrl: './mask.component.html',
@@ -7,6 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MaskComponent  {
+  static readonly MaskName = "searchMask";
+
+  get maskName(){ return MaskComponent.MaskName; }
+
   constructor() {}
 
   
