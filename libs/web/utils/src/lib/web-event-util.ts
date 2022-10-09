@@ -36,4 +36,10 @@ export class WebEventUtil{
     }
   }
 
+  static Scroll = {
+    Type:{
+      Scroll:'scroll'
+    }
+  }
+
 }

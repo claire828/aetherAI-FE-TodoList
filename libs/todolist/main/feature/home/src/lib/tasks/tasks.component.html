@@ -1,6 +1,6 @@
 
 <div class="wrap" #scrollArea>
-  <ng-container *ngIf="data$ | async as data">
+  <ng-container *ngIf="result$ | async as data">
     <ng-container *ngFor="let task of data.tasks| reverse:data.sort; index as i; last as isLast; count as length; trackBy:trackByIdentity " >
       <monorepo-todolist-task
         [task]="task"

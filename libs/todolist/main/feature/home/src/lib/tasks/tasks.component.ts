@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component,ElementRef,Input,OnDestroy,OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, Component,ElementRef,Input,OnDestroy,OnInit, QueryList, ViewChild, ViewChildren ,AfterViewInit} from '@angular/core';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
 import { deleteTask, editTask, getCurrMenu, getTasks } from '@monorepo/todolist/main/data-access/store';
 import { TaskComponent } from '@monorepo/todolist/main/ui/home';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, combineLatest , map,  tap, withLatestFrom} from 'rxjs';
+import { BehaviorSubject, combineLatest , map,  tap, withLatestFrom, distinctUntilChanged, debounceTime, startWith, pairwise, merge, mapTo, of} from 'rxjs';
 import { SubSink } from 'subsink';
 
 @Component({
@@ -14,16 +14,14 @@ import { SubSink } from 'subsink';
 })
 export class TasksComponent implements OnInit, OnDestroy {
 
-  private subSink = new SubSink();
-  private isSort$ = new BehaviorSubject<boolean>(false);
   @Input() set isSortByTime(sort:boolean) {this.isSort$.next(sort);}
   @ViewChildren(TaskComponent) taskUIs!: QueryList<TaskComponent>;
   @ViewChild("scrollArea") scrollArea!:ElementRef<HTMLElement>;
 
+  private subSink = new SubSink();
+  private isSort$ = new BehaviorSubject<boolean>(false);
   private menu$ = this.store.select(getCurrMenu);
-  
-
-  data$ = combineLatest([this.store.select(getTasks),this.menu$,this.isSort$])
+  private data$ = combineLatest([this.store.select(getTasks),this.menu$])
     .pipe(
       map(([tasks, menu] )=>{
           if(menu==='all') return tasks;
@@ -31,37 +29,27 @@ export class TasksComponent implements OnInit, OnDestroy {
           const result = tasks.filter(task=>task.complete === complete);
           return result;
         }
-      ),
-      withLatestFrom(this.isSort$),
-      map(([tasks, sort])=>{
-        return {tasks, sort}
-      })
+      )
+  );
+
+  result$ = merge(this.data$,this.isSort$).pipe(
+    debounceTime(200),
+    distinctUntilChanged(),
+    withLatestFrom( this.data$,this.isSort$),
+    map(([,tasks,sort])=>{
+        return {tasks,sort}
+      }
+    )
   );
   
+  trackByIdentity(index: number, task: ITask){return task.id;}
+  onRemoveTask(task:ITask){this.store.dispatch(deleteTask({id:task.id}));}
+  onEditTask(task:ITask){this.store.dispatch(editTask({task}));}
 
-  
-  trackByIdentity(index: number, task: ITask){
-    return task.id;
-  }
-  
-
-
-  onRemoveTask(task:ITask){
-    this.store.dispatch(deleteTask({id:task.id}));
-  }
-
-  onEditTask(task:ITask){
-    this.store.dispatch(editTask({task}));
-  }
-
- 
+  ngOnDestroy(){this.subSink.unsubscribe();}
+  constructor(private store:Store) {}
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {}
-
-  ngOnDestroy(){
-    this.subSink.unsubscribe();
-  }
-  constructor(private store:Store) {}
 
 }

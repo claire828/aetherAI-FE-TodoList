@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestro
 import { deleteTask, editTask, getTasks } from '@monorepo/todolist/main/data-access/store';
 import { WebEventUtil } from '@monorepo/web/utils';
 import { Store } from '@ngrx/store';
-import { debounceTime, distinctUntilChanged, exhaustMap, filter,  fromEvent, map, Subject,  tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, exhaustMap, filter,  fromEvent, map, merge, Subject,  tap } from 'rxjs';
 import { SubSink } from 'subsink';
 import { MaskComponent} from '@monorepo/todolist/main/ui/home';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
@@ -45,8 +45,7 @@ export class SearchComponent implements OnInit, OnDestroy, AfterViewInit {
       tap(()=>this.searchWord$.next(elem.value))
     );
 
-    this.sub.add(inputEvent$.subscribe());
-    this.sub.add(focusEvent$.subscribe());
+    this.sub.sink = merge(inputEvent$,focusEvent$).subscribe()
 
   }
 
