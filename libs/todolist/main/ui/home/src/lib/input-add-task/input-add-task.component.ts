@@ -1,3 +1,5 @@
+/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
+
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
 import { filter, fromEvent, merge , map, throttleTime, tap} from 'rxjs';
@@ -6,22 +8,22 @@ import {v4 as uuid} from 'uuid';
 import {WebEventUtil} from '@monorepo/web/utils';
 
 @Component({
-  selector: 'monorepo-input-header',
-  templateUrl: './input-header.component.html',
-  styleUrls: ['./input-header.component.scss'],
+  selector: 'monorepo-input-add-task',
+  template: `<input #inputHeader monorepoInputAutofocus type="text" placeholder="What needs to be done?" >`,
+  styles: [
+            `:host{ @apply bg-white  w-full;}`, 
+            `input{ @apply outline-none p-4 text-gray-400 w-full text-2xl placeholder:text-gray-200 placeholder:italic ;}`
+          ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class InputHeaderComponent implements OnInit, OnDestroy, AfterViewInit {
+export class InputAddTaskComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @Output() addNewTaskEvent = new EventEmitter<ITask>();
   @ViewChild('inputHeader') inputHeader!:ElementRef<HTMLInputElement>;
 
   private sub = new SubSink();
   constructor() {}
-
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
-  ngOnInit(): void { 
-  }
+  ngOnInit(): void { }
 
   ngAfterViewInit(): void {
     const elem = this.inputHeader.nativeElement;

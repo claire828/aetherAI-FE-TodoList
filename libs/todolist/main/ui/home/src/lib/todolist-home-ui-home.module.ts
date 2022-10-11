@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputHeaderComponent } from './input-header/input-header.component';
+import { InputAddTaskComponent } from './input-add-task/input-add-task.component';
 import { WebSharedDirectivesModule } from '@monorepo/web/shared/directives';
 import { TaskComponent } from './task/task.component';
 import { WebSharedPipesModule } from '@monorepo/web/shared/pipes';
@@ -10,12 +10,12 @@ import { TodolistSharedUiBtnBasicModule } from '@monorepo/todolist/shared/ui/btn
 @NgModule({
   imports: [CommonModule, WebSharedDirectivesModule, WebSharedPipesModule,TodolistSharedUiBtnBasicModule],
   exports: [
-    InputHeaderComponent,
+    InputAddTaskComponent,
     TaskComponent,
     MaskComponent,
   ],
   declarations: [
-    InputHeaderComponent,
+    InputAddTaskComponent,
     TaskComponent,
     MaskComponent,
   ],
