@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-import { TasksPanelComponent } from './tasks/tasks-panel.component';
+import { TasksPanelComponent } from './tasks-panel/tasks-panel.component';
 import { FooterComponent } from './footer/footer.component';
 import { TodolistHomeUiHomeModule } from '@monorepo/todolist/main/ui/home';
 import { WebSharedPipesModule } from '@monorepo/web/shared/pipes';
 import { TodolistSharedUiToggleArrowModule } from '@monorepo/todolist/shared/ui/toggle-arrow';
-import { SearchComponent } from './search/search.component';
+import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { TodolistSharedUiBtnBasicModule } from '@monorepo/todolist/shared/ui/btn-basic';
 @NgModule({
@@ -24,8 +24,8 @@ import { TodolistSharedUiBtnBasicModule } from '@monorepo/todolist/shared/ui/btn
     HomeComponent,
     TasksPanelComponent,
     FooterComponent,
-    SearchComponent,
+    SearchPanelComponent,
   ],
-  exports: [HomeComponent, SearchComponent],
+  exports: [HomeComponent, SearchPanelComponent],
 })
 export class TodolistHomeFeatureHomeModule {}

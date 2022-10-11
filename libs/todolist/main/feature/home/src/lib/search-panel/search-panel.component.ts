@@ -8,12 +8,12 @@ import { MaskComponent} from '@monorepo/todolist/main/ui/home';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
 
 @Component({
-  selector: 'monorepo-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  selector: 'monorepo-search-panel',
+  templateUrl: './search-panel.component.html',
+  styleUrls: ['./search-panel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchComponent implements OnInit, OnDestroy, AfterViewInit {
+export class SearchPanelComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @ViewChild('searchInput') searchInput!:ElementRef<HTMLInputElement>;
   readonly FilterKey = "name";
