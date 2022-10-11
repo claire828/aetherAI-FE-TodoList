@@ -5,6 +5,8 @@ import { TimingFormatPipe } from './timing-format.pipe';
 import { EnumToArrayPipe } from './enum-to-array.pipe';
 import { ReversePipe } from './reverse.pipe';
 import { FilterPipe } from './filter.pipe';
+import { OrderbyNumPipe } from './orderby-num.pipe';
+import { OrderbyAsciiPipe } from './orderby-ascii.pipe';
 
 @NgModule({
   imports: [CommonModule],
@@ -13,14 +15,18 @@ import { FilterPipe } from './filter.pipe';
     TimingFormatPipe,
     EnumToArrayPipe,
     ReversePipe,
-    FilterPipe
+    FilterPipe,
+    OrderbyNumPipe,
+    OrderbyAsciiPipe
   ],
   exports: [
     NumberWithCommasPipe,
     TimingFormatPipe,
     EnumToArrayPipe,
     ReversePipe,
-    FilterPipe
+    FilterPipe,
+    OrderbyNumPipe,
+    OrderbyAsciiPipe
   ],
 })
 export class WebSharedPipesModule {}

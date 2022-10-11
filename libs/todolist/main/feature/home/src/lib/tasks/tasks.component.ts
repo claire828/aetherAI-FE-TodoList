@@ -3,8 +3,9 @@ import { ITask } from '@monorepo/todolist/main/data-access/models';
 import { deleteTask, editTask, getCurrMenu, getTasks } from '@monorepo/todolist/main/data-access/store';
 import { TaskComponent } from '@monorepo/todolist/main/ui/home';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, combineLatest , map,  tap, withLatestFrom, distinctUntilChanged, debounceTime, startWith, pairwise, merge, mapTo, of} from 'rxjs';
+import { BehaviorSubject, combineLatest , map,  tap, withLatestFrom, distinctUntilChanged, debounceTime, merge} from 'rxjs';
 import { SubSink } from 'subsink';
+import { orderBy, orderByType } from '@monorepo/web/shared/pipes';
 
 @Component({
   selector: 'monorepo-tasks',
@@ -13,15 +14,14 @@ import { SubSink } from 'subsink';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TasksComponent implements OnInit, OnDestroy {
-
   @Input() set isSortByTime(sort:boolean) {this.isSort$.next(sort);}
   @ViewChildren(TaskComponent) taskUIs!: QueryList<TaskComponent>;
   @ViewChild("scrollArea") scrollArea!:ElementRef<HTMLElement>;
 
+  private readonly OrderBy = orderBy;
   private subSink = new SubSink();
   private isSort$ = new BehaviorSubject<boolean>(false);
-  private menu$ = this.store.select(getCurrMenu);
-  private data$ = combineLatest([this.store.select(getTasks),this.menu$])
+  private data$ = combineLatest([this.store.select(getTasks), this.store.select(getCurrMenu)])
     .pipe(
       map(([tasks, menu] )=>{
           if(menu==='all') return tasks;
@@ -32,12 +32,14 @@ export class TasksComponent implements OnInit, OnDestroy {
       )
   );
 
+  
   result$ = merge(this.data$,this.isSort$).pipe(
     debounceTime(200),
     distinctUntilChanged(),
     withLatestFrom( this.data$,this.isSort$),
     map(([,tasks,sort])=>{
-        return {tasks,sort}
+        const sortType:orderByType = this.OrderBy[+sort];
+        return {tasks, sortType, field:'ts' }
       }
     )
   );

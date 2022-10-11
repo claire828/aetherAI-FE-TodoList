@@ -18,7 +18,14 @@ export class TaskComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('check') checkElm!:ElementRef<HTMLInputElement>;
 
   private editModeSub = new BehaviorSubject<boolean>(false);
-  editMode$ = this.editModeSub.asObservable();
+  editMode$ = this.editModeSub.asObservable().pipe(
+    map(mode=> {
+      return {
+               on:mode,
+               off:!mode
+             }
+    })
+  );
 
 
   private subs = new SubSink();
