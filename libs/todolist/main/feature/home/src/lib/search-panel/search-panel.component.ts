@@ -1,11 +1,8 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { deleteTask, editTask, getTasks } from '@monorepo/todolist/main/data-access/store';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { WebEventUtil } from '@monorepo/web/utils';
-import { Store } from '@ngrx/store';
 import { debounceTime, distinctUntilChanged, exhaustMap, filter,  fromEvent, map, merge, Subject,  tap } from 'rxjs';
-import { SubSink } from 'subsink';
 import { MaskComponent} from '@monorepo/todolist/main/ui/home';
-import { ITask } from '@monorepo/todolist/main/data-access/models';
+import {TaskComponent as TaskManipulate} from '../task/task.component';
 
 @Component({
   selector: 'monorepo-search-panel',
@@ -13,17 +10,12 @@ import { ITask } from '@monorepo/todolist/main/data-access/models';
   styleUrls: ['./search-panel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchPanelComponent implements OnInit, OnDestroy, AfterViewInit {
+export class SearchPanelComponent extends TaskManipulate implements AfterViewInit {
 
   @ViewChild('searchInput') searchInput!:ElementRef<HTMLInputElement>;
   readonly FilterKey = "name";
-
-
-  private sub = new SubSink();
   focusOut$ = new Subject<boolean>();
   searchWord$ = new Subject<string>();
-  tasks$ = this.store.select(getTasks);
-
 
   ngAfterViewInit():void{
     const elem = this.searchInput.nativeElement;
@@ -44,25 +36,11 @@ export class SearchPanelComponent implements OnInit, OnDestroy, AfterViewInit {
       debounceTime(200),
       tap(()=>this.searchWord$.next(elem.value))
     );
-
     this.sub.sink = merge(inputEvent$,focusEvent$).subscribe()
-
   }
 
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
-  }
 
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
-  ngOnInit(): void {}
-  constructor(private store:Store) {}
+  constructor() { super();}
 
-  onRemoveTask(task:ITask){
-    this.store.dispatch(deleteTask({id:task.id}));
-  }
-
-  onEditTask(task:ITask){
-    this.store.dispatch(editTask({task}));
-  }
 }
 

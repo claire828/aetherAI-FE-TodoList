@@ -11,6 +11,7 @@ import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { TodolistSharedUiBtnBasicModule } from '@monorepo/todolist/shared/ui/btn-basic';
 import { TodolistSharedUiSpinnerModule } from '@monorepo/todolist/shared/ui/spinner';
+import { TaskComponent } from './task/task.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,14 +21,15 @@ import { TodolistSharedUiSpinnerModule } from '@monorepo/todolist/shared/ui/spin
     TodolistSharedUiToggleArrowModule,
     SvgIconsModule,
     TodolistSharedUiBtnBasicModule,
-    TodolistSharedUiSpinnerModule
+    TodolistSharedUiSpinnerModule,
   ],
   declarations: [
     HomeComponent,
     TasksPanelComponent,
     FooterComponent,
     SearchPanelComponent,
+    TaskComponent,
   ],
-  exports: [HomeComponent, SearchPanelComponent],
+  exports: [HomeComponent, SearchPanelComponent, TaskComponent],
 })
 export class TodolistHomeFeatureHomeModule {}

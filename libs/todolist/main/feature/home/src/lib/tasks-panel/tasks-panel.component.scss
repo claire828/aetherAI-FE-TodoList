@@ -1,7 +1,8 @@
 $max:8;
 $height:46px;
+$borderH:2px;
 .wrap{
-  height: $max * $height;
+  height: $max * $height + $borderH;
   @apply relative overflow-y-auto border border-gray-200;
 }
 

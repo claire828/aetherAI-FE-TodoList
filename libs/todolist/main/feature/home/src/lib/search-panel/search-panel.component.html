@@ -4,7 +4,7 @@
   <svg-icon [key]="'search'" [size]="'lg'"></svg-icon>
 
   <div class="panel pos" *ngIf="(searchWord$ | async) as word" [class.inactive]="focusOut$|async" >
-    <ng-container *ngFor="let task of tasks$| async | filter:FilterKey:word; " >
+    <ng-container *ngFor="let task of tasks$| async | filter:FilterKey:word; trackBy:trackByIdentity " >
         <monorepo-todolist-task 
           [task]="task" 
           (removeTask) = "onRemoveTask($event)"

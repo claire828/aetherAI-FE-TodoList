@@ -1,11 +1,8 @@
-import { ChangeDetectionStrategy, Component,ElementRef,Input,OnDestroy,OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
-import { ITask } from '@monorepo/todolist/main/data-access/models';
-import { deleteTask, editTask, getCurrMenu, getTasks, getTasksLoaing } from '@monorepo/todolist/main/data-access/store';
+import { ChangeDetectionStrategy, Component,ElementRef,Input,QueryList, ViewChild, ViewChildren} from '@angular/core';
 import { TaskComponent } from '@monorepo/todolist/main/ui/home';
-import { Store } from '@ngrx/store';
 import { BehaviorSubject, combineLatest , map, withLatestFrom, distinctUntilChanged, debounceTime, merge} from 'rxjs';
-import { SubSink } from 'subsink';
 import { orderBy, orderByType } from '@monorepo/web/shared/pipes';
+import {TaskComponent as TaskManipulate} from '../task/task.component';
 
 @Component({
   selector: 'monorepo-tasks-panel',
@@ -13,15 +10,14 @@ import { orderBy, orderByType } from '@monorepo/web/shared/pipes';
   styleUrls: ['./tasks-panel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TasksPanelComponent implements OnInit, OnDestroy {
+export class TasksPanelComponent extends TaskManipulate {
   @Input() set isSortByTime(sort:boolean) {this.isSort$.next(sort);}
   @ViewChildren(TaskComponent) taskUIs!: QueryList<TaskComponent>;
   @ViewChild("scrollArea") scrollArea!:ElementRef<HTMLElement>;
 
   private readonly OrderBy = orderBy;
-  private subSink = new SubSink();
   private isSort$ = new BehaviorSubject<boolean>(false);
-  private data$ = combineLatest([this.store.select(getTasks), this.store.select(getCurrMenu)])
+  private data$ = combineLatest([this.tasks$, this.menu$])
     .pipe(
       map(([tasks, menu] )=>{
           if(menu==='all') return tasks;
@@ -32,7 +28,6 @@ export class TasksPanelComponent implements OnInit, OnDestroy {
       )
   );
 
-  isLoading$ = this.store.select(getTasksLoaing);
   result$ = merge(this.data$,this.isSort$).pipe(
     debounceTime(200),
     distinctUntilChanged(),
@@ -44,12 +39,4 @@ export class TasksPanelComponent implements OnInit, OnDestroy {
     )
   );
   
-  trackByIdentity(index: number, task: ITask){return task.id;}
-  onRemoveTask(task:ITask){this.store.dispatch(deleteTask({id:task.id}));}
-  onEditTask(task:ITask){this.store.dispatch(editTask({task}));}
-  ngOnDestroy(){this.subSink.unsubscribe();}
-
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
-  ngOnInit(): void {}
-  constructor(private store:Store) {}
 }
