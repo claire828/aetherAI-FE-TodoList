@@ -1,8 +1,6 @@
 
 <div class="wrap" #scrollArea>
-
-  <monorepo-spinner *ngIf="isLoading$ | async"> loading...</monorepo-spinner>
-  <ng-container *ngIf="result$ | async as data">
+  <ng-container *ngIf="result$ | async as data; else loading">
     <ng-container *ngFor="let task of data.tasks| orderbyNum:data.field:data.sortType; trackBy:trackByIdentity " >
       <monorepo-todolist-task
         [task]="task"
@@ -14,4 +12,6 @@
 
 </div>
 
-
+<ng-template #loading>
+  <monorepo-spinner > loading...</monorepo-spinner>
+</ng-template>

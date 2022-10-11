@@ -2,7 +2,7 @@ $max:8;
 $height:46px;
 .wrap{
   height: $max * $height;
-  @apply relative overflow-y-auto;
+  @apply relative overflow-y-auto border border-gray-200;
 }
 
 monorepo-spinner{
