@@ -8,12 +8,12 @@ import { SubSink } from 'subsink';
 import { orderBy, orderByType } from '@monorepo/web/shared/pipes';
 
 @Component({
-  selector: 'monorepo-tasks',
-  templateUrl: './tasks.component.html',
-  styleUrls: ['./tasks.component.scss'],
+  selector: 'monorepo-tasks-panel',
+  templateUrl: './tasks-panel.component.html',
+  styleUrls: ['./tasks-panel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TasksComponent implements OnInit, OnDestroy {
+export class TasksPanelComponent implements OnInit, OnDestroy {
   @Input() set isSortByTime(sort:boolean) {this.isSort$.next(sort);}
   @ViewChildren(TaskComponent) taskUIs!: QueryList<TaskComponent>;
   @ViewChild("scrollArea") scrollArea!:ElementRef<HTMLElement>;
