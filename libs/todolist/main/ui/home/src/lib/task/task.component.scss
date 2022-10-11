@@ -31,7 +31,7 @@ button{
   &:hover{
     @apply transition-colors duration-500 text-red-500;
   }
-  @apply w-8 opacity-0 cursor-default ;
+  @apply w-4 mx-1 opacity-0 cursor-default ;
 }
 
 

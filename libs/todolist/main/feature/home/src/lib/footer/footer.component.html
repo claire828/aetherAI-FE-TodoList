@@ -2,12 +2,12 @@
   <span>{{strItemLeft$ | async}}</span>
 
   <ng-container *ngFor="let menuKey of menuTypes" > 
-    <monorepo-btn-footer
+    <monorepo-btn-basic
       [isHoverBoder]="true" 
       [param]="menuKey" 
       [isSelect]="(currMenu$ | async) === menuKey"
       (beClicked)="onMenuSwitch($event)" >{{menuKey}}
-    </monorepo-btn-footer>
+    </monorepo-btn-basic>
   </ng-container>
 
 

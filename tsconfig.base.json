@@ -34,6 +34,9 @@
       "@monorepo/todolist/shared/api": [
         "libs/todolist/shared/api/src/index.ts"
       ],
+      "@monorepo/todolist/shared/ui/btn-basic": [
+        "libs/todolist/shared/ui/btn-basic/src/index.ts"
+      ],
       "@monorepo/todolist/shared/ui/icon": [
         "libs/todolist/shared/ui/icon/src/index.ts"
       ],
