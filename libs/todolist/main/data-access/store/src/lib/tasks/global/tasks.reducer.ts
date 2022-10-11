@@ -43,7 +43,7 @@ export const tasksReducer = createReducer(
   /* add task */
   on(addTask, (state)=>({
     ...state,
-    status:'loading',
+    status:'pending',
   }) ),
 
   on(addTaskSuccess, (state,{task})=>({
@@ -62,7 +62,7 @@ export const tasksReducer = createReducer(
    /* delete task */
    on(deleteTask,(state)=>({
     ...state,
-    status:'loading',
+    status:'pending',
    })),
 
 
@@ -90,7 +90,7 @@ export const tasksReducer = createReducer(
   /* edit status */
 
   on(editTask,(state)=>{
-    return {...state, status:"loading"}
+    return {...state, status:"pending"}
   }),
 
   on(editTaskSuccess,(state, {task})=>{

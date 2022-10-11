@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component,ElementRef,Input,OnDestroy,OnInit, QueryList, ViewChild, ViewChildren ,AfterViewInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component,ElementRef,Input,OnDestroy,OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
-import { deleteTask, editTask, getCurrMenu, getTasks } from '@monorepo/todolist/main/data-access/store';
+import { deleteTask, editTask, getCurrMenu, getTasks, getTasksLoaing } from '@monorepo/todolist/main/data-access/store';
 import { TaskComponent } from '@monorepo/todolist/main/ui/home';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, combineLatest , map,  tap, withLatestFrom, distinctUntilChanged, debounceTime, merge} from 'rxjs';
+import { BehaviorSubject, combineLatest , map, withLatestFrom, distinctUntilChanged, debounceTime, merge} from 'rxjs';
 import { SubSink } from 'subsink';
 import { orderBy, orderByType } from '@monorepo/web/shared/pipes';
 
@@ -32,7 +32,7 @@ export class TasksPanelComponent implements OnInit, OnDestroy {
       )
   );
 
-  
+  isLoading$ = this.store.select(getTasksLoaing);
   result$ = merge(this.data$,this.isSort$).pipe(
     debounceTime(200),
     distinctUntilChanged(),
@@ -47,11 +47,9 @@ export class TasksPanelComponent implements OnInit, OnDestroy {
   trackByIdentity(index: number, task: ITask){return task.id;}
   onRemoveTask(task:ITask){this.store.dispatch(deleteTask({id:task.id}));}
   onEditTask(task:ITask){this.store.dispatch(editTask({task}));}
-
   ngOnDestroy(){this.subSink.unsubscribe();}
-  constructor(private store:Store) {}
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {}
-
+  constructor(private store:Store) {}
 }

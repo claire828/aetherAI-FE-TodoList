@@ -40,6 +40,9 @@
       "@monorepo/todolist/shared/ui/icon": [
         "libs/todolist/shared/ui/icon/src/index.ts"
       ],
+      "@monorepo/todolist/shared/ui/spinner": [
+        "libs/todolist/shared/ui/spinner/src/index.ts"
+      ],
       "@monorepo/todolist/shared/ui/toggle-arrow": [
         "libs/todolist/shared/ui/toggle-arrow/src/index.ts"
       ],

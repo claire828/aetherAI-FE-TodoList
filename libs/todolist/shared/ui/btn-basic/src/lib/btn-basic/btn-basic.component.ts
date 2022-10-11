@@ -23,5 +23,6 @@ export class BtnBasicComponent<T> implements OnInit {
 
 
   onSelect(){
+    this.beClicked.emit(this.param);
   }
 }

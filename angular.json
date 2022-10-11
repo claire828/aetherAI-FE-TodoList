@@ -14,6 +14,7 @@
     "todolist-shared-app-config": "libs/todolist/shared/app-config",
     "todolist-shared-ui-btn-basic": "libs/todolist/shared/ui/btn-basic",
     "todolist-shared-ui-icon": "libs/todolist/shared/ui/icon",
+    "todolist-shared-ui-spinner": "libs/todolist/shared/ui/spinner",
     "todolist-shared-ui-toggle-arrow": "libs/todolist/shared/ui/toggle-arrow",
     "todolist-shell-feature-shell": "libs/todolist/shell/feature/shell",
     "todolist-shell-ui-layout": "libs/todolist/shell/ui/layout",

@@ -10,6 +10,7 @@ import { TodolistSharedUiToggleArrowModule } from '@monorepo/todolist/shared/ui/
 import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { TodolistSharedUiBtnBasicModule } from '@monorepo/todolist/shared/ui/btn-basic';
+import { TodolistSharedUiSpinnerModule } from '@monorepo/todolist/shared/ui/spinner';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +19,8 @@ import { TodolistSharedUiBtnBasicModule } from '@monorepo/todolist/shared/ui/btn
     TodolistHomeUiHomeModule,
     TodolistSharedUiToggleArrowModule,
     SvgIconsModule,
-    TodolistSharedUiBtnBasicModule
+    TodolistSharedUiBtnBasicModule,
+    TodolistSharedUiSpinnerModule
   ],
   declarations: [
     HomeComponent,
