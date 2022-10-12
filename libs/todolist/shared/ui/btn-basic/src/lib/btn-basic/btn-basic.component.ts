@@ -5,7 +5,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 @Component({
   selector: 'monorepo-btn-basic',
   templateUrl: './btn-basic.component.html',
-  styleUrls: ['./btn-basic.component.scss'],
+  styles: [`button{ @apply text-sm px-2 box-border mx-2 transition-all duration-100 rounded-md; }`],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BtnBasicComponent<T> implements OnInit {

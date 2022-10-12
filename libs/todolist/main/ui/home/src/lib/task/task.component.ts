@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 import { AfterViewInit, OnDestroy, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ITask } from '@monorepo/todolist/main/data-access/models';
 import { filter, fromEvent, merge, map, tap,throttleTime, BehaviorSubject } from 'rxjs';
@@ -31,10 +32,7 @@ export class TaskComponent implements OnInit, AfterViewInit, OnDestroy {
   private subs = new SubSink();
   constructor(public ref: ElementRef<HTMLHtmlElement>) {}
 
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {}
-
-
   ngAfterViewInit(){
     const editElem = this.editElm.nativeElement;
     const editEvents$ = merge(

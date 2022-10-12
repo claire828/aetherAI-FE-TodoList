@@ -1,6 +1,5 @@
 import { Route } from '@angular/router';
-import { LayoutComponent } from '@monorepo/todolist/shell/ui/layout'; //這邊要記得在文件index中export
-
+import { LayoutComponent } from '@monorepo/todolist/shell/ui/layout'; 
 
 export const todolistShellRoutes: Route[] = [
   {

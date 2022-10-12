@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'monorepo-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss'],
+  template: `<router-outlet></router-outlet>`,
+  styles: [`:host{ @apply my-16;}` ],
 })
 export class LayoutComponent implements OnInit {
   constructor() {}

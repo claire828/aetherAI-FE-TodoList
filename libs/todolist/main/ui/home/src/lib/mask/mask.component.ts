@@ -3,8 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'monorepo-mask',
-  templateUrl: './mask.component.html',
-  styleUrls: ['./mask.component.scss'],
+  template: `<div [id]="maskName" class="fixed z-0  w-screen h-screen left-0 top-0" ></div>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MaskComponent  {
