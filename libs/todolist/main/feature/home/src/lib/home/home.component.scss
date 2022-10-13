@@ -3,7 +3,7 @@
 }
 
 .header{
-  @apply relative flex justify-start items-center bg-white border border-gray-200 px-2 w-[600px] mt-10 ;
+  @apply relative flex justify-start items-center bg-white border border-gray-200 px-2 w-homesm md:w-homemd lg:w-homelg mt-10 ;
 }
 
 monorepo-search-panel{

@@ -60,12 +60,6 @@
         "libs/web/shared/directives/src/index.ts"
       ],
       "@monorepo/web/shared/pipes": ["libs/web/shared/pipes/src/index.ts"],
-      "@monorepo/web/shared/services/dialog": [
-        "libs/web/shared/services/dialog/src/index.ts"
-      ],
-      "@monorepo/web/shared/services/storage": [
-        "libs/web/shared/services/storage/src/index.ts"
-      ],
       "@monorepo/web/utils": ["libs/web/utils/src/index.ts"]
     }
   },

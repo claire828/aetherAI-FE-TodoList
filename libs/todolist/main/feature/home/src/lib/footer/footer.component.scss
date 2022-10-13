@@ -1,5 +1,5 @@
 :host{
-  @apply text-[#777] text-center flex justify-center  w-full cursor-default items-center relative h-10;
+  @apply text-gray-600 text-center flex justify-center w-full cursor-default items-center relative h-10 md:my-2 lg:my-4;
 }
 
 span{
