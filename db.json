@@ -9,8 +9,14 @@
     {
       "id": "e13d4e97-3103-4a25-ac7c-758803b79277",
       "name": "washing dishes",
-      "complete": false,
+      "complete": true,
       "ts": 1665573070164
+    },
+    {
+      "id": "d06bb22d-aed0-41fe-bdbb-37f7d96dc54d",
+      "name": "love",
+      "complete": true,
+      "ts": 1665637534362
     }
   ]
 }

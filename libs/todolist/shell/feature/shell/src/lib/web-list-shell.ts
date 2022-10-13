@@ -8,7 +8,7 @@ export const todolistShellRoutes: Route[] = [
     children: [
       {
         path: '',
-        loadChildren: async () => (await import('@monorepo/todolist/main/feature/home')).TodolistHomeFeatureHomeModule
+        loadChildren: async () => (await import('@monorepo/todolist/core/feature/home')).TodolistHomeFeatureHomeModule
       }
     ]
   }
