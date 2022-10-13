@@ -3,7 +3,7 @@
 # TodoList
 A simple todolist client built with Angular14, Nx, Workspace, Ngrx, TailwindCSS, JsonServer.
 
-`This project was generated using [Nx](https://nx.dev) `
+`This project was generated using [Nx]`
 <br />
 
 
@@ -98,8 +98,7 @@ Below is the simplified version of the application structure.
                 ├── api (angular: API call, Service
                 management to share across the Client app)
                 ├── ui (dir) 
-                ├── assets (dir)
-                └── utils (angular:lib, usually shared Guards, Interceptors, Validators...)
+                └── assets (dir)
 ```
 
 
