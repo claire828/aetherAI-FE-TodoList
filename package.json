@@ -11,7 +11,8 @@
     "fe": "ng serve fe --port 1235 --hmr=true ",
     "todolist": "ng serve todolist --port 4200 --hmr=true",
     "json-server": "json-server --watch db.json",
-    "generate-icons": "svg-generator"
+    "generate-icons": "svg-generator",
+    "graph": "nx graph"
   },
   "private": true,
   "dependencies": {

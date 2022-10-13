@@ -18,7 +18,6 @@
       "@monorepo/todolist-shared-app-config": [
         "libs/todolist/shared/app-config/src/index.ts"
       ],
-      "@monorepo/todolist/assets": ["libs/todolist/assets/src/index.ts"],
       "@monorepo/todolist/main/data-access/models": [
         "libs/todolist/main/data-access/models/src/index.ts"
       ],

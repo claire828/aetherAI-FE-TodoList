@@ -1,23 +1,4 @@
 {
-  "auth": [],
-  "tasks": [
-    {
-      "id": "45a1e84f-4fd0-42f0-86a2-b0b97eb1f99f",
-      "name": "hello",
-      "complete": false,
-      "ts": 1665572675964
-    },
-    {
-      "id": "e13d4e97-3103-4a25-ac7c-758803b79277",
-      "name": "add one",
-      "complete": false,
-      "ts": 1665573070164
-    },
-    {
-      "id": "4ada9b75-6f52-4d8a-b678-cb70ce157a1e",
-      "name": "got it",
-      "complete": false,
-      "ts": 1665573217425
-    }
-  ]
+ 
+  
 }

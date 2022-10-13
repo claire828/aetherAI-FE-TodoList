@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "tasks": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": "45a1e84f-4fd0-42f0-86a2-b0b97eb1f99f",
+      "name": "tidying up kitchen",
+      "complete": false,
+      "ts": 1665572675964
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "e13d4e97-3103-4a25-ac7c-758803b79277",
+      "name": "washing dishes",
+      "complete": false,
+      "ts": 1665573070164
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

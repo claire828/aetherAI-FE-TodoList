@@ -1,105 +1,106 @@
 
 
-# Monorepo
+# TodoList
+A simple todolist client built with Angular14, Nx, Workspace, Ngrx, TailwindCSS, JsonServer.
 
-This project was generated using [Nx](https://nx.dev).
+`This project was generated using [Nx](https://nx.dev). `
+<br />
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
-🔎 **Smart, Fast and Extensible Build System**
+## Tech stack
+- [Angular 14][angular]
+- [Nx Workspace][nx]
+- [NgRx][ngrx] 
+- [TailwindCSS][tailwind]
+- [JSON Server][json-server]
+- [ngneat][ngneat/svgicon]
+  
+[angular]: https://angular.io/
+[nx]: https://nx.dev
+[ngrx]: https://ngrx.io/
+[tailwind]: https://tailwindcss.com/
+[json-server]: https://www.npmjs.com/package/json-server
+[ngneat/svgicon]: https://www.npmjs.com/package/@ngneat/svg-icon
+<br />
 
-## Quick Start & Documentation
 
-[Nx Documentation](https://nx.dev/angular)
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+## Running the project
+>Run `npm run todolist` to serves the client application.
 
-[Interactive Tutorial](https://nx.dev/react-tutorial/01-create-application)
+>Run `npm run json-server` to serves the backend server.
 
-## Adding capabilities to your workspace
+<br />
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+### Dependency Graph
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+Nx provides an [dependency graph]((https://nx.dev/latest/angular/structure/dependency-graph)) out of the box. To view it on your browser, clone my repository and run:
 
-Below are our core plugins:
+```bash
+npm run graph
+```
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+A simplified graph looks like the following. It gives you insightful information for your mono repo and is especially helpful when multiple projects depend on each other.
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+![Todolist Dependency Graph](/assets/graph.png)
 
-## Generate an application
-
-Run `ng g @nrwl/angular:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@monorepo/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+<br />
 
 
 
 
+### Structure
+Below is the simplified version of the application structure.
+```
+.
+└── root
+    ├── apps
+    │   └── todolist
+    │ 
+    └── libs
+        └── eslint-custom-overrides (dir)
+        └── tailwind-preset (dir)
+        │ 
+        └── web (dir) - common usages for apps
+        │   │── settings (dir) - environment setting. etc hmr..
+        │   ├── shared (dir)
+        │   │   ├── data-access (generic-state)
+        │   │   └── directives
+        │   │   └── pipes
+        │   └── util (dir)
+        │   
+        └── todolist (dir)
+            │ 
+            ├── shell (dir)
+            │   ├── feature (angular:lib) - for configure any forRoot modules
+            │   └── ui
+            │       └── layout (angular:lib)
+            │ 
+            │ 
+            ├── main (dir) - code
+            │   ├── data-access (dir)
+            │   │   ├── models (angular:lib)
+            │   │   └── store (angular:lib)
+            │   │       └── tasks (action, effect, reducer, selector)
+            │   │ 
+            │   │** (folders named by definition of router) **
+            │   ├── feature (dir) [smart components]
+            │   │   └── home (angular:lib)
+            │   │       └── ... (angular:lib, Component)
+            │   │           
+            │   └── ui (dir) - [representation components] 
+            │       └── home (angular:lib) -
+            │           └── ... (angular:lib, SCAM for Component)
+            │       
+            │ 
+            └── shared (dir) -- common usaged for features           
+                ├── app-config (injection token for environment)
+                ├── api (angular: API call, Service
+                management to share across the Client app)
+                ├── ui (dir) 
+                ├── assets (dir)
+                └── utils (angular:lib, usually shared Guards, Interceptors, Validators...)
+```
 
 
-## ☁ Nx Cloud
 
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.

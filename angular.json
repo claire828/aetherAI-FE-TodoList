@@ -4,7 +4,6 @@
   "projects": {
     "tailwind-preset": "libs/tailwind-preset",
     "todolist": "apps/todolist",
-    "todolist-assets": "libs/todolist/assets",
     "todolist-e2e": "apps/todolist-e2e",
     "todolist-home-feature-home": "libs/todolist/main/feature/home",
     "todolist-home-ui-home": "libs/todolist/main/ui/home",
