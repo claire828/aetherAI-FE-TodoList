@@ -48,8 +48,7 @@ A simplified graph looks like the following. It gives you insightful information
 
 
 
-
-### Structure
+### Project Structure
 Below is the simplified version of the application structure.
 ```
 .
@@ -102,4 +101,5 @@ Below is the simplified version of the application structure.
 ```
 
 
-
+### Monorepo Structure 
+![Mono](/assets/monorepo-flow.jpeg)
