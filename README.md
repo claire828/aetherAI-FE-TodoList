@@ -32,6 +32,17 @@ A simple todolist client built with Angular14, Nx, Workspace, Ngrx, TailwindCSS,
 
 <br />
 
+
+## Testing
+
+I am using NGRX - Mock Selectors to test the states / selectors.
+
+Still working on / learning the Marble diagrams.
+>Run `npm run test` to test the client application.
+
+<br />
+
+
 ### Dependency Graph
 
 Nx provides an [dependency graph]((https://nx.dev/latest/angular/structure/dependency-graph)) out of the box. To view it on your browser, clone my repository and run:

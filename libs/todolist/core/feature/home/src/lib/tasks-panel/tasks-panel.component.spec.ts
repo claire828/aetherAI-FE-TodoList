@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideMockStore } from '@ngrx/store/testing';
 import { TasksPanelComponent } from './tasks-panel.component';
 
 describe('tasksComponent', () => {
@@ -9,6 +9,7 @@ describe('tasksComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TasksPanelComponent],
+      providers: [provideMockStore({})],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TasksPanelComponent);
@@ -20,3 +21,5 @@ describe('tasksComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+

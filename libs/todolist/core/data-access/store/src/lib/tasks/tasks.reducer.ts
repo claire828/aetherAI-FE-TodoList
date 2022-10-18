@@ -11,7 +11,7 @@ export interface ITaskState<T> extends ICommonState<T>{
   menu:tasksMenuType,
 }
 
-const initState:ITaskState<ITask[]> = {
+export const initState:ITaskState<ITask[]> = {
   data:[],
   error:"",
   status:"pending",
