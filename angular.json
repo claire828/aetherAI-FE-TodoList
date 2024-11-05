@@ -89,13 +89,6 @@
         }
       }
     },
-    "todolist-e2e": {
-      "root": "apps/todolist-e2e",
-      "projectType": "application",
-      "sourceRoot": "apps/todolist-e2e/src",
-      "prefix": "app",
-      "architect": {}
-    },
     "todolist-core-feature-home": {
       "root": "libs/todolist/core/feature/home",
       "projectType": "library",

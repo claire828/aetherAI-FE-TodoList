@@ -5,11 +5,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/core/data-access/models",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/core/data-access/models/src",
-        "prefix": "monorepo",
-        "name": "todolist-core-data-access-models",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/core/data-access/models/**/*.ts",
+                "libs/todolist/core/data-access/models/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -20,20 +33,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/core/data-access/models/**/*.ts",
-                "libs/todolist/core/data-access/models/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/core/data-access/models/src",
+        "prefix": "monorepo",
+        "name": "todolist-core-data-access-models",
         "tags": [],
         "implicitDependencies": []
       }
@@ -43,11 +52,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/core/data-access/store",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/core/data-access/store/src",
-        "prefix": "monorepo",
-        "name": "store",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/core/data-access/store/**/*.ts",
+                "libs/todolist/core/data-access/store/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -58,20 +80,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/core/data-access/store/**/*.ts",
-                "libs/todolist/core/data-access/store/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/core/data-access/store/src",
+        "prefix": "monorepo",
+        "name": "store",
         "tags": [],
         "implicitDependencies": []
       }
@@ -81,11 +99,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/shared/ui/toggle-arrow",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/shared/ui/toggle-arrow/src",
-        "prefix": "monorepo",
-        "name": "toggle-arrow",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/shared/ui/toggle-arrow/**/*.ts",
+                "libs/todolist/shared/ui/toggle-arrow/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -96,20 +127,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/shared/ui/toggle-arrow/**/*.ts",
-                "libs/todolist/shared/ui/toggle-arrow/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/shared/ui/toggle-arrow/src",
+        "prefix": "monorepo",
+        "name": "toggle-arrow",
         "tags": [],
         "implicitDependencies": []
       }
@@ -119,11 +146,24 @@
       "type": "lib",
       "data": {
         "root": "libs/web/shared/data-access/models",
-        "projectType": "library",
-        "sourceRoot": "libs/web/shared/data-access/models/src",
-        "prefix": "monorepo",
-        "name": "web-data-access-models",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/web/shared/data-access/models/**/*.ts",
+                "libs/web/shared/data-access/models/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -134,20 +174,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/web/shared/data-access/models/**/*.ts",
-                "libs/web/shared/data-access/models/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/web/shared/data-access/models/src",
+        "prefix": "monorepo",
+        "name": "web-data-access-models",
         "tags": [],
         "implicitDependencies": []
       }
@@ -157,11 +193,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/shared/ui/btn-basic",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/shared/ui/btn-basic/src",
-        "prefix": "monorepo",
-        "name": "btn-basic",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/shared/ui/btn-basic/**/*.ts",
+                "libs/todolist/shared/ui/btn-basic/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -172,20 +221,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/shared/ui/btn-basic/**/*.ts",
-                "libs/todolist/shared/ui/btn-basic/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/shared/ui/btn-basic/src",
+        "prefix": "monorepo",
+        "name": "btn-basic",
         "tags": [],
         "implicitDependencies": []
       }
@@ -195,11 +240,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/shell/feature/shell",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/shell/feature/shell/src",
-        "prefix": "monorepo",
-        "name": "shell",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/shell/feature/shell/**/*.ts",
+                "libs/todolist/shell/feature/shell/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -210,20 +268,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/shell/feature/shell/**/*.ts",
-                "libs/todolist/shell/feature/shell/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/shell/feature/shell/src",
+        "prefix": "monorepo",
+        "name": "shell",
         "tags": [],
         "implicitDependencies": []
       }
@@ -233,11 +287,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/shared/app-config",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/shared/app-config/src",
-        "prefix": "monorepo",
-        "name": "app-config",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/shared/app-config/**/*.ts",
+                "libs/todolist/shared/app-config/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -248,20 +315,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/shared/app-config/**/*.ts",
-                "libs/todolist/shared/app-config/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/shared/app-config/src",
+        "prefix": "monorepo",
+        "name": "app-config",
         "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
         "tags": [],
         "implicitDependencies": []
@@ -272,11 +335,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/shared/ui/spinner",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/shared/ui/spinner/src",
-        "prefix": "monorepo",
-        "name": "spinner",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/shared/ui/spinner/**/*.ts",
+                "libs/todolist/shared/ui/spinner/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -287,20 +363,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/shared/ui/spinner/**/*.ts",
-                "libs/todolist/shared/ui/spinner/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/shared/ui/spinner/src",
+        "prefix": "monorepo",
+        "name": "spinner",
         "tags": [],
         "implicitDependencies": []
       }
@@ -310,11 +382,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/core/feature/home",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/core/feature/home/src",
-        "prefix": "monorepo",
-        "name": "todolist-core-feature-home",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/core/feature/home/**/*.ts",
+                "libs/todolist/core/feature/home/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -325,20 +410,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/core/feature/home/**/*.ts",
-                "libs/todolist/core/feature/home/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/core/feature/home/src",
+        "prefix": "monorepo",
+        "name": "todolist-core-feature-home",
         "tags": [],
         "implicitDependencies": []
       }
@@ -348,11 +429,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/shell/ui/layout",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/shell/ui/layout/src",
-        "prefix": "monorepo",
-        "name": "layout",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/shell/ui/layout/**/*.ts",
+                "libs/todolist/shell/ui/layout/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -363,20 +457,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/shell/ui/layout/**/*.ts",
-                "libs/todolist/shell/ui/layout/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/shell/ui/layout/src",
+        "prefix": "monorepo",
+        "name": "layout",
         "tags": [],
         "implicitDependencies": []
       }
@@ -386,11 +476,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/shared/ui/icon",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/shared/ui/icon/src",
-        "prefix": "monorepo",
-        "name": "icon",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/shared/ui/icon/**/*.ts",
+                "libs/todolist/shared/ui/icon/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -401,20 +504,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/shared/ui/icon/**/*.ts",
-                "libs/todolist/shared/ui/icon/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/shared/ui/icon/src",
+        "prefix": "monorepo",
+        "name": "icon",
         "tags": [],
         "implicitDependencies": []
       }
@@ -424,11 +523,24 @@
       "type": "lib",
       "data": {
         "root": "libs/web/shared/directives",
-        "projectType": "library",
-        "sourceRoot": "libs/web/shared/directives/src",
-        "prefix": "monorepo",
-        "name": "directives",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/web/shared/directives/**/*.ts",
+                "libs/web/shared/directives/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -439,20 +551,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/web/shared/directives/**/*.ts",
-                "libs/web/shared/directives/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/web/shared/directives/src",
+        "prefix": "monorepo",
+        "name": "directives",
         "tags": [],
         "implicitDependencies": []
       }
@@ -462,11 +570,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/core/ui/home",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/core/ui/home/src",
-        "prefix": "monorepo",
-        "name": "todolist-core-ui-home",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/core/ui/home/**/*.ts",
+                "libs/todolist/core/ui/home/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -477,20 +598,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/core/ui/home/**/*.ts",
-                "libs/todolist/core/ui/home/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/core/ui/home/src",
+        "prefix": "monorepo",
+        "name": "todolist-core-ui-home",
         "tags": [],
         "implicitDependencies": []
       }
@@ -500,11 +617,24 @@
       "type": "lib",
       "data": {
         "root": "libs/todolist/shared/api",
-        "projectType": "library",
-        "sourceRoot": "libs/todolist/shared/api/src",
-        "prefix": "monorepo",
-        "name": "api",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/todolist/shared/api/**/*.ts",
+                "libs/todolist/shared/api/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -515,20 +645,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/todolist/shared/api/**/*.ts",
-                "libs/todolist/shared/api/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/todolist/shared/api/src",
+        "prefix": "monorepo",
+        "name": "api",
         "tags": [],
         "implicitDependencies": []
       }
@@ -538,11 +664,24 @@
       "type": "lib",
       "data": {
         "root": "libs/web/settings/hmr",
-        "projectType": "library",
-        "sourceRoot": "libs/web/settings/hmr/src",
-        "prefix": "monorepo",
-        "name": "hmr",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/web/settings/hmr/**/*.ts",
+                "libs/web/settings/hmr/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -553,20 +692,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/web/settings/hmr/**/*.ts",
-                "libs/web/settings/hmr/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/web/settings/hmr/src",
+        "prefix": "monorepo",
+        "name": "hmr",
         "tags": [],
         "implicitDependencies": []
       }
@@ -576,11 +711,24 @@
       "type": "lib",
       "data": {
         "root": "libs/web/shared/pipes",
-        "projectType": "library",
-        "sourceRoot": "libs/web/shared/pipes/src",
-        "prefix": "monorepo",
-        "name": "pipes",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/web/shared/pipes/**/*.ts",
+                "libs/web/shared/pipes/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -591,20 +739,16 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "libs/web/shared/pipes/**/*.ts",
-                "libs/web/shared/pipes/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           }
         },
+        "projectType": "library",
+        "sourceRoot": "libs/web/shared/pipes/src",
+        "prefix": "monorepo",
+        "name": "pipes",
         "tags": [],
         "implicitDependencies": []
       }
@@ -614,56 +758,251 @@
       "type": "lib",
       "data": {
         "root": "libs/tailwind-preset",
+        "targets": {
+          "lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/tailwind-preset",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "metadata": {
+              "technologies": [
+                "eslint"
+              ],
+              "description": "Runs ESLint on project",
+              "help": {
+                "command": "npx eslint --help",
+                "example": {
+                  "options": {
+                    "max-warnings": 0
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": []
+          }
+        },
         "projectType": "library",
         "sourceRoot": "libs/tailwind-preset",
         "prefix": "app",
         "name": "tailwind-preset",
-        "targets": {},
         "tags": [],
         "implicitDependencies": []
       }
     },
-    "todolist-e2e": {
-      "name": "todolist-e2e",
+    "skeleton-e2e": {
+      "name": "skeleton-e2e",
       "type": "e2e",
       "data": {
-        "root": "apps/todolist-e2e",
+        "root": "apps/skeleton-e2e",
         "projectType": "application",
-        "sourceRoot": "apps/todolist-e2e/src",
-        "prefix": "app",
-        "name": "todolist-e2e",
+        "metadata": {
+          "targetGroups": {
+            "E2E (CI)": [
+              "e2e-ci--src/e2e/app.cy.ts",
+              "e2e-ci"
+            ]
+          }
+        },
         "targets": {
           "e2e": {
-            "executor": "@nrwl/cypress:cypress",
             "options": {
-              "cypressConfig": "apps/todolist-e2e/cypress.json",
-              "devServerTarget": "todolist:serve:development"
+              "cwd": "apps/skeleton-e2e",
+              "command": "cypress run"
+            },
+            "cache": true,
+            "inputs": [
+              "default",
+              "^default",
+              {
+                "externalDependencies": [
+                  "cypress"
+                ]
+              }
+            ],
+            "outputs": [
+              "{workspaceRoot}/dist/cypress/apps/skeleton-e2e/videos",
+              "{workspaceRoot}/dist/cypress/apps/skeleton-e2e/screenshots"
+            ],
+            "parallelism": false,
+            "metadata": {
+              "technologies": [
+                "cypress"
+              ],
+              "description": "Runs Cypress Tests",
+              "help": {
+                "command": "npx cypress run --help",
+                "example": {
+                  "args": [
+                    "--dev",
+                    "--headed"
+                  ]
+                }
+              }
             },
             "configurations": {
               "production": {
-                "devServerTarget": "todolist:serve:production"
+                "command": "cypress run --env webServerCommand=\"npx nx run skeleton:serve-static\""
               }
             },
+            "executor": "nx:run-commands"
+          },
+          "e2e-ci--src/e2e/app.cy.ts": {
+            "outputs": [
+              "{workspaceRoot}/dist/cypress/apps/skeleton-e2e/videos",
+              "{workspaceRoot}/dist/cypress/apps/skeleton-e2e/screenshots"
+            ],
+            "inputs": [
+              "default",
+              "^default",
+              {
+                "externalDependencies": [
+                  "cypress"
+                ]
+              }
+            ],
+            "cache": true,
+            "options": {
+              "cwd": "apps/skeleton-e2e",
+              "command": "cypress run --env webServerCommand=\"npx nx run skeleton:serve-static\" --spec src/e2e/app.cy.ts --config='{\"baseUrl\": \"http://localhost:4200\"}'"
+            },
+            "parallelism": false,
+            "metadata": {
+              "technologies": [
+                "cypress"
+              ],
+              "description": "Runs Cypress Tests in src/e2e/app.cy.ts in CI",
+              "help": {
+                "command": "npx cypress run --help",
+                "example": {
+                  "args": [
+                    "--dev",
+                    "--headed"
+                  ]
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
+          "e2e-ci": {
+            "executor": "nx:noop",
+            "cache": true,
+            "inputs": [
+              "default",
+              "^default",
+              {
+                "externalDependencies": [
+                  "cypress"
+                ]
+              }
+            ],
+            "outputs": [
+              "{workspaceRoot}/dist/cypress/apps/skeleton-e2e/videos",
+              "{workspaceRoot}/dist/cypress/apps/skeleton-e2e/screenshots"
+            ],
+            "dependsOn": [
+              {
+                "target": "e2e-ci--src/e2e/app.cy.ts",
+                "projects": "self",
+                "params": "forward"
+              }
+            ],
+            "parallelism": false,
+            "metadata": {
+              "technologies": [
+                "cypress"
+              ],
+              "description": "Runs Cypress Tests in CI",
+              "nonAtomizedTarget": "e2e",
+              "help": {
+                "command": "npx cypress run --help",
+                "example": {
+                  "args": [
+                    "--dev",
+                    "--headed"
+                  ]
+                }
+              }
+            },
+            "configurations": {},
+            "options": {}
+          },
+          "open-cypress": {
+            "options": {
+              "cwd": "apps/skeleton-e2e",
+              "command": "cypress open"
+            },
+            "metadata": {
+              "technologies": [
+                "cypress"
+              ],
+              "description": "Opens Cypress",
+              "help": {
+                "command": "npx cypress open --help",
+                "example": {
+                  "args": [
+                    "--dev",
+                    "--e2e"
+                  ]
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
             "parallelism": true
           },
           "lint": {
-            "executor": "@nrwl/linter:eslint",
+            "cache": true,
+            "options": {
+              "cwd": "apps/skeleton-e2e",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ],
             "outputs": [
               "{options.outputFile}"
             ],
-            "options": {
-              "lintFilePatterns": [
-                "apps/todolist-e2e/**/*.{js,ts}"
-              ]
+            "metadata": {
+              "technologies": [
+                "eslint"
+              ],
+              "description": "Runs ESLint on project",
+              "help": {
+                "command": "npx eslint --help",
+                "example": {
+                  "options": {
+                    "max-warnings": 0
+                  }
+                }
+              }
             },
+            "executor": "nx:run-commands",
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": []
           }
         },
+        "name": "skeleton-e2e",
         "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "apps/skeleton-e2e/src",
         "tags": [],
         "implicitDependencies": [
-          "todolist"
+          "skeleton"
         ]
       }
     },
@@ -672,11 +1011,24 @@
       "type": "lib",
       "data": {
         "root": "libs/web/utils",
-        "projectType": "library",
-        "sourceRoot": "libs/web/utils/src",
-        "prefix": "monorepo",
-        "name": "utils",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "libs/web/utils/**/*.ts",
+                "libs/web/utils/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -687,20 +1039,149 @@
               "passWithNoTests": true
             },
             "configurations": {},
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
+          }
+        },
+        "projectType": "library",
+        "sourceRoot": "libs/web/utils/src",
+        "prefix": "monorepo",
+        "name": "utils",
+        "tags": [],
+        "implicitDependencies": []
+      }
+    },
+    "skeleton": {
+      "name": "skeleton",
+      "type": "app",
+      "data": {
+        "root": "apps/skeleton",
+        "targets": {
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {},
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
+          "build": {
+            "executor": "@angular-devkit/build-angular:application",
+            "outputs": [
+              "{options.outputPath}"
+            ],
+            "options": {
+              "outputPath": "dist/apps/skeleton",
+              "index": "apps/skeleton/src/index.html",
+              "browser": "apps/skeleton/src/main.ts",
+              "polyfills": [
+                "zone.js"
+              ],
+              "tsConfig": "apps/skeleton/tsconfig.app.json",
+              "inlineStyleLanguage": "scss",
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "apps/skeleton/public"
+                }
+              ],
+              "styles": [
+                "apps/skeleton/src/styles.scss"
+              ],
+              "scripts": []
+            },
+            "configurations": {
+              "production": {
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "2kb",
+                    "maximumError": "4kb"
+                  }
+                ],
+                "outputHashing": "all"
+              },
+              "development": {
+                "optimization": false,
+                "extractLicenses": false,
+                "sourceMap": true
+              }
+            },
+            "defaultConfiguration": "production",
+            "parallelism": true,
+            "cache": true,
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "default",
+              "^default"
+            ]
+          },
+          "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+              "production": {
+                "buildTarget": "skeleton:build:production"
+              },
+              "development": {
+                "buildTarget": "skeleton:build:development"
+              }
+            },
+            "defaultConfiguration": "development",
+            "options": {},
             "parallelism": true
           },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
+          "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-              "lintFilePatterns": [
-                "libs/web/utils/**/*.ts",
-                "libs/web/utils/**/*.html"
-              ]
+              "buildTarget": "skeleton:build"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "apps/skeleton/jest.config.ts"
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
+          },
+          "serve-static": {
+            "executor": "@nx/web:file-server",
+            "options": {
+              "buildTarget": "skeleton:build",
+              "port": 4200,
+              "staticFilePath": "dist/apps/skeleton/browser",
+              "spa": true
             },
             "configurations": {},
             "parallelism": true
           }
         },
+        "name": "skeleton",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "prefix": "app",
+        "sourceRoot": "apps/skeleton/src",
         "tags": [],
         "implicitDependencies": []
       }
@@ -710,11 +1191,24 @@
       "type": "app",
       "data": {
         "root": "apps/todolist",
-        "projectType": "application",
-        "sourceRoot": "apps/todolist/src",
-        "prefix": "monorepo",
-        "name": "todolist",
         "targets": {
+          "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+              "lintFilePatterns": [
+                "apps/todolist/**/*.ts",
+                "apps/todolist/**/*.html"
+              ]
+            },
+            "configurations": {},
+            "parallelism": true,
+            "dependsOn": [],
+            "inputs": [
+              "default",
+              "{projectRoot}/**/*.{ts,tsx,js,jsx,html}",
+              "{workspaceRoot}/eslint.config.js"
+            ]
+          },
           "build": {
             "executor": "@angular-devkit/build-angular:browser",
             "defaultConfiguration": "production",
@@ -799,17 +1293,6 @@
             },
             "parallelism": true
           },
-          "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-              "lintFilePatterns": [
-                "apps/todolist/**/*.ts",
-                "apps/todolist/**/*.html"
-              ]
-            },
-            "configurations": {},
-            "parallelism": true
-          },
           "test": {
             "executor": "@nrwl/jest:jest",
             "outputs": [
@@ -820,7 +1303,10 @@
               "passWithNoTests": true
             },
             "configurations": {},
-            "parallelism": true
+            "parallelism": true,
+            "dependsOn": [
+              "^test"
+            ]
           },
           "extract-i18n": {
             "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -831,6 +1317,10 @@
             "parallelism": true
           }
         },
+        "projectType": "application",
+        "sourceRoot": "apps/todolist/src",
+        "prefix": "monorepo",
+        "name": "todolist",
         "tags": [],
         "implicitDependencies": []
       }
@@ -1188,6 +1678,15 @@
         "hash": "sha512-efRK3FotTFp4KD5u42jWfXpHUALXB9kJNsWiB4wEImKFH6CN+vjBspJQuLqk2oeBFh/7D2qRMc5P+2tZHM5hdw=="
       }
     },
+    "npm:@angular-eslint/builder": {
+      "type": "npm",
+      "name": "npm:@angular-eslint/builder",
+      "data": {
+        "version": "18.4.0",
+        "packageName": "@angular-eslint/builder",
+        "hash": "sha512-FOzGHX/nHSV1wSduSsabsx3aqC1nfde0opEpEDSOJhxExDxKCwoS1XPy1aERGyKip4ZVA6phC3dLtoBH3QMkVQ=="
+      }
+    },
     "npm:@angular-eslint/bundled-angular-compiler": {
       "type": "npm",
       "name": "npm:@angular-eslint/bundled-angular-compiler",
@@ -1213,6 +1712,15 @@
         "version": "18.4.0",
         "packageName": "@angular-eslint/eslint-plugin-template",
         "hash": "sha512-n3uZFCy76DnggPqjSVFV3gYD1ik7jCG28o2/HO4kobcMNKnwW8XAlFUagQ4TipNQh7fQiAefsEqvv2quMsYDVw=="
+      }
+    },
+    "npm:@angular-eslint/schematics": {
+      "type": "npm",
+      "name": "npm:@angular-eslint/schematics",
+      "data": {
+        "version": "18.4.0",
+        "packageName": "@angular-eslint/schematics",
+        "hash": "sha512-ssqe+0YCfekbWIXNdCrHfoPK/bPZAWybs0Bn/b99dfd8h8uyXkERo9AzIOx4Uyj/08SkP9aPL/0uOOEHDsRGwQ=="
       }
     },
     "npm:@angular-eslint/template-parser": {
@@ -3955,6 +4463,15 @@
       "type": "npm",
       "name": "npm:@eslint/eslintrc",
       "data": {
+        "version": "2.1.4",
+        "packageName": "@eslint/eslintrc",
+        "hash": "sha512-269Z39MS6wVJtsoUl10L60WdkhJVdPG24Q4eZTH3nnF6lpvSShEK3wQjDX9JRWAUPvPh7COouPpU9IrqaZFvtQ=="
+      }
+    },
+    "npm:@eslint/eslintrc@3.1.0": {
+      "type": "npm",
+      "name": "npm:@eslint/eslintrc@3.1.0",
+      "data": {
         "version": "3.1.0",
         "packageName": "@eslint/eslintrc",
         "hash": "sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ=="
@@ -3978,13 +4495,31 @@
         "hash": "sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg=="
       }
     },
-    "npm:globals@14.0.0": {
+    "npm:espree@9.6.1": {
       "type": "npm",
-      "name": "npm:globals@14.0.0",
+      "name": "npm:espree@9.6.1",
       "data": {
-        "version": "14.0.0",
+        "version": "9.6.1",
+        "packageName": "espree",
+        "hash": "sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ=="
+      }
+    },
+    "npm:espree": {
+      "type": "npm",
+      "name": "npm:espree",
+      "data": {
+        "version": "10.3.0",
+        "packageName": "espree",
+        "hash": "sha512-0QYC8b24HWY8zjRnDTL6RiHfDbAWn63qb4LMj1Z4b076A4une81+z03Kg7l7mn/48PUTqoLptSXez8oknU8Clg=="
+      }
+    },
+    "npm:globals@13.24.0": {
+      "type": "npm",
+      "name": "npm:globals@13.24.0",
+      "data": {
+        "version": "13.24.0",
         "packageName": "globals",
-        "hash": "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ=="
+        "hash": "sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ=="
       }
     },
     "npm:globals@15.12.0": {
@@ -3994,6 +4529,15 @@
         "version": "15.12.0",
         "packageName": "globals",
         "hash": "sha512-1+gLErljJFhbOVyaetcwJiJ4+eLe45S2E7P5UiZ9xGfeq3ATQf5DOv9G7MH3gGbKQLkzmNh2DxfZwLdw+j6oTQ=="
+      }
+    },
+    "npm:globals@14.0.0": {
+      "type": "npm",
+      "name": "npm:globals@14.0.0",
+      "data": {
+        "version": "14.0.0",
+        "packageName": "globals",
+        "hash": "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ=="
       }
     },
     "npm:globals": {
@@ -4021,6 +4565,51 @@
         "version": "3.14.1",
         "packageName": "js-yaml",
         "hash": "sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g=="
+      }
+    },
+    "npm:type-fest@0.20.2": {
+      "type": "npm",
+      "name": "npm:type-fest@0.20.2",
+      "data": {
+        "version": "0.20.2",
+        "packageName": "type-fest",
+        "hash": "sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ=="
+      }
+    },
+    "npm:type-fest@2.19.0": {
+      "type": "npm",
+      "name": "npm:type-fest@2.19.0",
+      "data": {
+        "version": "2.19.0",
+        "packageName": "type-fest",
+        "hash": "sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA=="
+      }
+    },
+    "npm:type-fest@0.8.1": {
+      "type": "npm",
+      "name": "npm:type-fest@0.8.1",
+      "data": {
+        "version": "0.8.1",
+        "packageName": "type-fest",
+        "hash": "sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA=="
+      }
+    },
+    "npm:type-fest@0.6.0": {
+      "type": "npm",
+      "name": "npm:type-fest@0.6.0",
+      "data": {
+        "version": "0.6.0",
+        "packageName": "type-fest",
+        "hash": "sha512-q+MB8nYR1KDLrgr4G5yemftpMC7/QLqVndBmEEdqzmNj5dcFOO4Oo8qlwZE3ULT3+Zim1F8Kq4cBnikNhlCMlg=="
+      }
+    },
+    "npm:type-fest": {
+      "type": "npm",
+      "name": "npm:type-fest",
+      "data": {
+        "version": "0.21.3",
+        "packageName": "type-fest",
+        "hash": "sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w=="
       }
     },
     "npm:@eslint/js": {
@@ -8073,42 +8662,6 @@
         "hash": "sha512-1f0t6W5xbC1sSAHHs3uXYPIQs2NXAEtIGqn6X9i3xbbub6hDS8PF8BIm7dOjQ8dZOPp7d9ltR64V5CoLlsOigA=="
       }
     },
-    "npm:type-fest@2.19.0": {
-      "type": "npm",
-      "name": "npm:type-fest@2.19.0",
-      "data": {
-        "version": "2.19.0",
-        "packageName": "type-fest",
-        "hash": "sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA=="
-      }
-    },
-    "npm:type-fest@0.8.1": {
-      "type": "npm",
-      "name": "npm:type-fest@0.8.1",
-      "data": {
-        "version": "0.8.1",
-        "packageName": "type-fest",
-        "hash": "sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA=="
-      }
-    },
-    "npm:type-fest@0.6.0": {
-      "type": "npm",
-      "name": "npm:type-fest@0.6.0",
-      "data": {
-        "version": "0.6.0",
-        "packageName": "type-fest",
-        "hash": "sha512-q+MB8nYR1KDLrgr4G5yemftpMC7/QLqVndBmEEdqzmNj5dcFOO4Oo8qlwZE3ULT3+Zim1F8Kq4cBnikNhlCMlg=="
-      }
-    },
-    "npm:type-fest": {
-      "type": "npm",
-      "name": "npm:type-fest",
-      "data": {
-        "version": "0.21.3",
-        "packageName": "type-fest",
-        "hash": "sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w=="
-      }
-    },
     "npm:@storybook/global": {
       "type": "npm",
       "name": "npm:@storybook/global",
@@ -8251,6 +8804,159 @@
         "version": "6.5.16",
         "packageName": "@storybook/ui",
         "hash": "sha512-rHn/n12WM8BaXtZ3IApNZCiS+C4Oc5+Lkl4MoctX8V7QSml0SxZBB5hsJ/AiWkgbRxjQpa/L/Nt7/Qw0FjTH/A=="
+      }
+    },
+    "npm:@swc-node/core": {
+      "type": "npm",
+      "name": "npm:@swc-node/core",
+      "data": {
+        "version": "1.13.3",
+        "packageName": "@swc-node/core",
+        "hash": "sha512-OGsvXIid2Go21kiNqeTIn79jcaX4l0G93X2rAnas4LFoDyA9wAwVK7xZdm+QsKoMn5Mus2yFLCc4OtX2dD/PWA=="
+      }
+    },
+    "npm:@swc-node/register": {
+      "type": "npm",
+      "name": "npm:@swc-node/register",
+      "data": {
+        "version": "1.9.2",
+        "packageName": "@swc-node/register",
+        "hash": "sha512-BBjg0QNuEEmJSoU/++JOXhrjWdu3PTyYeJWsvchsI0Aqtj8ICkz/DqlwtXbmZVZ5vuDPpTfFlwDBZe81zgShMA=="
+      }
+    },
+    "npm:@swc-node/sourcemap-support": {
+      "type": "npm",
+      "name": "npm:@swc-node/sourcemap-support",
+      "data": {
+        "version": "0.5.1",
+        "packageName": "@swc-node/sourcemap-support",
+        "hash": "sha512-JxIvIo/Hrpv0JCHSyRpetAdQ6lB27oFYhv0PKCNf1g2gUXOjpeR1exrXccRxLMuAV5WAmGFBwRnNOJqN38+qtg=="
+      }
+    },
+    "npm:@swc/core": {
+      "type": "npm",
+      "name": "npm:@swc/core",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core",
+        "hash": "sha512-nvTtHJI43DUSOAf3h9XsqYg8YXKc0/N4il9y4j0xAkO0ekgDNo+3+jbw6MInawjKJF9uulyr+f5bAutTsOKVlw=="
+      }
+    },
+    "npm:@swc/core-darwin-arm64": {
+      "type": "npm",
+      "name": "npm:@swc/core-darwin-arm64",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-darwin-arm64",
+        "hash": "sha512-6F/sSxpHaq3nzg2ADv9FHLi4Fu2A8w8vP8Ich8gIl16D2htStlwnaPmCLjRswO+cFkzgVqy/l01gzNGWd4DFqA=="
+      }
+    },
+    "npm:@swc/core-darwin-x64": {
+      "type": "npm",
+      "name": "npm:@swc/core-darwin-x64",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-darwin-x64",
+        "hash": "sha512-rF/rXkvUOTdTIfoYbmszbSUGsCyvqACqy1VeP3nXONS+LxFl4bRmRcUTRrblL7IE5RTMCKUuPbqbQSE2hK7bqg=="
+      }
+    },
+    "npm:@swc/core-linux-arm-gnueabihf": {
+      "type": "npm",
+      "name": "npm:@swc/core-linux-arm-gnueabihf",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-linux-arm-gnueabihf",
+        "hash": "sha512-2OAPL8iWBsmmwkjGXqvuUhbmmoLxS1xNXiMq87EsnCNMAKohGc7wJkdAOUL6J/YFpean/vwMWg64rJD4pycBeg=="
+      }
+    },
+    "npm:@swc/core-linux-arm64-gnu": {
+      "type": "npm",
+      "name": "npm:@swc/core-linux-arm64-gnu",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-linux-arm64-gnu",
+        "hash": "sha512-eH/Q9+8O5qhSxMestZnhuS1xqQMr6M7SolZYxiXJqxArXYILLCF+nq2R9SxuMl0CfjHSpb6+hHPk/HXy54eIRA=="
+      }
+    },
+    "npm:@swc/core-linux-arm64-musl": {
+      "type": "npm",
+      "name": "npm:@swc/core-linux-arm64-musl",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-linux-arm64-musl",
+        "hash": "sha512-TERh2OICAJz+SdDIK9+0GyTUwF6r4xDlFmpoiHKHrrD/Hh3u+6Zue0d7jQ/he/i80GDn4tJQkHlZys+RZL5UZg=="
+      }
+    },
+    "npm:@swc/core-linux-x64-gnu": {
+      "type": "npm",
+      "name": "npm:@swc/core-linux-x64-gnu",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-linux-x64-gnu",
+        "hash": "sha512-WMDPqU7Ji9dJpA+Llek2p9t7pcy7Bob8ggPUvgsIlv3R/eesF9DIzSbrgl6j3EAEPB9LFdSafsgf6kT/qnvqFg=="
+      }
+    },
+    "npm:@swc/core-linux-x64-musl": {
+      "type": "npm",
+      "name": "npm:@swc/core-linux-x64-musl",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-linux-x64-musl",
+        "hash": "sha512-DO14glwpdKY4POSN0201OnGg1+ziaSVr6/RFzuSLggshwXeeyVORiHv3baj7NENhJhWhUy3NZlDsXLnRFkmhHQ=="
+      }
+    },
+    "npm:@swc/core-win32-arm64-msvc": {
+      "type": "npm",
+      "name": "npm:@swc/core-win32-arm64-msvc",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-win32-arm64-msvc",
+        "hash": "sha512-V3Y1+a1zG1zpYXUMqPIHEMEOd+rHoVnIpO/KTyFwAmKVu8v+/xPEVx/AGoYE67x4vDAAvPQrKI3Aokilqa5yVg=="
+      }
+    },
+    "npm:@swc/core-win32-ia32-msvc": {
+      "type": "npm",
+      "name": "npm:@swc/core-win32-ia32-msvc",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-win32-ia32-msvc",
+        "hash": "sha512-OrM6yfXw4wXhnVFosOJzarw0Fdz5Y0okgHfn9oFbTPJhoqxV5Rdmd6kXxWu2RiVKs6kGSJFZXHDeUq2w5rTIMg=="
+      }
+    },
+    "npm:@swc/core-win32-x64-msvc": {
+      "type": "npm",
+      "name": "npm:@swc/core-win32-x64-msvc",
+      "data": {
+        "version": "1.5.29",
+        "packageName": "@swc/core-win32-x64-msvc",
+        "hash": "sha512-eD/gnxqKyZQQR0hR7TMkIlJ+nCF9dzYmVVNbYZWuA1Xy94aBPUsEk3Uw3oG7q6R3ErrEUPP0FNf2ztEnv+I+dw=="
+      }
+    },
+    "npm:@swc/counter": {
+      "type": "npm",
+      "name": "npm:@swc/counter",
+      "data": {
+        "version": "0.1.3",
+        "packageName": "@swc/counter",
+        "hash": "sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ=="
+      }
+    },
+    "npm:@swc/helpers": {
+      "type": "npm",
+      "name": "npm:@swc/helpers",
+      "data": {
+        "version": "0.5.13",
+        "packageName": "@swc/helpers",
+        "hash": "sha512-UoKGxQ3r5kYI9dALKJapMmuK+1zWM/H17Z1+iwnNmzcJRnfFuevZs375TA5rW31pu4BS4NoSy1fRsexDXfWn5w=="
+      }
+    },
+    "npm:@swc/types": {
+      "type": "npm",
+      "name": "npm:@swc/types",
+      "data": {
+        "version": "0.1.12",
+        "packageName": "@swc/types",
+        "hash": "sha512-wBJA+SdtkbFhHjTMYH+dEH1y4VpfGdAc2Kw/LK09i9bXd/K6j6PkDcFCEzb6iVfZMkPRrl/q0e3toqTAJdkIVA=="
       }
     },
     "npm:@tootallnate/once": {
@@ -9178,6 +9884,15 @@
         "version": "5.1.0",
         "packageName": "ajv-keywords",
         "hash": "sha512-YCS/JNFAUyr5vAuhk1DWm1CBxRHW9LbJ2ozWeemrIqpbsqKjHVxYPyi5GC0rjZIT5JxJ3virVTS8wk4i/Z+krw=="
+      }
+    },
+    "npm:angular-eslint": {
+      "type": "npm",
+      "name": "npm:angular-eslint",
+      "data": {
+        "version": "18.4.0",
+        "packageName": "angular-eslint",
+        "hash": "sha512-fEayKOZlux9YhnZfWN8zNU0VlBRB+G2m/2T+R2njWlGpD1+XhieCVZPB9dh5Jv/wEvcfPypEWE3DgH4MqIRxKA=="
       }
     },
     "npm:ansi-colors": {
@@ -12013,24 +12728,6 @@
         "version": "4.2.0",
         "packageName": "eslint-visitor-keys",
         "hash": "sha512-UyLnSehNt62FFhSwjZlHmeokpRK59rcz29j+F1/aDgbkbRTk7wIc9XzdoasMUbRNKDM0qQt/+BJ4BrpFeABemw=="
-      }
-    },
-    "npm:espree": {
-      "type": "npm",
-      "name": "npm:espree",
-      "data": {
-        "version": "10.3.0",
-        "packageName": "espree",
-        "hash": "sha512-0QYC8b24HWY8zjRnDTL6RiHfDbAWn63qb4LMj1Z4b076A4une81+z03Kg7l7mn/48PUTqoLptSXez8oknU8Clg=="
-      }
-    },
-    "npm:espree@9.6.1": {
-      "type": "npm",
-      "name": "npm:espree@9.6.1",
-      "data": {
-        "version": "9.6.1",
-        "packageName": "espree",
-        "hash": "sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ=="
       }
     },
     "npm:esprima": {
@@ -18513,6 +19210,15 @@
         "hash": "sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA=="
       }
     },
+    "npm:typescript-eslint": {
+      "type": "npm",
+      "name": "npm:typescript-eslint",
+      "data": {
+        "version": "8.13.0",
+        "packageName": "typescript-eslint",
+        "hash": "sha512-vIMpDRJrQd70au2G8w34mPps0ezFSPMEX4pXkTzUkrNbRX+36ais2ksGWN0esZL+ZMaFJEneOBHzCgSqle7DHw=="
+      }
+    },
     "npm:uglify-js": {
       "type": "npm",
       "name": "npm:uglify-js",
@@ -19657,17 +20363,74 @@
         "type": "static"
       }
     ],
-    "todolist-e2e": [
+    "skeleton-e2e": [
       {
-        "source": "todolist-e2e",
-        "target": "todolist",
+        "source": "skeleton-e2e",
+        "target": "skeleton",
         "type": "implicit"
+      },
+      {
+        "source": "skeleton-e2e",
+        "target": "npm:@nx/cypress",
+        "type": "static"
+      },
+      {
+        "source": "skeleton-e2e",
+        "target": "npm:cypress",
+        "type": "static"
+      },
+      {
+        "source": "skeleton-e2e",
+        "target": "npm:eslint-plugin-cypress",
+        "type": "static"
       }
     ],
     "utils": [
       {
         "source": "utils",
         "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "skeleton": [
+      {
+        "source": "skeleton",
+        "target": "npm:@nx/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "skeleton",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "skeleton",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "skeleton",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "skeleton",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "skeleton",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      },
+      {
+        "source": "skeleton",
+        "target": "npm:@nrwl/angular",
+        "type": "static"
+      },
+      {
+        "source": "skeleton",
+        "target": "tailwind-preset",
         "type": "static"
       }
     ],
@@ -20400,6 +21163,18 @@
         "type": "static"
       }
     ],
+    "npm:@angular-eslint/builder": [
+      {
+        "source": "npm:@angular-eslint/builder",
+        "target": "npm:eslint",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-eslint/builder",
+        "target": "npm:typescript",
+        "type": "static"
+      }
+    ],
     "npm:@angular-eslint/eslint-plugin": [
       {
         "source": "npm:@angular-eslint/eslint-plugin",
@@ -20466,6 +21241,43 @@
       {
         "source": "npm:@angular-eslint/eslint-plugin-template",
         "target": "npm:axobject-query",
+        "type": "static"
+      }
+    ],
+    "npm:@angular-eslint/schematics": [
+      {
+        "source": "npm:@angular-eslint/schematics",
+        "target": "npm:@angular-devkit/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-eslint/schematics",
+        "target": "npm:@angular-devkit/schematics",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-eslint/schematics",
+        "target": "npm:@angular-eslint/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-eslint/schematics",
+        "target": "npm:@angular-eslint/eslint-plugin-template",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-eslint/schematics",
+        "target": "npm:ignore",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-eslint/schematics",
+        "target": "npm:semver@7.6.3",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-eslint/schematics",
+        "target": "npm:strip-json-comments",
         "type": "static"
       }
     ],
@@ -23957,12 +24769,12 @@
       },
       {
         "source": "npm:@eslint/eslintrc",
-        "target": "npm:espree",
+        "target": "npm:espree@9.6.1",
         "type": "static"
       },
       {
         "source": "npm:@eslint/eslintrc",
-        "target": "npm:globals@14.0.0",
+        "target": "npm:globals@13.24.0",
         "type": "static"
       },
       {
@@ -23988,6 +24800,30 @@
       {
         "source": "npm:@eslint/eslintrc",
         "target": "npm:strip-json-comments",
+        "type": "static"
+      }
+    ],
+    "npm:espree@9.6.1": [
+      {
+        "source": "npm:espree@9.6.1",
+        "target": "npm:acorn",
+        "type": "static"
+      },
+      {
+        "source": "npm:espree@9.6.1",
+        "target": "npm:acorn-jsx",
+        "type": "static"
+      },
+      {
+        "source": "npm:espree@9.6.1",
+        "target": "npm:eslint-visitor-keys",
+        "type": "static"
+      }
+    ],
+    "npm:globals@13.24.0": [
+      {
+        "source": "npm:globals@13.24.0",
+        "target": "npm:type-fest@0.20.2",
         "type": "static"
       }
     ],
@@ -26135,6 +26971,16 @@
     "npm:nx@15.9.3": [
       {
         "source": "npm:nx@15.9.3",
+        "target": "npm:@swc-node/register",
+        "type": "static"
+      },
+      {
+        "source": "npm:nx@15.9.3",
+        "target": "npm:@swc/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:nx@15.9.3",
         "target": "npm:@nrwl/cli",
         "type": "static"
       },
@@ -27159,6 +28005,11 @@
     "npm:ts-node@10.9.1": [
       {
         "source": "npm:ts-node@10.9.1",
+        "target": "npm:@swc/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:ts-node@10.9.1",
         "target": "npm:@types/node",
         "type": "static"
       },
@@ -27841,6 +28692,16 @@
       }
     ],
     "npm:nx@19.8.4": [
+      {
+        "source": "npm:nx@19.8.4",
+        "target": "npm:@swc-node/register",
+        "type": "static"
+      },
+      {
+        "source": "npm:nx@19.8.4",
+        "target": "npm:@swc/core",
+        "type": "static"
+      },
       {
         "source": "npm:nx@19.8.4",
         "target": "npm:@napi-rs/wasm-runtime",
@@ -31714,6 +32575,153 @@
         "type": "static"
       }
     ],
+    "npm:@swc-node/core": [
+      {
+        "source": "npm:@swc-node/core",
+        "target": "npm:@swc/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc-node/core",
+        "target": "npm:@swc/types",
+        "type": "static"
+      }
+    ],
+    "npm:@swc-node/register": [
+      {
+        "source": "npm:@swc-node/register",
+        "target": "npm:@swc/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc-node/register",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc-node/register",
+        "target": "npm:@swc-node/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc-node/register",
+        "target": "npm:@swc-node/sourcemap-support",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc-node/register",
+        "target": "npm:colorette@2.0.20",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc-node/register",
+        "target": "npm:debug",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc-node/register",
+        "target": "npm:pirates",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc-node/register",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@swc-node/sourcemap-support": [
+      {
+        "source": "npm:@swc-node/sourcemap-support",
+        "target": "npm:source-map-support",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc-node/sourcemap-support",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@swc/core": [
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/helpers",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/counter",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/types",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-darwin-arm64",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-darwin-x64",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-linux-arm-gnueabihf",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-linux-arm64-gnu",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-linux-arm64-musl",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-linux-x64-gnu",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-linux-x64-musl",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-win32-arm64-msvc",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-win32-ia32-msvc",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
+        "target": "npm:@swc/core-win32-x64-msvc",
+        "type": "static"
+      }
+    ],
+    "npm:@swc/helpers": [
+      {
+        "source": "npm:@swc/helpers",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@swc/types": [
+      {
+        "source": "npm:@swc/types",
+        "target": "npm:@swc/counter",
+        "type": "static"
+      }
+    ],
     "npm:@tufjs/models": [
       {
         "source": "npm:@tufjs/models",
@@ -32761,6 +33769,48 @@
       {
         "source": "npm:ajv-keywords",
         "target": "npm:ajv",
+        "type": "static"
+      }
+    ],
+    "npm:angular-eslint": [
+      {
+        "source": "npm:angular-eslint",
+        "target": "npm:eslint",
+        "type": "static"
+      },
+      {
+        "source": "npm:angular-eslint",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "npm:angular-eslint",
+        "target": "npm:typescript-eslint",
+        "type": "static"
+      },
+      {
+        "source": "npm:angular-eslint",
+        "target": "npm:@angular-eslint/builder",
+        "type": "static"
+      },
+      {
+        "source": "npm:angular-eslint",
+        "target": "npm:@angular-eslint/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "npm:angular-eslint",
+        "target": "npm:@angular-eslint/eslint-plugin-template",
+        "type": "static"
+      },
+      {
+        "source": "npm:angular-eslint",
+        "target": "npm:@angular-eslint/schematics",
+        "type": "static"
+      },
+      {
+        "source": "npm:angular-eslint",
+        "target": "npm:@angular-eslint/template-parser",
         "type": "static"
       }
     ],
@@ -36387,7 +37437,7 @@
       },
       {
         "source": "npm:eslint",
-        "target": "npm:@eslint/eslintrc",
+        "target": "npm:@eslint/eslintrc@3.1.0",
         "type": "static"
       },
       {
@@ -36569,6 +37619,53 @@
       {
         "source": "npm:eslint-scope",
         "target": "npm:estraverse@4.3.0",
+        "type": "static"
+      }
+    ],
+    "npm:@eslint/eslintrc@3.1.0": [
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:ajv",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:debug",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:espree",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:globals@14.0.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:ignore",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:import-fresh",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:js-yaml@4.1.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:minimatch",
+        "type": "static"
+      },
+      {
+        "source": "npm:@eslint/eslintrc@3.1.0",
+        "target": "npm:strip-json-comments",
         "type": "static"
       }
     ],
@@ -40140,23 +41237,6 @@
         "type": "static"
       }
     ],
-    "npm:espree@9.6.1": [
-      {
-        "source": "npm:espree@9.6.1",
-        "target": "npm:acorn",
-        "type": "static"
-      },
-      {
-        "source": "npm:espree@9.6.1",
-        "target": "npm:acorn-jsx",
-        "type": "static"
-      },
-      {
-        "source": "npm:espree@9.6.1",
-        "target": "npm:eslint-visitor-keys",
-        "type": "static"
-      }
-    ],
     "npm:jsonfile": [
       {
         "source": "npm:jsonfile",
@@ -41748,6 +42828,16 @@
       }
     ],
     "npm:nx": [
+      {
+        "source": "npm:nx",
+        "target": "npm:@swc-node/register",
+        "type": "static"
+      },
+      {
+        "source": "npm:nx",
+        "target": "npm:@swc/core",
+        "type": "static"
+      },
       {
         "source": "npm:nx",
         "target": "npm:@napi-rs/wasm-runtime",
@@ -45771,6 +46861,11 @@
     "npm:ts-node": [
       {
         "source": "npm:ts-node",
+        "target": "npm:@swc/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:ts-node",
         "target": "npm:@types/node",
         "type": "static"
       },
@@ -46027,6 +47122,23 @@
       {
         "source": "npm:typed-array-length",
         "target": "npm:possible-typed-array-names",
+        "type": "static"
+      }
+    ],
+    "npm:typescript-eslint": [
+      {
+        "source": "npm:typescript-eslint",
+        "target": "npm:@typescript-eslint/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "npm:typescript-eslint",
+        "target": "npm:@typescript-eslint/parser",
+        "type": "static"
+      },
+      {
+        "source": "npm:typescript-eslint",
+        "target": "npm:@typescript-eslint/utils",
         "type": "static"
       }
     ],
