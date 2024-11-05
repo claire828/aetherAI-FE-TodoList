@@ -1,11 +1,15 @@
 {
+  "name": "todolist-core-data-access-models",
+  "root": "libs/todolist/core/data-access/models",
   "projectType": "library",
   "sourceRoot": "libs/todolist/core/data-access/models/src",
   "prefix": "monorepo",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/todolist/core/data-access/models"],
+      "outputs": [
+        "coverage/libs/todolist/core/data-access/models"
+      ],
       "options": {
         "jestConfig": "libs/todolist/core/data-access/models/jest.config.ts",
         "passWithNoTests": true

@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SvgIconsModule } from '@ngneat/svg-icon';
+import { provideSvgIcons } from '@ngneat/svg-icon';
 import { asSearchIcon } from './svg/search';
 import { asSpinIcon } from './svg/spin';
 
+
 @NgModule({
-  imports: [CommonModule,
-    SvgIconsModule.forRoot({
-      icons:[asSearchIcon,asSpinIcon]
-    })
-  ],
-  exports: [SvgIconsModule]
+  providers: [provideSvgIcons([asSearchIcon,asSpinIcon])],
 })
 export class TodolistSharedUiIconModule {}

@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'todolist-main-data-access-models',
+  displayName: 'todolist-core-data-access-models',
   preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {

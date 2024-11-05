@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'web-shared-data-access-models',
+  displayName: 'web-data-access-models',
   preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {

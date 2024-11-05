@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'todolist-home-ui-home',
+  displayName: 'todolist-core-ui-home',
   preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {

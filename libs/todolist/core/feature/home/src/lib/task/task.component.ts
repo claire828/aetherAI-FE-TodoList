@@ -21,6 +21,7 @@ export class TaskComponent implements OnInit, OnDestroy {
   ngOnInit(): void {}
 
   onRemoveTask(task:ITask){
+    task = task as unknown as ITask;
     this.store.dispatch(deleteTask({id:task.id}));
   }
 

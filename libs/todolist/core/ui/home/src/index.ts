@@ -1,4 +1,4 @@
-export * from './lib/todolist-home-ui-home.module';
+export * from './lib/todolist-core-ui-home.module';
 
 export * from './lib/task/task.component';
 

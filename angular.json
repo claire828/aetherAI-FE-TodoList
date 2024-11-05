@@ -2,25 +2,218 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "tailwind-preset": "libs/tailwind-preset",
-    "todolist": "apps/todolist",
-    "todolist-e2e": "apps/todolist-e2e",
-    "todolist-home-feature-home": "libs/todolist/core/feature/home",
-    "todolist-home-ui-home": "libs/todolist/core/ui/home",
-    "todolist-main-data-access-models": "libs/todolist/core/data-access/models",
-    "todolist-main-data-access-store": "libs/todolist/core/data-access/store",
-    "todolist-shared-api": "libs/todolist/shared/api",
-    "todolist-shared-app-config": "libs/todolist/shared/app-config",
-    "todolist-shared-ui-btn-basic": "libs/todolist/shared/ui/btn-basic",
-    "todolist-shared-ui-icon": "libs/todolist/shared/ui/icon",
-    "todolist-shared-ui-spinner": "libs/todolist/shared/ui/spinner",
-    "todolist-shared-ui-toggle-arrow": "libs/todolist/shared/ui/toggle-arrow",
-    "todolist-shell-feature-shell": "libs/todolist/shell/feature/shell",
-    "todolist-shell-ui-layout": "libs/todolist/shell/ui/layout",
-    "web-settings-hmr": "libs/web/settings/hmr",
-    "web-shared-data-access-models": "libs/web/shared/data-access/models",
-    "web-shared-directives": "libs/web/shared/directives",
-    "web-shared-pipes": "libs/web/shared/pipes",
-    "web-utils": "libs/web/utils"
+    "tailwind-preset": {
+      "root": "libs/tailwind-preset",
+      "projectType": "library",
+      "sourceRoot": "libs/tailwind-preset/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist": {
+      "root": "apps/todolist",
+      "projectType": "application",
+      "sourceRoot": "apps/todolist/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/todolist",
+            "index": "apps/todolist/src/index.html",
+            "main": "apps/todolist/src/main.ts",
+            "polyfills": "apps/todolist/src/polyfills.ts",
+            "tsConfig": "apps/todolist/tsconfig.app.json",
+            "assets": [
+              "apps/todolist/src/favicon.ico",
+              "apps/todolist/src/assets"
+            ],
+            "styles": [
+              "apps/todolist/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/todolist/src/environments/environment.ts",
+                  "with": "apps/todolist/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4200
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "todolist:build:production"
+            },
+            "development": {
+              "buildTarget": "todolist:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/todolist/**/*.ts",
+              "apps/todolist/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/todolist"
+          ],
+          "options": {
+            "jestConfig": "apps/todolist/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "todolist-e2e": {
+      "root": "apps/todolist-e2e",
+      "projectType": "application",
+      "sourceRoot": "apps/todolist-e2e/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-core-feature-home": {
+      "root": "libs/todolist/core/feature/home",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/core/feature/home/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-core-ui-home": {
+      "root": "libs/todolist/core/ui/home",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/core/ui/home/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-core-data-access-models": {
+      "root": "libs/todolist/core/data-access/models",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/core/data-access/models/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-main-data-access-store": {
+      "root": "libs/todolist/core/data-access/store",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/core/data-access/store/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-shared-api": {
+      "root": "libs/todolist/shared/api",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/shared/api/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-shared-app-config": {
+      "root": "libs/todolist/shared/app-config",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/shared/app-config/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-shared-ui-btn-basic": {
+      "root": "libs/todolist/shared/ui/btn-basic",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/shared/ui/btn-basic/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-shared-ui-icon": {
+      "root": "libs/todolist/shared/ui/icon",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/shared/ui/icon/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-shared-ui-spinner": {
+      "root": "libs/todolist/shared/ui/spinner",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/shared/ui/spinner/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-shared-ui-toggle-arrow": {
+      "root": "libs/todolist/shared/ui/toggle-arrow",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/shared/ui/toggle-arrow/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-shell-feature-shell": {
+      "root": "libs/todolist/shell/feature/shell",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/shell/feature/shell/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "todolist-shell-ui-layout": {
+      "root": "libs/todolist/shell/ui/layout",
+      "projectType": "library",
+      "sourceRoot": "libs/todolist/shell/ui/layout/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "web-settings-hmr": {
+      "root": "libs/web/settings/hmr",
+      "projectType": "library",
+      "sourceRoot": "libs/web/settings/hmr/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "web-data-access-models": {
+      "root": "libs/web/shared/data-access/models",
+      "projectType": "library",
+      "sourceRoot": "libs/web/shared/data-access/models/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "web-shared-directives": {
+      "root": "libs/web/shared/directives",
+      "projectType": "library",
+      "sourceRoot": "libs/web/shared/directives/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "web-shared-pipes": {
+      "root": "libs/web/shared/pipes",
+      "projectType": "library",
+      "sourceRoot": "libs/web/shared/pipes/src",
+      "prefix": "app",
+      "architect": {}
+    },
+    "web-utils": {
+      "root": "libs/web/utils",
+      "projectType": "library",
+      "sourceRoot": "libs/web/utils/src",
+      "prefix": "app",
+      "architect": {}
+    }
   }
 }

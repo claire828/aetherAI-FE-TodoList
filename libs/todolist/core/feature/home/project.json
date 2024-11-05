@@ -1,11 +1,15 @@
 {
+  "name": "todolist-core-feature-home",
+  "root": "libs/todolist/core/feature/home",
   "projectType": "library",
   "sourceRoot": "libs/todolist/core/feature/home/src",
   "prefix": "monorepo",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/todolist/core/feature/home"],
+      "outputs": [
+        "coverage/libs/todolist/core/feature/home"
+      ],
       "options": {
         "jestConfig": "libs/todolist/core/feature/home/jest.config.ts",
         "passWithNoTests": true
