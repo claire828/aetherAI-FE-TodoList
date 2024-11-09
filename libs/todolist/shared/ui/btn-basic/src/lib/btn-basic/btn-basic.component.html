@@ -1,9 +1,0 @@
-<button
-  [class.border]="isHoverBoder || isSelect"
-  [class.border-transparent]="isHoverBoder"  
-  [class.border-pink-200]="isSelect"
-  [class.hover:border-pink-200]="isHoverBoder"
-  [class.hover:underline]="isHoverUnderline"
-  (click)="onSelect()">
-  <ng-content></ng-content>
-</button>

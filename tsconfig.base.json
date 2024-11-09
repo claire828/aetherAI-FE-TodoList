@@ -19,42 +19,6 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "paths": {
-      "@monorepo/todolist-shared-app-config": [
-        "libs/todolist/shared/app-config/src/index.ts"
-      ],
-      "@monorepo/todolist/core/data-access/models": [
-        "libs/todolist/core/data-access/models/src/index.ts"
-      ],
-      "@monorepo/todolist/core/data-access/store": [
-        "libs/todolist/core/data-access/store/src/index.ts"
-      ],
-      "@monorepo/todolist/core/feature/home": [
-        "libs/todolist/core/feature/home/src/index.ts"
-      ],
-      "@monorepo/todolist/core/ui/home": [
-        "libs/todolist/core/ui/home/src/index.ts"
-      ],
-      "@monorepo/todolist/shared/api": [
-        "libs/todolist/shared/api/src/index.ts"
-      ],
-      "@monorepo/todolist/shared/ui/btn-basic": [
-        "libs/todolist/shared/ui/btn-basic/src/index.ts"
-      ],
-      "@monorepo/todolist/shared/ui/icon": [
-        "libs/todolist/shared/ui/icon/src/index.ts"
-      ],
-      "@monorepo/todolist/shared/ui/spinner": [
-        "libs/todolist/shared/ui/spinner/src/index.ts"
-      ],
-      "@monorepo/todolist/shared/ui/toggle-arrow": [
-        "libs/todolist/shared/ui/toggle-arrow/src/index.ts"
-      ],
-      "@monorepo/todolist/shell/feature/shell": [
-        "libs/todolist/shell/feature/shell/src/index.ts"
-      ],
-      "@monorepo/todolist/shell/ui/layout": [
-        "libs/todolist/shell/ui/layout/src/index.ts"
-      ],
       "@monorepo/web/settings/hmr": [
         "libs/web/settings/hmr/src/index.ts"
       ],

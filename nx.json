@@ -15,8 +15,7 @@
           "e2e",
           "build-storybook"
         ],
-        "parallel": 3,
-        "maxParallel": 3
+        "parallel": 3
       }
     }
   },
@@ -55,7 +54,7 @@
         "^default"
       ]
     },
-    "e2e-ci--**/*": {
+    "e2e": {
       "dependsOn": [
         "^build"
       ]

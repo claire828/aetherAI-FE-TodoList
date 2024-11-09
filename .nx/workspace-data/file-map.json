@@ -2,42 +2,6 @@
   "version": "6.0",
   "nxVersion": "20.0.8",
   "pathMappings": {
-    "@monorepo/todolist-shared-app-config": [
-      "libs/todolist/shared/app-config/src/index.ts"
-    ],
-    "@monorepo/todolist/core/data-access/models": [
-      "libs/todolist/core/data-access/models/src/index.ts"
-    ],
-    "@monorepo/todolist/core/data-access/store": [
-      "libs/todolist/core/data-access/store/src/index.ts"
-    ],
-    "@monorepo/todolist/core/feature/home": [
-      "libs/todolist/core/feature/home/src/index.ts"
-    ],
-    "@monorepo/todolist/core/ui/home": [
-      "libs/todolist/core/ui/home/src/index.ts"
-    ],
-    "@monorepo/todolist/shared/api": [
-      "libs/todolist/shared/api/src/index.ts"
-    ],
-    "@monorepo/todolist/shared/ui/btn-basic": [
-      "libs/todolist/shared/ui/btn-basic/src/index.ts"
-    ],
-    "@monorepo/todolist/shared/ui/icon": [
-      "libs/todolist/shared/ui/icon/src/index.ts"
-    ],
-    "@monorepo/todolist/shared/ui/spinner": [
-      "libs/todolist/shared/ui/spinner/src/index.ts"
-    ],
-    "@monorepo/todolist/shared/ui/toggle-arrow": [
-      "libs/todolist/shared/ui/toggle-arrow/src/index.ts"
-    ],
-    "@monorepo/todolist/shell/feature/shell": [
-      "libs/todolist/shell/feature/shell/src/index.ts"
-    ],
-    "@monorepo/todolist/shell/ui/layout": [
-      "libs/todolist/shell/ui/layout/src/index.ts"
-    ],
     "@monorepo/web/settings/hmr": [
       "libs/web/settings/hmr/src/index.ts"
     ],
@@ -79,7 +43,7 @@
       },
       {
         "file": ".gitignore",
-        "hash": "11870854792216396251"
+        "hash": "9456016856132568945"
       },
       {
         "file": ".prettierignore",
@@ -99,7 +63,7 @@
       },
       {
         "file": "angular.json",
-        "hash": "8633146959427221559"
+        "hash": "15617485484687601798"
       },
       {
         "file": "apps/.gitkeep",
@@ -142,24 +106,16 @@
         "hash": "10788585571228294851"
       },
       {
-        "file": "libs/todolist/shared/assets/fonts/alegreya.css",
-        "hash": "196961458397044453"
-      },
-      {
-        "file": "libs/todolist/shared/assets/fonts/raleway.css",
-        "hash": "4332966853028101022"
-      },
-      {
         "file": "nx.json",
-        "hash": "4458053712160550081"
+        "hash": "9249546522922886928"
       },
       {
         "file": "package-lock.json",
-        "hash": "2924557321084997976"
+        "hash": "980284534075089195"
       },
       {
         "file": "package.json",
-        "hash": "11554688187612161990"
+        "hash": "15991609006882498511"
       },
       {
         "file": "tools/generators/.gitkeep",
@@ -171,167 +127,25 @@
       },
       {
         "file": "tsconfig.base.json",
-        "hash": "14202341191012394722"
+        "hash": "16709583889377987109"
       }
     ],
     "projectFileMap": {
-      "layout": [
+      "tailwind-preset": [
         {
-          "file": "libs/todolist/shell/ui/layout/README.md",
-          "hash": "16157909099637670133"
+          "file": "libs/tailwind-preset/project.json",
+          "hash": "11734327380468800868"
         },
         {
-          "file": "libs/todolist/shell/ui/layout/jest.config.ts",
-          "hash": "12059987249789647481"
-        },
-        {
-          "file": "libs/todolist/shell/ui/layout/project.json",
-          "hash": "3830258606645342203"
-        },
-        {
-          "file": "libs/todolist/shell/ui/layout/src/index.ts",
-          "hash": "11163450382586162951"
-        },
-        {
-          "file": "libs/todolist/shell/ui/layout/src/lib/layout.module.ts",
-          "hash": "8048823804854081214",
+          "file": "libs/tailwind-preset/tailwind.config.js",
+          "hash": "3950992272379825159",
           "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@angular/router"
+            "npm:@nrwl/angular",
+            "npm:postcss-import",
+            "npm:postcss-nesting",
+            "npm:tailwindcss",
+            "npm:autoprefixer"
           ]
-        },
-        {
-          "file": "libs/todolist/shell/ui/layout/src/lib/layout/layout.component.ts",
-          "hash": "6038643516389295683",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/todolist/shell/ui/layout/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/shell/ui/layout/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/shell/ui/layout/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/shell/ui/layout/tsconfig.spec.json",
-          "hash": "459621581731998297"
-        }
-      ],
-      "icon": [
-        {
-          "file": "libs/todolist/shared/ui/icon/README.md",
-          "hash": "16726477352295376740"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/jest.config.ts",
-          "hash": "10460396303754059291"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/project.json",
-          "hash": "2072127062917623087"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/src/index.ts",
-          "hash": "6027304615141830198"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/src/lib/assets/search.svg",
-          "hash": "10306318064082033403"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/src/lib/assets/spin.svg",
-          "hash": "7921084156610603632"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/src/lib/svg/search.ts",
-          "hash": "5503295501719934093"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/src/lib/svg/spin.ts",
-          "hash": "14085953143247882976"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/src/lib/todolist-shared-ui-icon.module.ts",
-          "hash": "6093237705074495572",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@ngneat/svg-icon"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/shared/ui/icon/tsconfig.spec.json",
-          "hash": "459621581731998297"
-        }
-      ],
-      "todolist-core-data-access-models": [
-        {
-          "file": "libs/todolist/core/data-access/models/README.md",
-          "hash": "1991146212575623748"
-        },
-        {
-          "file": "libs/todolist/core/data-access/models/jest.config.ts",
-          "hash": "9042756277869244944"
-        },
-        {
-          "file": "libs/todolist/core/data-access/models/project.json",
-          "hash": "5912267222468738596"
-        },
-        {
-          "file": "libs/todolist/core/data-access/models/src/index.ts",
-          "hash": "2504671974759008625"
-        },
-        {
-          "file": "libs/todolist/core/data-access/models/src/lib/model/menu.model.ts",
-          "hash": "11210655640370441011"
-        },
-        {
-          "file": "libs/todolist/core/data-access/models/src/lib/model/task.model.ts",
-          "hash": "7632701773078267877"
-        },
-        {
-          "file": "libs/todolist/core/data-access/models/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/data-access/models/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/core/data-access/models/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/core/data-access/models/tsconfig.spec.json",
-          "hash": "459621581731998297"
         }
       ],
       "web-data-access-models": [
@@ -381,6 +195,336 @@
         {
           "file": "libs/web/shared/data-access/models/tsconfig.spec.json",
           "hash": "459621581731998297"
+        }
+      ],
+      "utils": [
+        {
+          "file": "libs/web/utils/README.md",
+          "hash": "2119504329122684891"
+        },
+        {
+          "file": "libs/web/utils/jest.config.ts",
+          "hash": "16954418676306031734"
+        },
+        {
+          "file": "libs/web/utils/project.json",
+          "hash": "13279935887844884449"
+        },
+        {
+          "file": "libs/web/utils/src/index.ts",
+          "hash": "12491185331934775406"
+        },
+        {
+          "file": "libs/web/utils/src/lib/web-event-util.ts",
+          "hash": "16719010077033510916"
+        },
+        {
+          "file": "libs/web/utils/src/test-setup.ts",
+          "hash": "17711435995618823417",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/web/utils/tsconfig.json",
+          "hash": "7739374366769715542"
+        },
+        {
+          "file": "libs/web/utils/tsconfig.lib.json",
+          "hash": "4424239006178759492"
+        },
+        {
+          "file": "libs/web/utils/tsconfig.spec.json",
+          "hash": "916342715649326327"
+        }
+      ],
+      "skeleton": [
+        {
+          "file": "apps/skeleton/eslint.config.js",
+          "hash": "12883900717377691005",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "apps/skeleton/jest.config.ts",
+          "hash": "10813977517774227940"
+        },
+        {
+          "file": "apps/skeleton/project.json",
+          "hash": "18111445993828354227"
+        },
+        {
+          "file": "apps/skeleton/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/skeleton/src/app/app.component.html",
+          "hash": "5654460193981998828"
+        },
+        {
+          "file": "apps/skeleton/src/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/skeleton/src/app/app.component.spec.ts",
+          "hash": "7434240354434036991",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/skeleton/src/app/app.component.ts",
+          "hash": "15395332188985497713",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/skeleton/src/app/app.config.ts",
+          "hash": "6137170128205633588",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/skeleton/src/app/app.routes.ts",
+          "hash": "6185150965714414910",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/skeleton/src/app/nx-welcome.component.ts",
+          "hash": "4979429398525788310",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/skeleton/src/index.html",
+          "hash": "12634377385046238835"
+        },
+        {
+          "file": "apps/skeleton/src/main.ts",
+          "hash": "732663438483983849",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "apps/skeleton/src/styles.scss",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "apps/skeleton/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/skeleton/tailwind.config.js",
+          "hash": "1208687256482303730",
+          "deps": [
+            "npm:@nrwl/angular",
+            "tailwind-preset"
+          ]
+        },
+        {
+          "file": "apps/skeleton/tsconfig.app.json",
+          "hash": "8365644956319658761"
+        },
+        {
+          "file": "apps/skeleton/tsconfig.editor.json",
+          "hash": "1055794200401717100"
+        },
+        {
+          "file": "apps/skeleton/tsconfig.json",
+          "hash": "6424220500541951295"
+        },
+        {
+          "file": "apps/skeleton/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "hmr": [
+        {
+          "file": "libs/web/settings/hmr/README.md",
+          "hash": "97721670428531784"
+        },
+        {
+          "file": "libs/web/settings/hmr/jest.config.ts",
+          "hash": "15684713615381926703"
+        },
+        {
+          "file": "libs/web/settings/hmr/project.json",
+          "hash": "7240207675983655791"
+        },
+        {
+          "file": "libs/web/settings/hmr/src/index.ts",
+          "hash": "12750781274450568570"
+        },
+        {
+          "file": "libs/web/settings/hmr/src/lib/hmr.ts",
+          "hash": "239702394475440728",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angularclass/hmr"
+          ]
+        },
+        {
+          "file": "libs/web/settings/hmr/src/test-setup.ts",
+          "hash": "17711435995618823417",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/web/settings/hmr/tsconfig.json",
+          "hash": "8437624626968268972"
+        },
+        {
+          "file": "libs/web/settings/hmr/tsconfig.lib.json",
+          "hash": "8490067543465590968"
+        },
+        {
+          "file": "libs/web/settings/hmr/tsconfig.spec.json",
+          "hash": "11015122191017681620"
+        }
+      ],
+      "skeleton-e2e": [
+        {
+          "file": "apps/skeleton-e2e/cypress.config.ts",
+          "hash": "1093754920526934723",
+          "deps": [
+            "npm:@nx/cypress",
+            "npm:cypress"
+          ]
+        },
+        {
+          "file": "apps/skeleton-e2e/eslint.config.js",
+          "hash": "8941139249087650005",
+          "deps": [
+            "npm:eslint-plugin-cypress"
+          ]
+        },
+        {
+          "file": "apps/skeleton-e2e/project.json",
+          "hash": "7961521249453700535"
+        },
+        {
+          "file": "apps/skeleton-e2e/src/e2e/app.cy.ts",
+          "hash": "10605423112369013609"
+        },
+        {
+          "file": "apps/skeleton-e2e/src/fixtures/example.json",
+          "hash": "11785586596216172004"
+        },
+        {
+          "file": "apps/skeleton-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "apps/skeleton-e2e/src/support/commands.ts",
+          "hash": "5397443931564808659"
+        },
+        {
+          "file": "apps/skeleton-e2e/src/support/e2e.ts",
+          "hash": "1054106023200826784"
+        },
+        {
+          "file": "apps/skeleton-e2e/tsconfig.json",
+          "hash": "4332380883180617610"
+        }
+      ],
+      "directives": [
+        {
+          "file": "libs/web/shared/directives/README.md",
+          "hash": "12164713666302047347"
+        },
+        {
+          "file": "libs/web/shared/directives/jest.config.ts",
+          "hash": "10972388074185252702"
+        },
+        {
+          "file": "libs/web/shared/directives/project.json",
+          "hash": "12844977502503120888"
+        },
+        {
+          "file": "libs/web/shared/directives/src/index.ts",
+          "hash": "683049938008259667"
+        },
+        {
+          "file": "libs/web/shared/directives/src/lib/click-debounce-stop-propagation.directive.ts",
+          "hash": "3978284911585834208",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs",
+            "npm:subsink"
+          ]
+        },
+        {
+          "file": "libs/web/shared/directives/src/lib/click-debounce.directive.ts",
+          "hash": "16578830736248740097",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs",
+            "npm:subsink",
+            "utils"
+          ]
+        },
+        {
+          "file": "libs/web/shared/directives/src/lib/click-stop-propagation.directive.ts",
+          "hash": "12073670665345202256",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/web/shared/directives/src/lib/input-autofocus.directive.ts",
+          "hash": "16887123597998130190",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/web/shared/directives/src/lib/place-holder.directive.ts",
+          "hash": "13062511376524190473",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/web/shared/directives/src/lib/web-shared-directives.module.ts",
+          "hash": "4948011663889081402",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/web/shared/directives/src/test-setup.ts",
+          "hash": "17711435995618823417",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/web/shared/directives/tsconfig.json",
+          "hash": "8437624626968268972"
+        },
+        {
+          "file": "libs/web/shared/directives/tsconfig.lib.json",
+          "hash": "8490067543465590968"
+        },
+        {
+          "file": "libs/web/shared/directives/tsconfig.spec.json",
+          "hash": "11015122191017681620"
         }
       ],
       "pipes": [
@@ -506,1159 +650,6 @@
         },
         {
           "file": "libs/web/shared/pipes/tsconfig.spec.json",
-          "hash": "11015122191017681620"
-        }
-      ],
-      "skeleton": [
-        {
-          "file": "apps/skeleton/eslint.config.js",
-          "hash": "12883900717377691005",
-          "deps": [
-            "npm:@nx/eslint-plugin"
-          ]
-        },
-        {
-          "file": "apps/skeleton/jest.config.ts",
-          "hash": "10813977517774227940"
-        },
-        {
-          "file": "apps/skeleton/project.json",
-          "hash": "18111445993828354227"
-        },
-        {
-          "file": "apps/skeleton/public/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/skeleton/src/app/app.component.html",
-          "hash": "5654460193981998828"
-        },
-        {
-          "file": "apps/skeleton/src/app/app.component.scss",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/skeleton/src/app/app.component.spec.ts",
-          "hash": "7434240354434036991",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/skeleton/src/app/app.component.ts",
-          "hash": "15395332188985497713",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/skeleton/src/app/app.config.ts",
-          "hash": "6137170128205633588",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/skeleton/src/app/app.routes.ts",
-          "hash": "6185150965714414910",
-          "deps": [
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/skeleton/src/app/nx-welcome.component.ts",
-          "hash": "4979429398525788310",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "apps/skeleton/src/index.html",
-          "hash": "12634377385046238835"
-        },
-        {
-          "file": "apps/skeleton/src/main.ts",
-          "hash": "732663438483983849",
-          "deps": [
-            "npm:@angular/platform-browser"
-          ]
-        },
-        {
-          "file": "apps/skeleton/src/styles.scss",
-          "hash": "5195668842064076916"
-        },
-        {
-          "file": "apps/skeleton/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "apps/skeleton/tailwind.config.js",
-          "hash": "1208687256482303730",
-          "deps": [
-            "npm:@nrwl/angular",
-            "tailwind-preset"
-          ]
-        },
-        {
-          "file": "apps/skeleton/tsconfig.app.json",
-          "hash": "8365644956319658761"
-        },
-        {
-          "file": "apps/skeleton/tsconfig.editor.json",
-          "hash": "1055794200401717100"
-        },
-        {
-          "file": "apps/skeleton/tsconfig.json",
-          "hash": "6424220500541951295"
-        },
-        {
-          "file": "apps/skeleton/tsconfig.spec.json",
-          "hash": "2927375835638640771"
-        }
-      ],
-      "app-config": [
-        {
-          "file": "libs/todolist/shared/app-config/README.md",
-          "hash": "1517492646928436707"
-        },
-        {
-          "file": "libs/todolist/shared/app-config/jest.config.ts",
-          "hash": "5962897700046337285"
-        },
-        {
-          "file": "libs/todolist/shared/app-config/project.json",
-          "hash": "3299843584447547560"
-        },
-        {
-          "file": "libs/todolist/shared/app-config/src/index.ts",
-          "hash": "8638081559548214037"
-        },
-        {
-          "file": "libs/todolist/shared/app-config/src/lib/app.config.token.ts",
-          "hash": "8289029042294239932",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/app-config/src/lib/app.config.ts",
-          "hash": "681900735544493127"
-        },
-        {
-          "file": "libs/todolist/shared/app-config/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/app-config/tsconfig.json",
-          "hash": "8437624626968268972"
-        },
-        {
-          "file": "libs/todolist/shared/app-config/tsconfig.lib.json",
-          "hash": "8490067543465590968"
-        },
-        {
-          "file": "libs/todolist/shared/app-config/tsconfig.spec.json",
-          "hash": "11015122191017681620"
-        }
-      ],
-      "api": [
-        {
-          "file": "libs/todolist/shared/api/README.md",
-          "hash": "7054089146611961832"
-        },
-        {
-          "file": "libs/todolist/shared/api/jest.config.ts",
-          "hash": "3988230157820485697"
-        },
-        {
-          "file": "libs/todolist/shared/api/project.json",
-          "hash": "8594875999380183499"
-        },
-        {
-          "file": "libs/todolist/shared/api/src/index.ts",
-          "hash": "3843102334501893133"
-        },
-        {
-          "file": "libs/todolist/shared/api/src/lib/todolist-api.service.spec.ts",
-          "hash": "9620248626206715850",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/api/src/lib/todolist-api.service.ts",
-          "hash": "3100185169700174592",
-          "deps": [
-            "npm:@angular/core",
-            "app-config",
-            "npm:@angular/common",
-            "todolist-core-data-access-models",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/api/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/api/tsconfig.json",
-          "hash": "8437624626968268972"
-        },
-        {
-          "file": "libs/todolist/shared/api/tsconfig.lib.json",
-          "hash": "8490067543465590968"
-        },
-        {
-          "file": "libs/todolist/shared/api/tsconfig.spec.json",
-          "hash": "11015122191017681620"
-        }
-      ],
-      "btn-basic": [
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/README.md",
-          "hash": "9972131761512611827"
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/jest.config.ts",
-          "hash": "2653129141699714745"
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/project.json",
-          "hash": "14131649985287098492"
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/src/index.ts",
-          "hash": "17110310040343883415"
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/src/lib/btn-basic/btn-basic.component.html",
-          "hash": "4495533054088098047"
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/src/lib/btn-basic/btn-basic.component.ts",
-          "hash": "9226862321475085261",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/src/lib/todolist-shared-ui-btn-basic.module.ts",
-          "hash": "18416218254555632630",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/shared/ui/btn-basic/tsconfig.spec.json",
-          "hash": "459621581731998297"
-        }
-      ],
-      "utils": [
-        {
-          "file": "libs/web/utils/README.md",
-          "hash": "2119504329122684891"
-        },
-        {
-          "file": "libs/web/utils/jest.config.ts",
-          "hash": "16954418676306031734"
-        },
-        {
-          "file": "libs/web/utils/project.json",
-          "hash": "13279935887844884449"
-        },
-        {
-          "file": "libs/web/utils/src/index.ts",
-          "hash": "12491185331934775406"
-        },
-        {
-          "file": "libs/web/utils/src/lib/web-event-util.ts",
-          "hash": "16719010077033510916"
-        },
-        {
-          "file": "libs/web/utils/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/web/utils/tsconfig.json",
-          "hash": "7739374366769715542"
-        },
-        {
-          "file": "libs/web/utils/tsconfig.lib.json",
-          "hash": "4424239006178759492"
-        },
-        {
-          "file": "libs/web/utils/tsconfig.spec.json",
-          "hash": "916342715649326327"
-        }
-      ],
-      "skeleton-e2e": [
-        {
-          "file": "apps/skeleton-e2e/cypress.config.ts",
-          "hash": "1093754920526934723",
-          "deps": [
-            "npm:@nx/cypress",
-            "npm:cypress"
-          ]
-        },
-        {
-          "file": "apps/skeleton-e2e/eslint.config.js",
-          "hash": "8941139249087650005",
-          "deps": [
-            "npm:eslint-plugin-cypress"
-          ]
-        },
-        {
-          "file": "apps/skeleton-e2e/project.json",
-          "hash": "7961521249453700535"
-        },
-        {
-          "file": "apps/skeleton-e2e/src/e2e/app.cy.ts",
-          "hash": "10605423112369013609"
-        },
-        {
-          "file": "apps/skeleton-e2e/src/fixtures/example.json",
-          "hash": "11785586596216172004"
-        },
-        {
-          "file": "apps/skeleton-e2e/src/support/app.po.ts",
-          "hash": "11157016311132186162"
-        },
-        {
-          "file": "apps/skeleton-e2e/src/support/commands.ts",
-          "hash": "5397443931564808659"
-        },
-        {
-          "file": "apps/skeleton-e2e/src/support/e2e.ts",
-          "hash": "1054106023200826784"
-        },
-        {
-          "file": "apps/skeleton-e2e/tsconfig.json",
-          "hash": "4332380883180617610"
-        }
-      ],
-      "todolist-core-ui-home": [
-        {
-          "file": "libs/todolist/core/ui/home/README.md",
-          "hash": "10998381736864283532"
-        },
-        {
-          "file": "libs/todolist/core/ui/home/jest.config.ts",
-          "hash": "6889567639815609520"
-        },
-        {
-          "file": "libs/todolist/core/ui/home/project.json",
-          "hash": "18145440904739985348"
-        },
-        {
-          "file": "libs/todolist/core/ui/home/src/index.ts",
-          "hash": "13816432290045685530"
-        },
-        {
-          "file": "libs/todolist/core/ui/home/src/lib/input-add-task/input-add-task.component.ts",
-          "hash": "1685013063372700913",
-          "deps": [
-            "npm:@angular/core",
-            "todolist-core-data-access-models",
-            "npm:rxjs",
-            "npm:subsink",
-            "npm:uuid",
-            "utils"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/ui/home/src/lib/mask/mask.component.ts",
-          "hash": "7383987057136458649",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/ui/home/src/lib/task/task.component.html",
-          "hash": "7253807878980704833"
-        },
-        {
-          "file": "libs/todolist/core/ui/home/src/lib/task/task.component.scss",
-          "hash": "8705132045387517155"
-        },
-        {
-          "file": "libs/todolist/core/ui/home/src/lib/task/task.component.ts",
-          "hash": "2014430719589246211",
-          "deps": [
-            "npm:@angular/core",
-            "todolist-core-data-access-models",
-            "npm:rxjs",
-            "npm:subsink",
-            "utils"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/ui/home/src/lib/todolist-home-ui-home.module.ts",
-          "hash": "7741552561615392246",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "directives",
-            "pipes",
-            "btn-basic"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/ui/home/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/ui/home/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/core/ui/home/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/core/ui/home/tsconfig.spec.json",
-          "hash": "459621581731998297"
-        }
-      ],
-      "spinner": [
-        {
-          "file": "libs/todolist/shared/ui/spinner/README.md",
-          "hash": "8671069472862737637"
-        },
-        {
-          "file": "libs/todolist/shared/ui/spinner/jest.config.ts",
-          "hash": "2878117451457596932"
-        },
-        {
-          "file": "libs/todolist/shared/ui/spinner/project.json",
-          "hash": "7133772260871035313"
-        },
-        {
-          "file": "libs/todolist/shared/ui/spinner/src/index.ts",
-          "hash": "2086559073763365957"
-        },
-        {
-          "file": "libs/todolist/shared/ui/spinner/src/lib/spinner/spinner.component.ts",
-          "hash": "4016441552112674830",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/spinner/src/lib/todolist-shared-ui-spinner.module.ts",
-          "hash": "16504465636365812645",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@ngneat/svg-icon"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/spinner/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/spinner/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/shared/ui/spinner/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/shared/ui/spinner/tsconfig.spec.json",
-          "hash": "459621581731998297"
-        }
-      ],
-      "tailwind-preset": [
-        {
-          "file": "libs/tailwind-preset/project.json",
-          "hash": "11734327380468800868"
-        },
-        {
-          "file": "libs/tailwind-preset/tailwind.config.js",
-          "hash": "3950992272379825159",
-          "deps": [
-            "npm:@nrwl/angular",
-            "npm:postcss-import",
-            "npm:postcss-nesting",
-            "npm:tailwindcss",
-            "npm:autoprefixer"
-          ]
-        }
-      ],
-      "toggle-arrow": [
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/README.md",
-          "hash": "5939124953370158811"
-        },
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/jest.config.ts",
-          "hash": "14059690529969887179"
-        },
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/project.json",
-          "hash": "13392348041049641546"
-        },
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/src/index.ts",
-          "hash": "9286363680348034233"
-        },
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/src/lib/todolist-shared-ui-toggle-arrow.module.ts",
-          "hash": "14501531332015031313",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/src/lib/toggle-arrow/toggle-arrow.component.ts",
-          "hash": "14860783980910258339",
-          "deps": [
-            "npm:@angular/core",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/shared/ui/toggle-arrow/tsconfig.spec.json",
-          "hash": "459621581731998297"
-        }
-      ],
-      "todolist": [
-        {
-          "file": "apps/todolist/.browserslistrc",
-          "hash": "17600754102500844387"
-        },
-        {
-          "file": "apps/todolist/db.json",
-          "hash": "14127336516120090585"
-        },
-        {
-          "file": "apps/todolist/jest.config.ts",
-          "hash": "1562776721674511755"
-        },
-        {
-          "file": "apps/todolist/project.json",
-          "hash": "2841703674951134716"
-        },
-        {
-          "file": "apps/todolist/src/app/app.component.html",
-          "hash": "17816966185630879015"
-        },
-        {
-          "file": "apps/todolist/src/app/app.component.scss",
-          "hash": "9349417265757926247"
-        },
-        {
-          "file": "apps/todolist/src/app/app.component.spec.ts",
-          "hash": "7872642777513950632",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/todolist/src/app/app.component.ts",
-          "hash": "11472693427213643922",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/todolist/src/app/app.module.ts",
-          "hash": "3795696188784186818",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/platform-browser",
-            "npm:@angular/router",
-            "shell",
-            "app-config",
-            "npm:@angular/common",
-            "npm:@ngrx/store-devtools"
-          ]
-        },
-        {
-          "file": "apps/todolist/src/app/nx-welcome.component.ts",
-          "hash": "5228705543292784305",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/todolist/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/todolist/src/environments/environment.hmr.ts",
-          "hash": "17217001373973049006"
-        },
-        {
-          "file": "apps/todolist/src/environments/environment.prod.ts",
-          "hash": "11913996928135794508"
-        },
-        {
-          "file": "apps/todolist/src/environments/environment.ts",
-          "hash": "10060867183270602552"
-        },
-        {
-          "file": "apps/todolist/src/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/todolist/src/index.html",
-          "hash": "12381858195868964422"
-        },
-        {
-          "file": "apps/todolist/src/main.ts",
-          "hash": "2365521269524010109",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/platform-browser-dynamic",
-            "hmr"
-          ]
-        },
-        {
-          "file": "apps/todolist/src/polyfills.ts",
-          "hash": "13952578668946952738",
-          "deps": [
-            "npm:zone.js"
-          ]
-        },
-        {
-          "file": "apps/todolist/src/styles.scss",
-          "hash": "4982672923661574367"
-        },
-        {
-          "file": "apps/todolist/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "apps/todolist/tailwind.config.js",
-          "hash": "1905998165644706421",
-          "deps": [
-            "npm:@nrwl/angular",
-            "tailwind-preset"
-          ]
-        },
-        {
-          "file": "apps/todolist/tsconfig.app.json",
-          "hash": "3435748458705813322"
-        },
-        {
-          "file": "apps/todolist/tsconfig.editor.json",
-          "hash": "6367495026318685054"
-        },
-        {
-          "file": "apps/todolist/tsconfig.json",
-          "hash": "17981161305287108769"
-        },
-        {
-          "file": "apps/todolist/tsconfig.spec.json",
-          "hash": "6658172359945877284"
-        }
-      ],
-      "store": [
-        {
-          "file": "libs/todolist/core/data-access/store/README.md",
-          "hash": "7738736442316686222"
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/jest.config.ts",
-          "hash": "14427125928436100243"
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/project.json",
-          "hash": "2178840615640042363"
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/src/index.ts",
-          "hash": "4377408159289771829"
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/src/lib/tasks/index.ts",
-          "hash": "1080630989609958531"
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/src/lib/tasks/tasks.action.ts",
-          "hash": "15234704781203954147",
-          "deps": [
-            "npm:@ngrx/store",
-            "todolist-core-data-access-models"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/src/lib/tasks/tasks.effect.ts",
-          "hash": "13678676633525152688",
-          "deps": [
-            "npm:rxjs",
-            "npm:@ngrx/store",
-            "npm:@angular/core",
-            "npm:@ngrx/effects",
-            "api"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/src/lib/tasks/tasks.reducer.spec.ts",
-          "hash": "8862047714309078367"
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/src/lib/tasks/tasks.reducer.ts",
-          "hash": "2612338579788205053",
-          "deps": [
-            "npm:@ngrx/store",
-            "web-data-access-models",
-            "todolist-core-data-access-models"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/src/lib/tasks/tasks.selector.spec.ts",
-          "hash": "16791345021777940937",
-          "deps": [
-            "todolist-core-data-access-models"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/src/lib/tasks/tasks.selector.ts",
-          "hash": "3565870013838923045",
-          "deps": [
-            "todolist-core-data-access-models",
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/core/data-access/store/tsconfig.spec.json",
-          "hash": "459621581731998297"
-        }
-      ],
-      "shell": [
-        {
-          "file": "libs/todolist/shell/feature/shell/README.md",
-          "hash": "1006764008024933078"
-        },
-        {
-          "file": "libs/todolist/shell/feature/shell/jest.config.ts",
-          "hash": "15040391525714101223"
-        },
-        {
-          "file": "libs/todolist/shell/feature/shell/project.json",
-          "hash": "7550662185965948157"
-        },
-        {
-          "file": "libs/todolist/shell/feature/shell/src/index.ts",
-          "hash": "6791005490940552720"
-        },
-        {
-          "file": "libs/todolist/shell/feature/shell/src/lib/web-list-shell.module.ts",
-          "hash": "925363992475478744",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@angular/router",
-            "npm:@ngrx/store",
-            "npm:@ngrx/effects",
-            "store",
-            "icon"
-          ]
-        },
-        {
-          "file": "libs/todolist/shell/feature/shell/src/lib/web-list-shell.ts",
-          "hash": "8303550816991205990",
-          "deps": [
-            "npm:@angular/router",
-            "layout",
-            [
-              "todolist-core-feature-home",
-              "dynamic"
-            ]
-          ]
-        },
-        {
-          "file": "libs/todolist/shell/feature/shell/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/shell/feature/shell/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/shell/feature/shell/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/shell/feature/shell/tsconfig.spec.json",
-          "hash": "459621581731998297"
-        }
-      ],
-      "todolist-core-feature-home": [
-        {
-          "file": "libs/todolist/core/feature/home/README.md",
-          "hash": "6365660878066796663"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/jest.config.ts",
-          "hash": "2343993562571583700"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/project.json",
-          "hash": "17356772305385808882"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/index.ts",
-          "hash": "3639948800626349689"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/footer/footer.component.html",
-          "hash": "6313795339750132454"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/footer/footer.component.scss",
-          "hash": "4761964793370207700"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/footer/footer.component.spec.ts",
-          "hash": "377685358651504757",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/footer/footer.component.ts",
-          "hash": "1477782601210866437",
-          "deps": [
-            "npm:@angular/core",
-            "todolist-core-data-access-models",
-            "store",
-            "npm:@ngrx/store",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/home/home.component.html",
-          "hash": "8559047509077854010"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/home/home.component.scss",
-          "hash": "3127592086814308779"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/home/home.component.spec.ts",
-          "hash": "6767060144771871771",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/home/home.component.ts",
-          "hash": "4793311878780992073",
-          "deps": [
-            "npm:@angular/core",
-            "todolist-core-data-access-models",
-            "store",
-            "npm:@ngrx/store",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/search-panel/search-panel.component.html",
-          "hash": "5765557340263858186"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/search-panel/search-panel.component.scss",
-          "hash": "17187477934648802129"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/search-panel/search-panel.component.spec.ts",
-          "hash": "4707016653639228083",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/search-panel/search-panel.component.ts",
-          "hash": "10123058962514933524",
-          "deps": [
-            "npm:@angular/core",
-            "utils",
-            "npm:rxjs",
-            "todolist-core-ui-home"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/task/task.component.ts",
-          "hash": "16769870814501560086",
-          "deps": [
-            "npm:@angular/core",
-            "todolist-core-data-access-models",
-            "store",
-            "npm:@ngrx/store",
-            "npm:subsink"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/tasks-panel/tasks-panel.component.html",
-          "hash": "9483714275786442768"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/tasks-panel/tasks-panel.component.scss",
-          "hash": "13500024082009434603"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/tasks-panel/tasks-panel.component.spec.ts",
-          "hash": "6319107107111709977",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/tasks-panel/tasks-panel.component.ts",
-          "hash": "14605771890284115262",
-          "deps": [
-            "npm:@angular/core",
-            "todolist-core-ui-home",
-            "npm:rxjs",
-            "pipes"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/lib/todolist-home-feature-home.module.ts",
-          "hash": "670165771802672340",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@angular/router",
-            "todolist-core-ui-home",
-            "pipes",
-            "toggle-arrow",
-            "npm:@ngneat/svg-icon",
-            "btn-basic",
-            "spinner"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/todolist/core/feature/home/tsconfig.json",
-          "hash": "16259194420737281264"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/tsconfig.lib.json",
-          "hash": "4627792733129338905"
-        },
-        {
-          "file": "libs/todolist/core/feature/home/tsconfig.spec.json",
-          "hash": "459621581731998297"
-        }
-      ],
-      "directives": [
-        {
-          "file": "libs/web/shared/directives/README.md",
-          "hash": "12164713666302047347"
-        },
-        {
-          "file": "libs/web/shared/directives/jest.config.ts",
-          "hash": "10972388074185252702"
-        },
-        {
-          "file": "libs/web/shared/directives/project.json",
-          "hash": "12844977502503120888"
-        },
-        {
-          "file": "libs/web/shared/directives/src/index.ts",
-          "hash": "683049938008259667"
-        },
-        {
-          "file": "libs/web/shared/directives/src/lib/click-debounce-stop-propagation.directive.ts",
-          "hash": "3978284911585834208",
-          "deps": [
-            "npm:@angular/core",
-            "npm:rxjs",
-            "npm:subsink"
-          ]
-        },
-        {
-          "file": "libs/web/shared/directives/src/lib/click-debounce.directive.ts",
-          "hash": "16578830736248740097",
-          "deps": [
-            "npm:@angular/core",
-            "npm:rxjs",
-            "npm:subsink",
-            "utils"
-          ]
-        },
-        {
-          "file": "libs/web/shared/directives/src/lib/click-stop-propagation.directive.ts",
-          "hash": "12073670665345202256",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/web/shared/directives/src/lib/input-autofocus.directive.ts",
-          "hash": "16887123597998130190",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/web/shared/directives/src/lib/place-holder.directive.ts",
-          "hash": "13062511376524190473",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/web/shared/directives/src/lib/web-shared-directives.module.ts",
-          "hash": "4948011663889081402",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "libs/web/shared/directives/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/web/shared/directives/tsconfig.json",
-          "hash": "8437624626968268972"
-        },
-        {
-          "file": "libs/web/shared/directives/tsconfig.lib.json",
-          "hash": "8490067543465590968"
-        },
-        {
-          "file": "libs/web/shared/directives/tsconfig.spec.json",
-          "hash": "11015122191017681620"
-        }
-      ],
-      "hmr": [
-        {
-          "file": "libs/web/settings/hmr/README.md",
-          "hash": "97721670428531784"
-        },
-        {
-          "file": "libs/web/settings/hmr/jest.config.ts",
-          "hash": "15684713615381926703"
-        },
-        {
-          "file": "libs/web/settings/hmr/project.json",
-          "hash": "7240207675983655791"
-        },
-        {
-          "file": "libs/web/settings/hmr/src/index.ts",
-          "hash": "12750781274450568570"
-        },
-        {
-          "file": "libs/web/settings/hmr/src/lib/hmr.ts",
-          "hash": "239702394475440728",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angularclass/hmr"
-          ]
-        },
-        {
-          "file": "libs/web/settings/hmr/src/test-setup.ts",
-          "hash": "17711435995618823417",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/web/settings/hmr/tsconfig.json",
-          "hash": "8437624626968268972"
-        },
-        {
-          "file": "libs/web/settings/hmr/tsconfig.lib.json",
-          "hash": "8490067543465590968"
-        },
-        {
-          "file": "libs/web/settings/hmr/tsconfig.spec.json",
           "hash": "11015122191017681620"
         }
       ]

@@ -8,8 +8,7 @@
     "start": "nx serves",
     "build": "nx build",
     "test": "npx nx affected:test",
-    "skeleton": "ng serve skeleton --port 1235 --hmr=true ",
-    "todolist": "ng serve todolist --port 4200 --hmr=true",
+    "skeleton": "ng serve skeleton --port 4200 --hmr=true ",
     "json-server": "json-server --watch db.json",
     "generate-icons": "svg-generator",
     "graph": "nx graph"
@@ -98,22 +97,5 @@
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.0",
     "webpack": "^5.96.1"
-  },
-  "svgGenerator": {
-    "outputPath": "./libs/todolist/shared/ui/icon/src/lib/svg",
-    "prefix": "as",
-    "srcPath": "./libs/todolist/shared/ui/icon/src/lib/assets",
-    "svgoConfig": {
-      "plugins": [
-        "removeDimensions",
-        "cleanupAttrs",
-        {
-          "name": "convertColors",
-          "params": {
-            "currentColor": true
-          }
-        }
-      ]
-    }
   }
 }
