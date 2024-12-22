@@ -1,10 +1,10 @@
 const { FlatCompat } = require('@eslint/eslintrc');
-const js = require('@eslint/js');
+const eslint = require('@eslint/js');
 const nrwlEslintPluginNx = require('@nrwl/eslint-plugin-nx');
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
+  recommendedConfig: eslint.configs.recommended,
 });
 
 module.exports = [
@@ -38,6 +38,9 @@ module.exports = [
       '@angular-eslint/prefer-standalone': 'error',
       '@angular-eslint/use-pipe-transform-interface': 'error',
       '@angular-eslint/use-lifecycle-interface': 'warn',
+      "@angular-eslint/template/prefer-self-closing-tags": 'error',
+      "@angular-eslint/template/prefer-control-flow": 'error',
+      "@angular-eslint/prefer-on-push-component-change-detection": 'error',
     },
   },
   ...compat
