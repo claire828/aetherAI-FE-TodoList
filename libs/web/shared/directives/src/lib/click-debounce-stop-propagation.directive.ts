@@ -8,11 +8,11 @@ import { SubSink } from 'subsink';
 export class ClickDebounceStopPropagationDirective implements OnDestroy {
 
   @Output() clickDebounceStopPropagation = new EventEmitter();
-  private subsink = new SubSink();
+  private subSink = new SubSink();
   private click$ = new Subject<any>();
 
   constructor() {
-    this.subsink.sink = 
+    this.subSink.sink = 
       this.click$
       .pipe(debounceTime(300))
       .subscribe(x=>this.clickDebounceStopPropagation.emit(x));
@@ -26,7 +26,7 @@ export class ClickDebounceStopPropagationDirective implements OnDestroy {
    }
 
    ngOnDestroy(){
-    this.subsink.unsubscribe();
+    this.subSink.unsubscribe();
    }
 
 }

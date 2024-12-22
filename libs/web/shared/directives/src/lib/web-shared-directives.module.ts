@@ -7,14 +7,15 @@ import { PlaceHolderDirective } from './place-holder.directive';
 import { InputAutofocusDirective } from './input-autofocus.directive';
 
 @NgModule({
-  imports: [CommonModule],
-  exports:[ClickDebounceDirective,ClickStopPropagationDirective,ClickDebounceStopPropagationDirective,PlaceHolderDirective, InputAutofocusDirective],
-  declarations: [
-    ClickDebounceDirective,
+  imports: [
+    CommonModule,
     ClickStopPropagationDirective,
     ClickDebounceStopPropagationDirective,
     PlaceHolderDirective,
-    InputAutofocusDirective
+    InputAutofocusDirective,
+    ClickDebounceDirective
   ],
+  exports:[ClickDebounceDirective,ClickStopPropagationDirective,ClickDebounceStopPropagationDirective,PlaceHolderDirective, InputAutofocusDirective],
+
 })
 export class WebSharedDirectivesModule {}

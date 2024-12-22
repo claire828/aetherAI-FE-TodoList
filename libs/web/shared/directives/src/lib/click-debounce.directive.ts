@@ -8,19 +8,19 @@ import {WebEventUtil} from '@monorepo/web/utils';
 })
 export class ClickDebounceDirective implements OnDestroy {
 
-  private subsink = new SubSink();
+  private subSink = new SubSink();
   @Output() monorepoClickDebounce = new EventEmitter();
 
   constructor(elemRef:ElementRef) { 
     //這個是傳入pointEvent, 如果要MouseEvent做其他對應動作，就專注使用HostListener
-    this.subsink.sink = fromEvent(elemRef.nativeElement, WebEventUtil.Mouse.Type.Click)
+    this.subSink.sink = fromEvent(elemRef.nativeElement, WebEventUtil.Mouse.Type.Click)
     .pipe(debounceTime(300))
     .subscribe(x=>this.monorepoClickDebounce.emit(x));
   }
 
 
   ngOnDestroy(){
-    this.subsink.unsubscribe();
+    this.subSink.unsubscribe();
   }
 
 }

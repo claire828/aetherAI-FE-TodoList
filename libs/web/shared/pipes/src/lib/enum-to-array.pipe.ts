@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'enumToArray'
 })
-export class EnumToArrayPipe<T,V> implements PipeTransform {
+export class EnumToArrayPipe<T extends object, V> implements PipeTransform {
 
   transform(data:T): {key:string, value:V}[] {
     const keys = Object.keys(data);
