@@ -1,2 +1,2 @@
-export const orderBy = ['decending','ascending','none'] as const;
+export const orderBy = ['descending','ascending','none'] as const;
 export type orderByType = typeof orderBy[number];

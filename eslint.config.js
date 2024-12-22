@@ -41,6 +41,7 @@ module.exports = [
       "@angular-eslint/template/prefer-self-closing-tags": 'error',
       "@angular-eslint/template/prefer-control-flow": 'error',
       "@angular-eslint/prefer-on-push-component-change-detection": 'error',
+      "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": true }]
     },
   },
   ...compat

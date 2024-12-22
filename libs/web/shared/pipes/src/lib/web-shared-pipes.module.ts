@@ -9,8 +9,8 @@ import { OrderbyNumPipe } from './orderby-num.pipe';
 import { OrderbyAsciiPipe } from './orderby-ascii.pipe';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [
+  imports: [
+    CommonModule,
     NumberWithCommasPipe,
     TimingFormatPipe,
     EnumToArrayPipe,

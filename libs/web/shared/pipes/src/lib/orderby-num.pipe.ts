@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { orderByType } from './pipe-util';
 
-
 @Pipe({
   name: 'orderbyNum'
 })
@@ -14,7 +13,7 @@ export class OrderbyNumPipe<T extends object, K extends keyof T > implements Pip
   //sort by comparing number
   compare(arr: T[], fieldName: K, sortByDescending:orderByType):T[]{
     switch(sortByDescending){
-      case 'decending':
+      case 'descending':
         return [...arr].sort((a, b) => +b[fieldName] - +a[fieldName]);
 
       case 'ascending':
