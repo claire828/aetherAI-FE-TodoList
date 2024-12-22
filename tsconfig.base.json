@@ -33,6 +33,9 @@
       ],
       "@monorepo/web/utils": [
         "libs/web/utils/src/index.ts"
+      ],
+      "web/features/dialog": [
+        "libs/web/features/dialog/src/index.ts"
       ]
     }
   },

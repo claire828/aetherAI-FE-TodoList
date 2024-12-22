@@ -21,12 +21,8 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        "{projectRoot}/dist"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist"]
     },
     "lint": {
       "dependsOn": [],
@@ -37,27 +33,16 @@
       ]
     },
     "test": {
-      "dependsOn": [
-        "^test"
-      ],
-      "outputs": [
-        "{projectRoot}/coverage"
-      ]
+      "dependsOn": ["^test"],
+      "outputs": ["{projectRoot}/coverage"]
     },
     "@angular-devkit/build-angular:application": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "default",
-        "^default"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     },
     "e2e": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     }
   },
   "generators": {
@@ -81,6 +66,13 @@
       "linter": "eslint",
       "style": "scss",
       "unitTestRunner": "jest"
+    },
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "scss"
     }
   },
   "plugins": [
