@@ -1,5 +1,5 @@
 export enum DialogCategory {
   Default,
   System,
-  Component
+  Component,
 }

@@ -14,10 +14,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "libs/web/settings/hmr/**/*.ts",
-          "libs/web/settings/hmr/**/*.html"
-        ]
+        "lintFilePatterns": ["libs/web/settings/hmr/**/*.ts", "libs/web/settings/hmr/**/*.html"]
       }
     }
   },

@@ -1,45 +1,41 @@
-export class WebEventUtil{
-
+export class WebEventUtil {
   static Keyboard = {
     Type: {
-      KeyPress:'keypress',
-      KeyUp:'keyup',
-      KeyDown:'keydown',
-      Input:'input'
+      KeyPress: 'keypress',
+      KeyUp: 'keyup',
+      KeyDown: 'keydown',
+      Input: 'input',
     },
-    Key :{
-      Enter:'Enter',
-      WhiteSpace:' ',
-      Tab: 'Tab'
-    }
-  }
-
+    Key: {
+      Enter: 'Enter',
+      WhiteSpace: ' ',
+      Tab: 'Tab',
+    },
+  };
 
   static Mouse = {
-    Type:{
-      Click:'click',
-      DblClick:'dblclick',
-      MouseDown:'mousedown',
-      MouseMove:'mousemove',
-      MouseOut:'mouseout',
-      MouseOver:'mouseOver',
-      MouseUp:'mouseup'
-    }
-  }
-
+    Type: {
+      Click: 'click',
+      DblClick: 'dblclick',
+      MouseDown: 'mousedown',
+      MouseMove: 'mousemove',
+      MouseOut: 'mouseout',
+      MouseOver: 'mouseOver',
+      MouseUp: 'mouseup',
+    },
+  };
 
   static Focus = {
-    Type:{
-      Focus:'focus',
-      Blur:'blur',
-      FocusOut:'focusout'
-    }
-  }
+    Type: {
+      Focus: 'focus',
+      Blur: 'blur',
+      FocusOut: 'focusout',
+    },
+  };
 
   static Scroll = {
-    Type:{
-      Scroll:'scroll'
-    }
-  }
-
+    Type: {
+      Scroll: 'scroll',
+    },
+  };
 }

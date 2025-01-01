@@ -1,4 +1,4 @@
 export enum DialogEvent {
   Confirm,
-  Cancel
+  Cancel,
 }

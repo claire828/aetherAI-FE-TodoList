@@ -20,9 +20,7 @@
       "@monorepo/web/shared/data-access/models": [
         "libs/web/shared/data-access/models/src/index.ts"
       ],
-      "@monorepo/web/shared/directives": [
-        "libs/web/shared/directives/src/index.ts"
-      ],
+      "@monorepo/web/shared/directives": ["libs/web/shared/directives/src/index.ts"],
       "@monorepo/web/shared/pipes": ["libs/web/shared/pipes/src/index.ts"],
       "@monorepo/web/utils": ["libs/web/utils/src/index.ts"],
       "web/features/dialog": ["libs/web/features/dialog/src/index.ts"]

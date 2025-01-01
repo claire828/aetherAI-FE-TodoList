@@ -1,15 +1,13 @@
 import { Directive, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[monorepoClickStopPropagation]'
+  selector: '[monorepoClickStopPropagation]',
 })
 export class ClickStopPropagationDirective {
+  constructor() {}
 
-  constructor() { }
-
-  @HostListener('click',['$event']) onClick(e:MouseEvent){
+  @HostListener('click', ['$event']) onClick(e: MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
   }
-
 }

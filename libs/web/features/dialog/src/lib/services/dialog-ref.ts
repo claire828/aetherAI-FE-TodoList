@@ -1,5 +1,4 @@
-import { OverlayRef, PositionStrategy } from "@angular/cdk/overlay";
-
+import { OverlayRef, PositionStrategy } from '@angular/cdk/overlay';
 
 export class DialogRef {
   #overlayRef: OverlayRef;

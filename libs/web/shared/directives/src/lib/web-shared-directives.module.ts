@@ -13,9 +13,14 @@ import { InputAutofocusDirective } from './input-autofocus.directive';
     ClickDebounceStopPropagationDirective,
     PlaceHolderDirective,
     InputAutofocusDirective,
-    ClickDebounceDirective
+    ClickDebounceDirective,
   ],
-  exports:[ClickDebounceDirective,ClickStopPropagationDirective,ClickDebounceStopPropagationDirective,PlaceHolderDirective, InputAutofocusDirective],
-
+  exports: [
+    ClickDebounceDirective,
+    ClickStopPropagationDirective,
+    ClickDebounceStopPropagationDirective,
+    PlaceHolderDirective,
+    InputAutofocusDirective,
+  ],
 })
 export class WebSharedDirectivesModule {}

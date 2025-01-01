@@ -17,7 +17,7 @@ import { OrderbyAsciiPipe } from './orderby-ascii.pipe';
     ReversePipe,
     FilterPipe,
     OrderbyNumPipe,
-    OrderbyAsciiPipe
+    OrderbyAsciiPipe,
   ],
   exports: [
     NumberWithCommasPipe,
@@ -26,7 +26,7 @@ import { OrderbyAsciiPipe } from './orderby-ascii.pipe';
     ReversePipe,
     FilterPipe,
     OrderbyNumPipe,
-    OrderbyAsciiPipe
+    OrderbyAsciiPipe,
   ],
 })
 export class WebSharedPipesModule {}

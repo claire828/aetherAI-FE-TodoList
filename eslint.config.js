@@ -24,9 +24,8 @@ module.exports = [
             },
           ],
         },
-      ]
+      ],
     },
-    
   },
   ...compat
     .config({
@@ -42,13 +41,11 @@ module.exports = [
         ...config.rules,
       },
     })),
-  ...compat
-    .config({ extends: ['plugin:@nrwl/nx/javascript'] })
-    .map((config) => ({
-      ...config,
-      files: ['**/*.js', '**/*.jsx'],
-      rules: {
-        ...config.rules,
-      },
-    })),
+  ...compat.config({ extends: ['plugin:@nrwl/nx/javascript'] }).map((config) => ({
+    ...config,
+    files: ['**/*.js', '**/*.jsx'],
+    rules: {
+      ...config.rules,
+    },
+  })),
 ];

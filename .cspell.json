@@ -1,16 +1,16 @@
 {
-    "language": "en",
-    "words": [
-        "ngneat",
-        "ngrx",
-        "subsink",
-        "@angular-eslint",
-        "FlatCompat",
-        "nrwlEslintPluginNx",
-        "eslint",
-        "typescript",
-        "jsx",
-        "tsx",
-        "angularclass",
-    ]
+  "language": "en",
+  "words": [
+    "ngneat",
+    "ngrx",
+    "subsink",
+    "@angular-eslint",
+    "FlatCompat",
+    "nrwlEslintPluginNx",
+    "eslint",
+    "typescript",
+    "jsx",
+    "tsx",
+    "angularclass"
+  ]
 }

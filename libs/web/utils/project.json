@@ -14,10 +14,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "libs/web/utils/**/*.ts",
-          "libs/web/utils/**/*.html"
-        ]
+        "lintFilePatterns": ["libs/web/utils/**/*.ts", "libs/web/utils/**/*.html"]
       }
     }
   },

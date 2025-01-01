@@ -14,10 +14,7 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "libs/web/shared/pipes/**/*.ts",
-          "libs/web/shared/pipes/**/*.html"
-        ]
+        "lintFilePatterns": ["libs/web/shared/pipes/**/*.ts", "libs/web/shared/pipes/**/*.html"]
       }
     }
   },
