@@ -1,6 +1,6 @@
 import { OverlayRef, PositionStrategy } from '@angular/cdk/overlay';
 
-export class DialogRef {
+export class DecorateOverlayRef {
   #overlayRef: OverlayRef;
   constructor(overlay: OverlayRef) {
     this.#overlayRef = overlay;

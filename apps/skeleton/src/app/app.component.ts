@@ -1,14 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { WebFeaturesDialogComponent } from 'web/features/dialog';
+import { DialogBtnDisplay, DialogCategory, DialogService } from 'web/features/dialog';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, WebFeaturesDialogComponent],
+  imports: [RouterModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'skeleton';
+  constructor() {
+    const service = inject(DialogService);
+    service.openDialog({
+      name: 'test',
+      category: DialogCategory.Default,
+      btnDisplay: DialogBtnDisplay.EnterCancel,
+      title: 'test',
+      content: 'test',
+      observer: {
+        next: () => {},
+        error: () => {},
+        complete: () => {},
+      },
+    });
+  }
 }
