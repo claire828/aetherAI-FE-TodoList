@@ -6,7 +6,7 @@ import { DecorateOverlayRef } from '../utils/decorate-overlay-ref';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { WebFeaturesDialogComponent } from '../web-features-dialog/web-features-dialog.component';
 import { DIALOG_PROVIDER } from '../default-configs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
 @Injectable({ providedIn: 'root' })
 export class DialogService {
   #injector: Injector = inject(Injector);
@@ -15,14 +15,10 @@ export class DialogService {
   constructor() { }
 
   public openDialog(dialogConfig: DialogConfig): DecorateOverlayRef {
-    const { overlayConfig } = dialogConfig;
-    const { decorateRef, overlayRef } = this.#refBuilder(overlayConfig);
+    const decorateRef = this.#refBuilder(dialogConfig.overlayConfig);
     const injector = this.createInjector(decorateRef, dialogConfig);
     const portal = new ComponentPortal(WebFeaturesDialogComponent, null, injector);
-    overlayRef.attach(portal);
-    if (overlayConfig.hasBackdrop) {
-      overlayRef.backdropClick().pipe(takeUntilDestroyed()).subscribe(() => decorateRef.close());
-    }
+    decorateRef.overlayRef.attach(portal);
     return decorateRef;
   }
 

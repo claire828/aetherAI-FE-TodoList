@@ -3,15 +3,9 @@ import {
   OverlayConfig,
   OverlayPositionBuilder,
   PositionStrategy,
-  OverlayRef,
 } from '@angular/cdk/overlay';
 import { DecorateOverlayRef } from './decorate-overlay-ref';
 import { generateGlobalCenterPosition } from './position-builder';
-
-export interface RefMap {
-  overlayRef: OverlayRef;
-  decorateRef: DecorateOverlayRef;
-}
 
 /**
  * Type definition for a function that decorates a reference builder.
@@ -23,7 +17,7 @@ export interface RefMap {
 export type DecorateRefBuilder = (
   config: OverlayConfig,
   positionStrategy?: PositionStrategy
-) => RefMap;
+) => DecorateOverlayRef;
 
 
 /**
@@ -40,11 +34,7 @@ export function createRefBuilder(
   return (config, positionStrategy = generateGlobalCenterPosition(builder)) => {
     const overlayConfig = { ...config, positionStrategy };
     const overlayRef = overlay.create(overlayConfig);
-    const decorateRef = new DecorateOverlayRef(overlayRef);
-    return {
-      overlayRef,
-      decorateRef,
-    };
+    return new DecorateOverlayRef(overlayRef, config.hasBackdrop);
   };
 }
 
