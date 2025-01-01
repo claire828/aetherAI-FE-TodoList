@@ -26,6 +26,7 @@ module.exports = [
         },
       ]
     },
+    
   },
   ...compat
     .config({
