@@ -4,7 +4,6 @@ import { Overlay, OverlayPositionBuilder } from '@angular/cdk/overlay';
 import { DecorateRefBuilder, createRefBuilder } from '../utils';
 import { DecorateOverlayRef } from '../utils/decorate-overlay-ref';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { WebFeaturesDialogComponent } from '../web-features-dialog/web-features-dialog.component';
 import { DIALOG_PROVIDER } from '../default-configs';
 
 @Injectable({ providedIn: 'root' })
@@ -14,14 +13,17 @@ export class DialogService {
 
   constructor() { }
 
+  // TODO: 製作按鈕按下後，通知enter / close and send 資料。
+  // 分清楚custom or default.
   public openDialog(dialogConfig: DialogConfig): DecorateOverlayRef {
     const decorateRef = this.#refBuilder(dialogConfig.overlayConfig);
     const injector = this.createInjector(decorateRef, dialogConfig);
-    const portal = new ComponentPortal(WebFeaturesDialogComponent, null, injector);
-    decorateRef.overlayRef.attach(portal);
+    const portal = new ComponentPortal(dialogConfig.componentRef(), null, injector);
+    decorateRef.attachPortal(portal);
     return decorateRef;
   }
 
+  // 拔出去的原因是因為要讓DialogComponent可以使用到DialogService
   private createInjector(decorateRef: DecorateOverlayRef, dialogConfig: DialogConfig): Injector {
     return Injector.create({
       providers: [

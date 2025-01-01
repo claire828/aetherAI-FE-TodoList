@@ -1,5 +1,6 @@
 import { OverlayConfig } from "@angular/cdk/overlay";
 import { DialogBtnDisplay, DialogCategory, DialogConfig } from "../models";
+import { WebFeaturesDialogComponent } from "../web-features-dialog/web-features-dialog.component";
 
 export const DEFAULT_OVERLAY_CONFIG: OverlayConfig = {
   hasBackdrop: true,
@@ -12,7 +13,7 @@ export const MOCK_CONFIG: DialogConfig = {
   category: DialogCategory.Default,
   btnDisplay: DialogBtnDisplay.EnterCancel,
   title: 'Dialog Title',
-  content: 'Dialog Content',
+  componentRef: () => WebFeaturesDialogComponent,
   overlayConfig: DEFAULT_OVERLAY_CONFIG,
 }
 
@@ -21,6 +22,6 @@ export const MOCK_CONFIG2: DialogConfig = {
   category: DialogCategory.Default,
   btnDisplay: DialogBtnDisplay.EnterCancel,
   title: 'Dialog Title2',
-  content: 'Dialog Content2',
+  componentRef: () => WebFeaturesDialogComponent,
   overlayConfig: DEFAULT_OVERLAY_CONFIG,
 }
