@@ -14,4 +14,8 @@ export class DecorateOverlayRef {
   public close(): void {
     this.#overlayRef.dispose();
   }
+
+  public test(): void {
+    console.log('test');
+  }
 }
