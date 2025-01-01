@@ -5,8 +5,8 @@ import { DecorateRefBuilder, createRefBuilder } from '../utils';
 import { DecorateOverlayRef } from '../utils/decorate-overlay-ref';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { WebFeaturesDialogComponent } from '../web-features-dialog/web-features-dialog.component';
-import { DEFAULT_OVERLAY_CONFIG, DIALOG_PROVIDER } from '../default-configs';
-
+import { DIALOG_PROVIDER } from '../default-configs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Injectable({ providedIn: 'root' })
 export class DialogService {
   #injector: Injector = inject(Injector);
@@ -14,22 +14,26 @@ export class DialogService {
 
   constructor() { }
 
-  public openDialog(config: DialogConfig) {
-    const { decorateRef, overlayRef } = this.#refBuilder(DEFAULT_OVERLAY_CONFIG);
-    const injector = this.createInjector(decorateRef, config);
+  public openDialog(dialogConfig: DialogConfig): DecorateOverlayRef {
+    const { overlayConfig } = dialogConfig;
+    const { decorateRef, overlayRef } = this.#refBuilder(overlayConfig);
+    const injector = this.createInjector(decorateRef, dialogConfig);
     const portal = new ComponentPortal(WebFeaturesDialogComponent, null, injector);
     overlayRef.attach(portal);
-    overlayRef.backdropClick().subscribe(() => decorateRef.close());
+    if (overlayConfig.hasBackdrop) {
+      overlayRef.backdropClick().pipe(takeUntilDestroyed()).subscribe(() => decorateRef.close());
+    }
+    return decorateRef;
   }
 
-  private createInjector(decorateRef: DecorateOverlayRef, config: DialogConfig): Injector {
+  private createInjector(decorateRef: DecorateOverlayRef, dialogConfig: DialogConfig): Injector {
     return Injector.create({
       providers: [
         { provide: DecorateOverlayRef, useValue: decorateRef }, // 是Class, 有實體
-        { provide: DIALOG_PROVIDER, useValue: config }, // 因為是interface, 因此要創token
+        { provide: DIALOG_PROVIDER, useValue: dialogConfig }, // 因為是interface, 因此要創token
       ],
       parent: this.#injector,
-      name: config.name,
+      name: dialogConfig.name,
     });
   }
 }

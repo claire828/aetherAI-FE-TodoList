@@ -1,18 +1,18 @@
 import { OverlayRef, PositionStrategy } from '@angular/cdk/overlay';
 
 export class DecorateOverlayRef {
-  #overlayRef: OverlayRef;
+  public overlayRef: OverlayRef;
   constructor(overlay: OverlayRef) {
-    this.#overlayRef = overlay;
+    this.overlayRef = overlay;
   }
 
   public updatePosition(strategy: PositionStrategy): void {
-    this.#overlayRef.updatePositionStrategy(strategy);
-    this.#overlayRef.updatePosition();
+    this.overlayRef.updatePositionStrategy(strategy);
+    this.overlayRef.updatePosition();
   }
 
   public close(): void {
-    this.#overlayRef.dispose();
+    this.overlayRef.dispose();
   }
 
   public test(): void {

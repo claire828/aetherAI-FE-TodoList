@@ -1,7 +1,6 @@
-import { Observer } from 'rxjs';
+import { OverlayConfig } from '@angular/cdk/overlay';
 import { DialogBtnDisplay } from './dialog-btn-display.enum';
 import { DialogCategory } from './dialog-category.enum';
-import { DialogEvent } from './dialog-event.enum';
 import { Type } from '@angular/core';
 
 export interface DialogConfig<T = unknown> {
@@ -9,6 +8,6 @@ export interface DialogConfig<T = unknown> {
   category: DialogCategory;
   btnDisplay: DialogBtnDisplay;
   title: string;
-  content: string | Type<T>; // 還沒用到
-  observer: Observer<DialogEvent>;
+  content: string | Type<T>; // TODO: 還沒用到
+  overlayConfig: OverlayConfig;
 }

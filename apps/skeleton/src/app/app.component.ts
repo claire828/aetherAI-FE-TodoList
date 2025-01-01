@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DialogService, MOCK_CONFIG } from 'web/features/dialog';
+import { DialogService, MOCK_CONFIG, MOCK_CONFIG2 } from 'web/features/dialog';
 
 @Component({
   standalone: true,
@@ -12,9 +12,10 @@ import { DialogService, MOCK_CONFIG } from 'web/features/dialog';
 export class AppComponent {
   title = 'skeleton';
 
-  // TODO: 拔掉
+  // TODO: 拔掉Mock. 呼叫openDialog就能收到回傳資料做事情了
   constructor() {
     const service = inject(DialogService);
     service.openDialog(MOCK_CONFIG);
+    service.openDialog(MOCK_CONFIG2);
   }
 }

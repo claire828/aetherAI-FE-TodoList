@@ -8,7 +8,7 @@ import {
 import { DecorateOverlayRef } from './decorate-overlay-ref';
 import { generateGlobalCenterPosition } from './position-builder';
 
-interface RefMap {
+export interface RefMap {
   overlayRef: OverlayRef;
   decorateRef: DecorateOverlayRef;
 }
