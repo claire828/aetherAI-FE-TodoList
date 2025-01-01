@@ -11,8 +11,8 @@ export default defineConfig({
         production: 'npx nx run skeleton:serve-static',
       },
       ciWebServerCommand: 'npx nx run skeleton:serve-static',
-      ciBaseUrl: 'http://localhost:4200',
+      ciBaseUrl: 'http://localhost:4300',
     }),
-    baseUrl: 'http://localhost:4200',
+    baseUrl: 'http://localhost:4300',
   },
 });

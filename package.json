@@ -8,7 +8,7 @@
     "start": "nx serves",
     "build": "nx build",
     "test": "npx nx affected:test",
-    "skeleton": "ng serve skeleton --port 4200 --hmr=true ",
+    "skeleton": "ng serve skeleton --port 4300 --hmr=true ",
     "json-server": "json-server --watch db.json",
     "generate-icons": "svg-generator",
     "graph": "nx graph"

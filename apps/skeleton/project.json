@@ -56,7 +56,8 @@
           "buildTarget": "skeleton:build:production"
         },
         "development": {
-          "buildTarget": "skeleton:build:development"
+          "buildTarget": "skeleton:build:development",
+          "port": 4300
         }
       },
       "defaultConfiguration": "development"
@@ -81,7 +82,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "skeleton:build",
-        "port": 4200,
+        "port": 4300,
         "staticFilePath": "dist/apps/skeleton/browser",
         "spa": true
       }

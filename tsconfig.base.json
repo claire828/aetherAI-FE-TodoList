@@ -10,37 +10,23 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "esModuleInterop": true,
     "paths": {
-      "@monorepo/web/settings/hmr": [
-        "libs/web/settings/hmr/src/index.ts"
-      ],
+      "@monorepo/web/settings/hmr": ["libs/web/settings/hmr/src/index.ts"],
       "@monorepo/web/shared/data-access/models": [
         "libs/web/shared/data-access/models/src/index.ts"
       ],
       "@monorepo/web/shared/directives": [
         "libs/web/shared/directives/src/index.ts"
       ],
-      "@monorepo/web/shared/pipes": [
-        "libs/web/shared/pipes/src/index.ts"
-      ],
-      "@monorepo/web/utils": [
-        "libs/web/utils/src/index.ts"
-      ],
-      "web/features/dialog": [
-        "libs/web/features/dialog/src/index.ts"
-      ]
+      "@monorepo/web/shared/pipes": ["libs/web/shared/pipes/src/index.ts"],
+      "@monorepo/web/utils": ["libs/web/utils/src/index.ts"],
+      "web/features/dialog": ["libs/web/features/dialog/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

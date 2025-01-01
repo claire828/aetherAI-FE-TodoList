@@ -1,7 +1,8 @@
-const { createGlobPatternsForDependencies } = require('@nrwl/angular/tailwind');
 const { join } = require('path');
+const { createGlobPatternsForDependencies } = require('@nx/angular/tailwind');
 const sharedTailwindConfig = require('../../libs/tailwind-preset/tailwind.config');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   presets: [sharedTailwindConfig],
   content: [
@@ -9,12 +10,6 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {
-      width: {
-        homesm: '340px',
-        homemd: '600px',
-        homelg: '1000px'
-      },
-    },
+    extend: {},
   },
 };
