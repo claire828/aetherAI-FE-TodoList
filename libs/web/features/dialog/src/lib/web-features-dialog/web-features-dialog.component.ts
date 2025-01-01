@@ -1,6 +1,8 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DecorateOverlayRef } from '../utils';
+import { DIALOG_PROVIDER } from '../default-configs';
+import { DialogConfig } from '../models';
 
 @Component({
   selector: 'web-features-dialog',
@@ -11,8 +13,9 @@ import { DecorateOverlayRef } from '../utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WebFeaturesDialogComponent {
-  constructor(private ref: DecorateOverlayRef) {
+  constructor(private ref: DecorateOverlayRef, @Inject(DIALOG_PROVIDER) public config: DialogConfig) {
   }
+
 
   public close() {
     this.ref.close();

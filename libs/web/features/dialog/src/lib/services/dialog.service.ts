@@ -5,7 +5,7 @@ import { DecorateRefBuilder, createRefBuilder } from '../utils';
 import { DecorateOverlayRef } from '../utils/decorate-overlay-ref';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { WebFeaturesDialogComponent } from '../web-features-dialog/web-features-dialog.component';
-import { DEFAULT_OVERLAY_CONFIG } from '../default-configs';
+import { DEFAULT_OVERLAY_CONFIG, DIALOG_PROVIDER } from '../default-configs';
 
 @Injectable({ providedIn: 'root' })
 export class DialogService {
@@ -25,8 +25,8 @@ export class DialogService {
   private createInjector(decorateRef: DecorateOverlayRef, config: DialogConfig): Injector {
     return Injector.create({
       providers: [
-        { provide: DecorateOverlayRef, useValue: decorateRef },
-        // TODO: 要加入config
+        { provide: DecorateOverlayRef, useValue: decorateRef }, // 是Class, 有實體
+        { provide: DIALOG_PROVIDER, useValue: config }, // 因為是interface, 因此要創token
       ],
       parent: this.#injector,
       name: config.name,

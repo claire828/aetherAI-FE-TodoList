@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DialogBtnDisplay, DialogCategory, DialogService } from 'web/features/dialog';
+import { DialogService, MOCK_CONFIG } from 'web/features/dialog';
 
 @Component({
   standalone: true,
@@ -11,19 +11,10 @@ import { DialogBtnDisplay, DialogCategory, DialogService } from 'web/features/di
 })
 export class AppComponent {
   title = 'skeleton';
+
+  // TODO: 拔掉
   constructor() {
     const service = inject(DialogService);
-    service.openDialog({
-      name: 'test',
-      category: DialogCategory.Default,
-      btnDisplay: DialogBtnDisplay.EnterCancel,
-      title: 'test',
-      content: 'test',
-      observer: {
-        next: () => {},
-        error: () => {},
-        complete: () => {},
-      },
-    });
+    service.openDialog(MOCK_CONFIG);
   }
 }
