@@ -6,7 +6,8 @@ import {
 } from '@angular/cdk/overlay';
 import { DecorateOverlayRef } from './decorate-overlay-ref';
 import { generateGlobalCenterPosition } from './position-builder';
-import { Injector, Provider, StaticProvider } from '@angular/core';
+import { Injector } from '@angular/core';
+import { ProviderTypes } from '../models';
 
 /**
  * Type definition for a function that decorates a reference builder.
@@ -49,17 +50,15 @@ export function createRefBuilder(
  * @param providers - The providers to include in the injector.
  * @returns The created injector.
  */
-export function createRefInjector
-  (injector: Injector,
-    name: string,
-    decorateRef: DecorateOverlayRef,
-    providers: Array<Provider | StaticProvider> = []): Injector {
-  return Injector.create({
-    providers: [
-      { provide: DecorateOverlayRef, useValue: decorateRef },
-      ...providers,
-    ],
-    parent: injector,
-    name,
-  });
+export function createRefInjector(injector: Injector) {
+  return (name: string, decorateRef: DecorateOverlayRef, providers: ProviderTypes = []): Injector => {
+    return Injector.create({
+      providers: [
+        { provide: DecorateOverlayRef, useValue: decorateRef },
+        ...providers,
+      ],
+      parent: injector,
+      name,
+    });
+  };
 }

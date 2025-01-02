@@ -1,5 +1,5 @@
 import { OverlayConfig } from "@angular/cdk/overlay";
-import { DialogBtnDisplay, DialogCategory, DialogConfig } from "../models";
+import { DialogComponentConfig } from "../models";
 import { WebFeaturesDialogComponent } from "../web-features-dialog/web-features-dialog.component";
 
 export const DEFAULT_OVERLAY_CONFIG: OverlayConfig = {
@@ -8,20 +8,14 @@ export const DEFAULT_OVERLAY_CONFIG: OverlayConfig = {
   panelClass: [],
 };
 
-export const MOCK_CONFIG: DialogConfig = {
+export const MOCK_CONFIG: DialogComponentConfig = {
   name: 'Dialog Name',
-  category: DialogCategory.Default,
-  btnDisplay: DialogBtnDisplay.EnterCancel,
-  title: 'Dialog Title',
   componentRef: () => WebFeaturesDialogComponent,
   overlayConfig: DEFAULT_OVERLAY_CONFIG,
 }
 
-export const MOCK_CONFIG2: DialogConfig = {
+export const MOCK_CONFIG2: DialogComponentConfig = {
   name: 'Dialog Name2',
-  category: DialogCategory.Default,
-  btnDisplay: DialogBtnDisplay.EnterCancel,
-  title: 'Dialog Title2',
   componentRef: () => WebFeaturesDialogComponent,
   overlayConfig: DEFAULT_OVERLAY_CONFIG,
 }

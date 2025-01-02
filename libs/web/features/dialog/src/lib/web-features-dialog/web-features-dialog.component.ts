@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, Inject, Input } from '@angular/core
 import { CommonModule } from '@angular/common';
 import { DecorateOverlayRef } from '../utils';
 import { DIALOG_PROVIDER } from '../default-configs';
-import { DialogConfig } from '../models';
+import { DialogComponentConfig } from '../models';
 
 @Component({
   selector: 'web-features-dialog',
@@ -14,7 +14,7 @@ import { DialogConfig } from '../models';
 })
 export class WebFeaturesDialogComponent {
   @Input() public content: string | undefined;
-  constructor(private ref: DecorateOverlayRef, @Inject(DIALOG_PROVIDER) public config: DialogConfig) {
+  constructor(private ref: DecorateOverlayRef, @Inject(DIALOG_PROVIDER) public config: DialogComponentConfig) {
   }
 
 

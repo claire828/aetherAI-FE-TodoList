@@ -9,6 +9,7 @@ export class DecorateOverlayRef {
   constructor(overlay: OverlayRef, hasBackdrop: boolean = true) {
     this.overlayRef = overlay;
     if (hasBackdrop) {
+      // TODO: close 的話等於取消，這邊繼續做把事件傳出去。 製作按鈕按下後，通知enter / close and send 資料。
       this.overlayRef.backdropClick().subscribe(() => this.close());
     }
   }

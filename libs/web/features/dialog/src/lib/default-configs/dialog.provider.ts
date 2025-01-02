@@ -1,4 +1,4 @@
 import { InjectionToken } from "@angular/core";
-import { DialogConfig } from "../models";
+import { DialogComponentConfig } from "../models";
 
-export const DIALOG_PROVIDER = new InjectionToken<DialogConfig>('DIALOG_CONFIG_PROVIDER');
+export const DIALOG_PROVIDER = new InjectionToken<DialogComponentConfig>('DIALOG_CONFIG_PROVIDER');

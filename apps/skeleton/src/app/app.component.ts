@@ -15,7 +15,7 @@ export class AppComponent {
   // TODO: 拔掉Mock. 呼叫openDialog就能收到回傳資料做事情了
   constructor() {
     const service = inject(DialogService);
-    service.openCustomizeDialog(MOCK_CONFIG);
-    service.openCustomizeDialog(MOCK_CONFIG2);
+    service.openComponentDialog(MOCK_CONFIG);
+    service.openComponentDialog(MOCK_CONFIG2);
   }
 }
