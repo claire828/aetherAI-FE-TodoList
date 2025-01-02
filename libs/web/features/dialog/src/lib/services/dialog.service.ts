@@ -1,10 +1,11 @@
-import { inject, Injectable, Injector } from '@angular/core';
+import { inject, Injectable, Injector, Provider, StaticProvider } from '@angular/core';
 import { DialogConfig } from '../models';
 import { Overlay, OverlayPositionBuilder } from '@angular/cdk/overlay';
-import { DecorateRefBuilder, createRefBuilder } from '../utils';
+import { DecorateRefBuilder, createRefBuilder, createRefInjector } from '../utils';
 import { DecorateOverlayRef } from '../utils/decorate-overlay-ref';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { DIALOG_PROVIDER } from '../default-configs';
+import { WebFeaturesDialogComponent } from '../web-features-dialog/web-features-dialog.component';
 
 @Injectable({ providedIn: 'root' })
 export class DialogService {
@@ -13,27 +14,26 @@ export class DialogService {
 
   constructor() { }
 
-  // TODO: 製作按鈕按下後，通知enter / close and send 資料。
-  // 分清楚custom or default.
-  public openDialog(dialogConfig: DialogConfig): DecorateOverlayRef {
+  public openCustomizeDialog(dialogConfig: DialogConfig): DecorateOverlayRef {
     const decorateRef = this.#refBuilder(dialogConfig.overlayConfig);
-    const injector = this.createInjector(decorateRef, dialogConfig);
+    // 因為是interface, 因此要創token (這一個拔出去，因為給custom使用)
+    const dialogProvider = { provide: DIALOG_PROVIDER, useValue: dialogConfig };
+    const injector = createRefInjector(this.#injector, dialogConfig.name, decorateRef, [dialogProvider]);
     const portal = new ComponentPortal(dialogConfig.componentRef(), null, injector);
     decorateRef.attachPortal(portal);
     return decorateRef;
   }
 
-  // 拔出去的原因是因為要讓DialogComponent可以使用到DialogService
-  private createInjector(decorateRef: DecorateOverlayRef, dialogConfig: DialogConfig): Injector {
-    return Injector.create({
-      providers: [
-        { provide: DecorateOverlayRef, useValue: decorateRef }, // 是Class, 有實體
-        { provide: DIALOG_PROVIDER, useValue: dialogConfig }, // 因為是interface, 因此要創token
-      ],
-      parent: this.#injector,
-      name: dialogConfig.name,
-    });
+  public openDefaultDialog(dialogConfig: DialogConfig): DecorateOverlayRef {
+    const decorateRef = this.#refBuilder(dialogConfig.overlayConfig);
+    const injector = createRefInjector(this.#injector, dialogConfig.name, decorateRef, []);
+    const portal = new ComponentPortal(WebFeaturesDialogComponent, null, injector);
+    decorateRef.attachPortal(portal);
+    decorateRef.updateInput('content', 'mes');
+    return decorateRef;
   }
+
+
 }
 
 
