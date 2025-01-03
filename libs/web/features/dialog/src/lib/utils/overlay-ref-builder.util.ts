@@ -4,8 +4,8 @@ import {
   OverlayPositionBuilder,
   PositionStrategy,
 } from '@angular/cdk/overlay';
-import { DecorateOverlayRef } from './decorate-overlay-ref';
-import { generateGlobalCenterPosition } from './position-builder';
+import { DecorateOverlayRef } from '../decorate-overlay-ref';
+import { generateGlobalCenterPosition } from './overlay-position-builder.util';
 import { Injector } from '@angular/core';
 import { ProviderTypes } from '../providers/dialog.provider';
 
@@ -18,6 +18,7 @@ import { ProviderTypes } from '../providers/dialog.provider';
  */
 export type DecorateRefBuilder = (
   config: OverlayConfig,
+  autoClose?: boolean,
   positionStrategy?: PositionStrategy
 ) => DecorateOverlayRef;
 
@@ -33,10 +34,10 @@ export function createRefBuilder(
   builder: OverlayPositionBuilder,
   overlay: Overlay
 ): DecorateRefBuilder {
-  return (config, positionStrategy = generateGlobalCenterPosition(builder)) => {
-    const overlayConfig = { ...config, positionStrategy };
+  return (overlayConfig, autoClose = true, positionStrategy = generateGlobalCenterPosition(builder)) => {
+    overlayConfig = { ...overlayConfig, positionStrategy };
     const overlayRef = overlay.create(overlayConfig);
-    return new DecorateOverlayRef(overlayRef, config.hasBackdrop);
+    return new DecorateOverlayRef(overlayRef, autoClose, overlayConfig.hasBackdrop);
   };
 }
 

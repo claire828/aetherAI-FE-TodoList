@@ -1,5 +1,5 @@
 export enum DialogEvent {
-  Enter,
-  Cancel,
-  BackdropClick
+  Enter = "Enter",
+  Cancel = "Cancel",
+  BackdropClick = "BackdropClick",
 }

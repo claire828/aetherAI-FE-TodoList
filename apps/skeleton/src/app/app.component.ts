@@ -11,11 +11,16 @@ import { DialogService, MOCK_CONFIG, MOCK_CONFIG2 } from 'web/features/dialog';
 })
 export class AppComponent {
 
-  constructor() { this.showDialog(); }
+  constructor() { }
 
   public showDialog() {
     const service = inject(DialogService);
-    service.openDefaultDialog(MOCK_CONFIG);
-    // service.openComponentDialog(MOCK_CONFIG2);
+    const ref = service.openDefaultDialog(MOCK_CONFIG);
+    const subscription = ref.event$.subscribe((event) => {
+      console.log(event);
+      ref.close();
+      subscription.unsubscribe();
+    });
+    service.openComponentDialog(MOCK_CONFIG2);
   }
 }
