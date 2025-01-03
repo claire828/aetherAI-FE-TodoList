@@ -1,8 +1,8 @@
-import { Component, ChangeDetectionStrategy, Inject, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DecorateOverlayRef } from '../utils';
 import { DIALOG_PROVIDER } from '../default-configs';
-import { DialogComponentConfig } from '../models';
+import { DefaultDialogConfig, DialogBtnDisplay } from '../models';
 
 @Component({
   selector: 'web-features-dialog',
@@ -13,12 +13,19 @@ import { DialogComponentConfig } from '../models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WebFeaturesDialogComponent {
-  @Input() public content: string | undefined;
-  constructor(private ref: DecorateOverlayRef, @Inject(DIALOG_PROVIDER) public config: DialogComponentConfig) {
+  constructor(private ref: DecorateOverlayRef,
+    @Inject(DIALOG_PROVIDER) public config: DefaultDialogConfig) {
   }
 
+  public get dialogBtnDisplay() {
+    return DialogBtnDisplay;
+  }
 
   public close() {
+    this.ref.close();
+  }
+
+  public enter() {
     this.ref.close();
   }
 }

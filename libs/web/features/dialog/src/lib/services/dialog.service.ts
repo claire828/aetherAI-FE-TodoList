@@ -9,18 +9,17 @@ import { WebFeaturesDialogComponent } from '../web-features-dialog/web-features-
 
 @Injectable({ providedIn: 'root' })
 export class DialogService {
-  #injector: Injector = inject(Injector);
   #refBuilder: DecorateRefBuilder = createRefBuilder(inject(OverlayPositionBuilder), inject(Overlay));
-  #refInjector = createRefInjector(this.#injector);
+  #refInjector = createRefInjector(inject(Injector));
   constructor() { }
 
-  public openDefaultDialog(dialogConfig: DefaultDialogConfig): DecorateOverlayRef {
-    return this.createDialog(dialogConfig, WebFeaturesDialogComponent);
+  public openDefaultDialog(config: DefaultDialogConfig): DecorateOverlayRef {
+    const dialogProvider = { provide: DIALOG_PROVIDER, useValue: config };
+    return this.createDialog(config, WebFeaturesDialogComponent, [dialogProvider]);
   }
 
-  public openComponentDialog(dialogConfig: DialogComponentConfig): DecorateOverlayRef {
-    const dialogProvider = { provide: DIALOG_PROVIDER, useValue: dialogConfig };
-    return this.createDialog(dialogConfig, dialogConfig.componentRef(), [dialogProvider]);
+  public openComponentDialog(config: DialogComponentConfig, providers: ProviderTypes = []): DecorateOverlayRef {
+    return this.createDialog(config, config.componentRef(), providers);
   }
 
   private createDialog<T extends DialogType, C>(
@@ -32,8 +31,6 @@ export class DialogService {
     decorateRef.attachPortal(portal);
     return decorateRef;
   }
-
-
 
 }
 
