@@ -26,10 +26,7 @@ export class WebFeaturesDialogComponent {
 
   public sendEvent(event: DialogEvent) {
     this.ref.sendEvent(event);
-    this.close();
-  }
-
-  public close() {
     this.ref.close();
   }
+
 }

@@ -1,9 +1,9 @@
-import { DialogBtn } from '../models';
+import { DialogBtnSetting, DialogEvent } from '../models';
 
-export const DefaultEnterSetting = [{ type: DialogBtn.Enter, displayName: 'Enter' }];
-export const DefaultCloseSetting = [{ type: DialogBtn.Cancel, displayName: 'Close' }];
+export const DefaultEnterSetting: DialogBtnSetting[] = [{ type: DialogEvent.Enter, displayName: 'Enter' }];
+export const DefaultCloseSetting: DialogBtnSetting[] = [{ type: DialogEvent.Cancel, displayName: 'Close' }];
 
-export const DefaultEnterCloseSetting = [
+export const DefaultEnterCloseSetting: DialogBtnSetting[] = [
   ...DefaultEnterSetting,
   ...DefaultCloseSetting
 ];
