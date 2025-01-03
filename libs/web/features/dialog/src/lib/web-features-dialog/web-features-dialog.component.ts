@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DecorateOverlayRef } from '../utils';
-import { DIALOG_PROVIDER } from '../default-configs';
+import { DIALOG_DEFAULT_PROVIDER } from '../default-configs';
 import { DefaultDialogConfig, DialogBtnDisplay } from '../models';
 
 @Component({
@@ -14,7 +14,7 @@ import { DefaultDialogConfig, DialogBtnDisplay } from '../models';
 })
 export class WebFeaturesDialogComponent {
   constructor(private ref: DecorateOverlayRef,
-    @Inject(DIALOG_PROVIDER) public config: DefaultDialogConfig) {
+    @Inject(DIALOG_DEFAULT_PROVIDER) public config: DefaultDialogConfig) {
   }
 
   public get dialogBtnDisplay() {
