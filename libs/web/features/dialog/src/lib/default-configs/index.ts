@@ -1,2 +1,2 @@
-export * from './dialog-config.const';
+export * from './overlay-config.const';
 export * from './dialog.provider';
