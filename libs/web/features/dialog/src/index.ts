@@ -3,4 +3,5 @@ export * from './lib/models';
 export * from './lib/services';
 export * from './lib/utils';
 export * from './lib/default-configs';
-export * from './lib/mock';
+export * from './lib/mocks';
+export * from './lib/providers';

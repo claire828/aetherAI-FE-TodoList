@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WebFeaturesDialogComponent } from './web-features-dialog.component';
 import { DecorateOverlayRef } from '../utils';
-import { DIALOG_DEFAULT_PROVIDER } from '../default-configs';
+import { DIALOG_DEFAULT_PROVIDER } from '../providers';
+
 
 describe('WebFeaturesDialogComponent', () => {
   let component: WebFeaturesDialogComponent;

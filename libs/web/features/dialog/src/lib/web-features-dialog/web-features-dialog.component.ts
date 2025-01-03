@@ -1,8 +1,8 @@
 import { Component, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DecorateOverlayRef } from '../utils';
-import { DIALOG_DEFAULT_PROVIDER } from '../default-configs';
 import { DefaultDialogConfig, DialogBtnDisplay } from '../models';
+import { DIALOG_DEFAULT_PROVIDER } from '../providers';
 
 @Component({
   selector: 'web-features-dialog',

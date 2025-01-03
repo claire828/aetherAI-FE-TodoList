@@ -4,8 +4,8 @@ import { Overlay, OverlayPositionBuilder } from '@angular/cdk/overlay';
 import { DecorateRefBuilder, createRefBuilder, createRefInjector } from '../utils';
 import { DecorateOverlayRef } from '../utils/decorate-overlay-ref';
 import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
-import { DIALOG_COMPONENT_PROVIDER, DIALOG_DEFAULT_PROVIDER, ProviderTypes } from '../default-configs';
 import { WebFeaturesDialogComponent } from '../web-features-dialog/web-features-dialog.component';
+import { DIALOG_DEFAULT_PROVIDER, ProviderTypes, DIALOG_COMPONENT_PROVIDER } from '../providers';
 
 @Injectable({ providedIn: 'root' })
 /**

@@ -7,7 +7,7 @@ import {
 import { DecorateOverlayRef } from './decorate-overlay-ref';
 import { generateGlobalCenterPosition } from './position-builder';
 import { Injector } from '@angular/core';
-import { ProviderTypes } from '../default-configs/dialog.provider';
+import { ProviderTypes } from '../providers/dialog.provider';
 
 /**
  * Type definition for a function that decorates a reference builder.
