@@ -3,8 +3,8 @@
     <div class="mt-4 w-full h-full text-sm"> {{config.content}}</div>
 
     <div class=" flex justify-center items-center p-2 gap-4">
-        <button class="outline-none text-base border px-2 py-1 rounded-md border-red-400 bg-pink-200 transition-colors hover:bg-pink-300 " (click)="enter()">enter</button>
-        <button *ngIf="config.btnDisplay === dialogBtnDisplay.EnterCancel" class="outline-none text-base border px-2 py-1 rounded-md border-blue-400 transition-colors bg-blue-300 hover:bg-blue-500 " (click)="close()">close</button>
+        <button *ngIf="config.btns[0].type === dialogBtnDisplay.Enter" class="outline-none text-base border px-2 py-1 rounded-md border-red-400 bg-pink-200 transition-colors hover:bg-pink-300 " (click)="sendEvent(dialogEvent.Enter)">enter</button>
+        <button class="outline-none text-base border px-2 py-1 rounded-md border-blue-400 transition-colors bg-blue-300 hover:bg-blue-500 " (click)="sendEvent(dialogEvent.Cancel)">close</button>
     </div>
    
 </div>

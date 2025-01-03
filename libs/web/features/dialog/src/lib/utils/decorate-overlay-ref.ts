@@ -1,9 +1,14 @@
 import { OverlayRef, PositionStrategy } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { ComponentRef } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { DialogEvent } from '../models';
 
 export class DecorateOverlayRef {
   public overlayRef: OverlayRef;
+  #eventEmitterSubject: Subject<DialogEvent> = new Subject<DialogEvent>();
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  public event$: Observable<DialogEvent> = this.#eventEmitterSubject;
   #componentRef: ComponentRef<any> | undefined;
 
   constructor(overlay: OverlayRef, hasBackdrop: boolean = true) {
@@ -27,6 +32,10 @@ export class DecorateOverlayRef {
   public updatePosition(strategy: PositionStrategy): void {
     this.overlayRef.updatePositionStrategy(strategy);
     this.overlayRef.updatePosition();
+  }
+
+  public sendEvent(event: DialogEvent): void {
+    this.#eventEmitterSubject.next(event);
   }
 
   public close(): void {

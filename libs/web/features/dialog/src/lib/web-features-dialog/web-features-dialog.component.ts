@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DecorateOverlayRef } from '../utils';
-import { DefaultDialogConfig, DialogBtnDisplay } from '../models';
+import { DefaultDialogConfig, DialogBtn, DialogEvent } from '../models';
 import { DIALOG_DEFAULT_PROVIDER } from '../providers';
 
 @Component({
@@ -17,15 +17,19 @@ export class WebFeaturesDialogComponent {
     @Inject(DIALOG_DEFAULT_PROVIDER) public config: DefaultDialogConfig) {
   }
 
-  public get dialogBtnDisplay() {
-    return DialogBtnDisplay;
+  public get dialogBtnDisplay(): typeof DialogBtn {
+    return DialogBtn;
+  }
+  public get dialogEvent(): typeof DialogEvent {
+    return DialogEvent;
+  }
+
+  public sendEvent(event: DialogEvent) {
+    this.ref.sendEvent(event);
+    this.close();
   }
 
   public close() {
-    this.ref.close();
-  }
-
-  public enter() {
     this.ref.close();
   }
 }

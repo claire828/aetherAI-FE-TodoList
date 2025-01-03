@@ -1,6 +1,6 @@
 
 import { ComponentType } from '@angular/cdk/portal';
-import { DialogBtnDisplay } from './dialog-btn-display.enum';
+import { DialogBtn } from './dialog-btn.enum';
 import { OverlayConfig } from '@angular/cdk/overlay';
 
 /**
@@ -19,11 +19,17 @@ export interface DialogComponentConfig<T = unknown, D = unknown> {
 
 export interface DefaultDialogConfig {
   name: string;
-  content: string;
-  btnDisplay: DialogBtnDisplay;
   title: string;
+  content: string;
+  btns: DialogBtnSetting[],
   overlayConfig: OverlayConfig;
 };
+
+
+export interface DialogBtnSetting {
+  type: DialogBtn;
+  displayName: string;
+}
 
 
 /**
