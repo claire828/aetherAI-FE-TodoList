@@ -5,7 +5,6 @@ import { filter, Observable, Subject, takeUntil, tap } from 'rxjs';
 import { DialogEvent } from './models';
 
 export class DecorateOverlayRef {
-  public overlayRef: OverlayRef;
   #eventEmitterSubject: Subject<DialogEvent> = new Subject<DialogEvent>();
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -13,17 +12,15 @@ export class DecorateOverlayRef {
   #destroySubject: Subject<boolean> = new Subject<boolean>();
   #componentRef: ComponentRef<any> | undefined;
 
-  constructor(overlay: OverlayRef, private autoClose: boolean, hasBackdrop: boolean = true) {
-    this.overlayRef = overlay;
-    if (hasBackdrop) {
-      this.overlayRef.backdropClick().pipe(
-        takeUntil(this.#destroySubject),
-        tap(() => this.sendEvent(DialogEvent.BackdropClick)),
-        filter(() => this.autoClose),
-        tap(() => this.close())
-      )
-        .subscribe();
-    }
+  constructor(private overlayRef: OverlayRef, private autoClose: boolean) {
+    this.overlayRef.backdropClick().pipe(
+      takeUntil(this.#destroySubject),
+      tap(() => this.sendEvent(DialogEvent.BackdropClick)),
+      filter(() => this.autoClose),
+      tap(() => this.close())
+    )
+      .subscribe();
+
   }
 
   public updateInput<T>(input: string, value: T): void {

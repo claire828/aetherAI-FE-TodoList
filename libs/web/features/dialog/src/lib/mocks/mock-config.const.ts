@@ -4,7 +4,7 @@ import { DialogComponentConfig, DefaultDialogConfig, DialogEvent } from "../mode
 import { WebFeatureMockComponent } from "../web-features-mock/web-features-mock.component";
 
 export const MOCK_CONFIG: DefaultDialogConfig = {
-  name: 'a1',
+  injectorID: 'a1',
   title: 'Dialog Default Title',
   content: 'Dialog Content',
   btns: [
@@ -23,7 +23,7 @@ export const MOCK_CONFIG: DefaultDialogConfig = {
 }
 
 export const MOCK_CONFIG2: DialogComponentConfig = {
-  name: 'a2',
+  injectorID: 'a2',
   componentRef: () => WebFeatureMockComponent,
   overlayConfig: DEFAULT_OVERLAY_CONFIG,
   data: {

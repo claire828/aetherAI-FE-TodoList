@@ -72,8 +72,9 @@ export class DialogService {
   private createDialog<T extends DialogType, C>(
     dialogConfig: T, component: ComponentType<C>, providers: ProviderTypes = []
   ): DecorateOverlayRef {
-    const decorateRef = this.#refBuilder(dialogConfig.overlayConfig);
-    const injector = this.#refInjector(dialogConfig.name, decorateRef, providers);
+    const { overlayConfig, autoClose, injectorID } = dialogConfig;
+    const decorateRef = this.#refBuilder(overlayConfig, autoClose);
+    const injector = this.#refInjector(injectorID, decorateRef, providers);
     const portal = new ComponentPortal(component, null, injector);
     decorateRef.attachPortal(portal);
     return decorateRef;
@@ -82,7 +83,6 @@ export class DialogService {
 }
 
 
-// classes ?: string | string[] | Set<string> | { [className: string]: any };
 //  contentFactory: (contentContainerRef: ViewContainerRef) => void;
 // <ng-container *sharedContentContainer="widget.contentFactory"></ng-container>
 // protected override createContentFactory(): (contentContainerRef: ViewContainerRef) => void {

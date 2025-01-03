@@ -18,7 +18,7 @@ export class AppComponent {
     const ref = service.openDefaultDialog(MOCK_CONFIG);
     const subscription = ref.event$.subscribe((event) => {
       console.log(event);
-      ref.close();
+      // ref.close();
       subscription.unsubscribe();
     });
     service.openComponentDialog(MOCK_CONFIG2);

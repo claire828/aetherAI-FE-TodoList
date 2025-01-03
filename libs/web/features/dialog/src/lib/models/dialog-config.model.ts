@@ -10,19 +10,21 @@ import { DialogEvent } from './dialog-event.enum';
  * @template D - The type of the data passed to the component.
  */
 export interface DialogComponentConfig<T = unknown, D = unknown> {
-  name: string;
+  injectorID: string;
   componentRef: () => ComponentType<T>;
   overlayConfig: OverlayConfig;
+  autoClose?: boolean;
   data?: D;
 }
 
 
 export interface DefaultDialogConfig {
-  name: string;
+  injectorID: string;
   title: string;
   content: string;
   btns: DialogBtnSetting[],
   overlayConfig: OverlayConfig;
+  autoClose?: boolean;
 };
 
 

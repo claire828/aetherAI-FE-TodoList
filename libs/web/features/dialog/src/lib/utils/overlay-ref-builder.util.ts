@@ -37,7 +37,7 @@ export function createRefBuilder(
   return (overlayConfig, autoClose = true, positionStrategy = generateGlobalCenterPosition(builder)) => {
     overlayConfig = { ...overlayConfig, positionStrategy };
     const overlayRef = overlay.create(overlayConfig);
-    return new DecorateOverlayRef(overlayRef, autoClose, overlayConfig.hasBackdrop);
+    return new DecorateOverlayRef(overlayRef, autoClose);
   };
 }
 
