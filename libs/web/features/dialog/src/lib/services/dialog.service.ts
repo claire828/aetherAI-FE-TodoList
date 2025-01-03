@@ -7,7 +7,6 @@ import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
 import { WebFeaturesDialogComponent } from '../web-features-dialog/web-features-dialog.component';
 import { DIALOG_DEFAULT_PROVIDER, ProviderTypes, DIALOG_COMPONENT_PROVIDER } from '../providers';
 
-@Injectable({ providedIn: 'root' })
 /**
  * Service to manage and open dialog overlays in the application.
  *
@@ -29,29 +28,30 @@ import { DIALOG_DEFAULT_PROVIDER, ProviderTypes, DIALOG_COMPONENT_PROVIDER } fro
  *
  * @publicApi
  */
+@Injectable({ providedIn: 'root' })
 export class DialogService {
   #refBuilder: DecorateRefBuilder = createRefBuilder(inject(OverlayPositionBuilder), inject(Overlay));
   #refInjector = createRefInjector(inject(Injector));
   constructor() { }
 
   /**
- * Opens a default dialog with the specified configuration.
- *
- * @param {DefaultDialogConfig} config - The configuration object for the default dialog.
- * @returns {DecorateOverlayRef} - A reference to the created dialog overlay.
- */
+   * Opens a default dialog with the specified configuration.
+   *
+   * @param {DefaultDialogConfig} config - The configuration object for the default dialog.
+   * @returns {DecorateOverlayRef} - A reference to the created dialog overlay.
+   */
   public openDefaultDialog(config: DefaultDialogConfig): DecorateOverlayRef {
     const dialogProvider = { provide: DIALOG_DEFAULT_PROVIDER, useValue: config };
     return this.createDialog(config, WebFeaturesDialogComponent, [dialogProvider]);
   }
 
   /**
- * Opens a component dialog with the specified configuration and providers.
- *
- * @param {DialogComponentConfig} config - The configuration object for the component dialog.
- * @param {ProviderTypes} [providers=[]] - Optional array of providers to be injected into the dialog.
- * @returns {DecorateOverlayRef} - A reference to the created dialog overlay.
- */
+   * Opens a component dialog with the specified configuration and providers.
+   *
+   * @param {DialogComponentConfig} config - The configuration object for the component dialog.
+   * @param {ProviderTypes} [providers=[]] - Optional array of providers to be injected into the dialog.
+   * @returns {DecorateOverlayRef} - A reference to the created dialog overlay.
+   */
   public openComponentDialog(config: DialogComponentConfig, providers: ProviderTypes = []): DecorateOverlayRef {
     const dialogComponentProvider = { provide: DIALOG_COMPONENT_PROVIDER, useValue: config };
     return this.createDialog(config, config.componentRef(), [...providers, dialogComponentProvider]);
@@ -72,14 +72,24 @@ export class DialogService {
   private createDialog<T extends DialogType, C>(
     dialogConfig: T, component: ComponentType<C>, providers: ProviderTypes = []
   ): DecorateOverlayRef {
+    // Sets up the dialog reference, injector, and portal.
     const { overlayConfig, autoClose, injectorID } = dialogConfig;
     const decorateRef = this.#refBuilder(overlayConfig, autoClose);
     const injector = this.#refInjector(injectorID, decorateRef, providers);
     const portal = new ComponentPortal(component, null, injector);
+    return this.attachDialog(decorateRef, portal);
+  }
+
+  /**
+   * Attaches the portal to the dialog reference and returns the dialog reference.
+   * @param {DecorateOverlayRef} decorateRef - The dialog reference.
+   * @param {ComponentPortal<any>} portal - The portal to be attached.
+   * @returns {DecorateOverlayRef} - The dialog reference with the attached portal.
+   */
+  private attachDialog(decorateRef: DecorateOverlayRef, portal: ComponentPortal<any>): DecorateOverlayRef {
     decorateRef.attachPortal(portal);
     return decorateRef;
   }
-
 }
 
 
