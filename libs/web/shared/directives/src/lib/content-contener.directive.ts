@@ -13,7 +13,7 @@ export class ContentContainerDirective {
   }
 }
 
-//  <ng-container *sharedContentContainer="widget.contentFactory"></ng-container> 
+//  <ng-container *sharedContentContainer="widget.contentFactory"></ng-container>
 // protected override createContentFactory(): (contentContainerRef: ViewContainerRef) => void {
 //   return (contentContainerRef: ViewContainerRef) => {
 //     contentContainerRef.createComponent(ZStackSlideWidgetComponent);

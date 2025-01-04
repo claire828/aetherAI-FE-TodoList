@@ -16,13 +16,6 @@
       "prefix": "app",
       "architect": {}
     },
-    "web-data-access-models": {
-      "root": "libs/web/shared/data-access/models",
-      "projectType": "library",
-      "sourceRoot": "libs/web/shared/data-access/models/src",
-      "prefix": "app",
-      "architect": {}
-    },
     "web-shared-directives": {
       "root": "libs/web/shared/directives",
       "projectType": "library",
