@@ -16,25 +16,11 @@
       "prefix": "app",
       "architect": {}
     },
-    "web-shared-directives": {
-      "root": "libs/web/shared/directives",
+    "shared":{
+      "root": "libs/shared",
       "projectType": "library",
-      "sourceRoot": "libs/web/shared/directives/src",
-      "prefix": "app",
-      "architect": {}
-    },
-    "web-shared-pipes": {
-      "root": "libs/web/shared/pipes",
-      "projectType": "library",
-      "sourceRoot": "libs/web/shared/pipes/src",
-      "prefix": "app",
-      "architect": {}
-    },
-    "web-utils": {
-      "root": "libs/web/utils",
-      "projectType": "library",
-      "sourceRoot": "libs/web/utils/src",
-      "prefix": "app",
+      "sourceRoot": "libs/shared/src",
+      "prefix": "shared",
       "architect": {}
     }
   }
