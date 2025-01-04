@@ -1,4 +1,4 @@
-export class WebEventUtil {
+export class WebEvent {
   static Keyboard = {
     Type: {
       KeyPress: 'keypress',

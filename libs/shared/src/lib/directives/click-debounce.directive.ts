@@ -1,10 +1,10 @@
 import { Directive, ElementRef, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { debounceTime, fromEvent } from 'rxjs';
 import { SubSink } from 'subsink';
-import { WebEvent } from 'shared';
+import { WebEvent } from '../types';
 
 @Directive({
-  selector: '[monorepoClickDebounce]',
+  selector: '[sharedClickDebounce]',
 })
 export class ClickDebounceDirective implements OnDestroy {
   @Output() monorepoClickDebounce = new EventEmitter();
