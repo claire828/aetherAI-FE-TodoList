@@ -2,11 +2,14 @@
 import { DEFAULT_OVERLAY_CONFIG } from "../default-configs";
 import { DialogComponentConfig, DefaultDialogConfig, DialogEvent } from "../models";
 import { WebFeatureMockComponent } from "../web-features-mock/web-features-mock.component";
+import { WebFeatureMockNoInjectorComponent } from "../web-features-mock/web-features-mock-no-injector.component";
 
 export const MOCK_CONFIG: DefaultDialogConfig = {
   injectorID: 'a1',
   title: 'Dialog Default Title',
-  content: 'Dialog Content',
+  // content: 'Dialog Content',
+  contentClasses: ['bg-gray-200'],
+  contentComponent: () => WebFeatureMockNoInjectorComponent,
   btns: [
     {
       type: DialogEvent.Enter,

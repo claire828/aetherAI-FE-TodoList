@@ -21,7 +21,9 @@ export interface DialogComponentConfig<T = unknown, D = unknown> {
 export interface DefaultDialogConfig {
   injectorID: string;
   title: string;
-  content: string;
+  content?: string;
+  contentComponent?: () => ComponentType<any>;
+  contentClasses: ClassType;
   btns: DialogBtnSetting[],
   overlayConfig: OverlayConfig;
   autoClose?: boolean;
@@ -31,7 +33,7 @@ export interface DefaultDialogConfig {
 export interface DialogBtnSetting {
   type: DialogEvent;
   displayName: string;
-  classes?: string | string[] | Set<string> | { [className: string]: any };
+  classes?: ClassType;
 }
 
 
@@ -40,3 +42,4 @@ export interface DialogBtnSetting {
  * It can be either a `DialogComponentConfig` or a `DefaultDialogConfig`.
  */
 export type DialogType = DialogComponentConfig | DefaultDialogConfig;
+export type ClassType = string | string[] | Set<string> | { [className: string]: any };
