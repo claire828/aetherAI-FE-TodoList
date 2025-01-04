@@ -9,6 +9,7 @@
     "build": "nx build",
     "test": "npx nx affected:test",
     "skeleton": "ng serve skeleton --port 4300 --hmr=true ",
+    "todolist": "ng serve todolist --port 4305 --hmr=true ",
     "json-server": "json-server --watch db.json",
     "generate-icons": "svg-generator",
     "graph": "nx graph",
