@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 @Component({
   selector: 'lib-todolist',
   standalone: true,
@@ -9,4 +8,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './lib-todolist.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LibTodolistComponent { }
+export class LibTodolistComponent {
+
+  constructor() { }
+
+}
