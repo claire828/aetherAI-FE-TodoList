@@ -24,6 +24,7 @@
       "@monorepo/web/shared/pipes": ["libs/web/shared/pipes/src/index.ts"],
       "@monorepo/web/utils": ["libs/web/utils/src/index.ts"],
       "shared": ["libs/shared/src/index.ts"],
+      "shared-store": ["libs/stores/shared-store/src/index.ts"],
       "web/features/dialog": ["libs/web/features/dialog/src/index.ts"]
     }
   },
