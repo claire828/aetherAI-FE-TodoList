@@ -1,7 +1,7 @@
 import { Directive, ElementRef, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { debounceTime, fromEvent } from 'rxjs';
 import { SubSink } from 'subsink';
-import { WebEvent } from '../types';
+import { WebEvent } from '../events';
 
 @Directive({
   selector: '[sharedClickDebounce]',

@@ -1,1 +1,1 @@
-export * from './web-event';
+export * from './class.type';

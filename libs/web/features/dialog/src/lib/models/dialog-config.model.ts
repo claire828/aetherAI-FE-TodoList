@@ -2,6 +2,7 @@
 import { ComponentType } from '@angular/cdk/portal';
 import { OverlayConfig } from '@angular/cdk/overlay';
 import { DialogEvent } from './dialog-event.enum';
+import { ClassType } from 'shared';
 
 /**
  * Configuration interface for a dialog component.
@@ -42,4 +43,3 @@ export interface DialogBtnSetting {
  * It can be either a `DialogComponentConfig` or a `DefaultDialogConfig`.
  */
 export type DialogType = DialogComponentConfig | DefaultDialogConfig;
-export type ClassType = string | string[] | Set<string> | { [className: string]: any };
