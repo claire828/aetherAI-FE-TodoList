@@ -23,6 +23,7 @@
       "@monorepo/web/shared/directives": ["libs/web/shared/directives/src/index.ts"],
       "@monorepo/web/shared/pipes": ["libs/web/shared/pipes/src/index.ts"],
       "@monorepo/web/utils": ["libs/web/utils/src/index.ts"],
+      "lib-todolist": ["libs/lib-todolist/src/index.ts"],
       "shared": ["libs/shared/src/index.ts"],
       "shared-store": ["libs/stores/shared-store/src/index.ts"],
       "todolist-store": ["libs/stores/todolist-store/src/index.ts"],
