@@ -11,5 +11,5 @@ import { LibTodolistComponent } from 'lib-todolist';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'todolist1';
+
 }
