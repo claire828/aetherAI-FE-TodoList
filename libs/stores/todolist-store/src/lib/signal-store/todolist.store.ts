@@ -1,4 +1,4 @@
-import { patchState, signalStore, withMethods } from '@ngrx/signals';
+import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import {
   addEntities,
   addEntity,
@@ -10,8 +10,18 @@ import {
   withEntities
 } from '@ngrx/signals/entities';
 import { TaskEntity } from '../models';
+import { TodolistState } from '../models/todolist.state';
+
+const initialState: TodolistState = {
+  selectedIds: [],
+}
 
 export const TodolistStore = signalStore(
+  { providedIn: 'root' },
+  // withHooks (life cycle)
+  // withEffects (effects)
+  // withComputed (selector)
+  withState(initialState),
   withEntities<TaskEntity>(),
   withMethods(
     (store) => ({

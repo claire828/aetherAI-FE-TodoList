@@ -1,17 +1,26 @@
-<div class="rounded-md bg-white shadow-lg p-4 w-96 h-64 flex flex-col items-center justify-center">
-    <span class="text-lg h-auto font-medium text-gray-600 w-full h-4 text-center mb-4">{{config.title}}</span>
-    
-    <!-- text section-->
-    <section *ngIf="config.content" class="w-full h-full text-sm {{config.contentClasses}}"> {{config.content}}</section>
-    
+<div class="flex h-64 w-96 flex-col items-center justify-center rounded-md bg-white p-4 shadow-lg">
+  <span class="mb-4 h-4 w-full text-center text-lg font-medium text-gray-600">{{
+    config.title
+  }}</span>
+
+  <!-- text section-->
+  @if (config.content) {
+    <section class="w-full h-full text-sm {{ config.contentClasses }}">
+      {{ config.content }}
+    </section>
+  }
+
+  @if (config.contentComponent) {
     <!-- dynamic component section: createComponent() adds component to the same level as the #content host element in the DOM,  -->
     <section #content *ngIf="config.contentComponent"></section>
+  }
 
-    <!-- button section-->
-    <section class="flex justify-center items-center p-2 gap-4">
-        <button *ngFor="let btn of config.btns" (click)="sendEvent(btn.type)" class="{{btn.classes}}" >
-            {{btn.displayName}}
-        </button>
-    </section>
-   
+  <!-- button section-->
+  <section class="flex items-center justify-center gap-4 p-2">
+    @for (btn of config.btns; track btn.type; let index = $index) {
+      <button (click)="sendEvent(btn.type)" class="{{ btn.classes }}">
+        {{ btn.displayName }}
+      </button>
+    }
+  </section>
 </div>
