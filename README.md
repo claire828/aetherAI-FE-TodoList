@@ -7,7 +7,7 @@ A simple todolist client built with Angular14, Nx, Workspace, Ngrx, TailwindCSS,
 
 ## Tech stack
 
-- [Angular 14][angular]
+- [Angular 19][angular]
 - [Nx Workspace][nx]
 - [NgRx][ngrx]
 - [TailwindCSS][tailwind]
@@ -101,7 +101,7 @@ Below is the simplified version of the application structure.
             │           └── ... (angular:lib, SCAM for Component)
             │
             │
-            └── shared (dir) -- common usaged for features
+            └── shared (dir) -- common usage for features
                 ├── app-config (injection token for environment)
                 ├── api (angular: API call, Service
                 management to share across the Client app)

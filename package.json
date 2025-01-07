@@ -37,7 +37,7 @@
     "@nrwl/angular": "19.8.4",
     "@types/uuid": "^10.0.0",
     "cspell": "^8.15.7",
-    "json-server": "^v1.0.0-beta.3",
+    "json-server": "^1.0.0-beta.3",
     "localforage": "^1.10.0",
     "postcss-nesting": "^13.0.1",
     "rxjs": "^7.8.1",
