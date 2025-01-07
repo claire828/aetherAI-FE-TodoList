@@ -1,15 +1,33 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, resource } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TaskComponentComponent } from '../../uis/task-component/task-component.component';
+import { TaskEntity } from 'todolist-store';
 @Component({
   selector: 'lib-todolist',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TaskComponentComponent],
   templateUrl: './lib-todolist.component.html',
   styleUrl: './lib-todolist.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LibTodolistComponent {
+  // resourceAPI 可以跟 input 綁一起使用
+  // resource < responseType, requestType>
+  public todoLists = resource<TaskEntity[], unknown>(
+    (
+      {
+        loader: async () => {
+          const data = await fetch('http://localhost:3000/tasks');
+          if (!data.ok) {
+            throw Error('error');
+          };
+          return await data.json() as TaskEntity[];
+        }
+      }
+    )
+  )
 
-  constructor() { }
-
+  constructor() {
+    this.todoLists.reload();
+  }
 }

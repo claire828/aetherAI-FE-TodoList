@@ -1,0 +1,10 @@
+<div class="flex h-6 w-full justify-between gap-4 text-center text-sm">
+  <label for="selected"></label>
+  <input id="selected" type="checkbox" />
+  <div class="w-1/2">{{ task().name }}</div>
+  <span>{{ formattedDate() }}</span>
+  <label for="completed">status</label>
+  <input id="completed" type="checkbox" [checked]="completed()" />
+</div>
+
+<!-- [formControl]="completedControl"-->

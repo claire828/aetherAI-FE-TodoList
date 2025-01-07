@@ -1,7 +1,9 @@
 <div class="flex flex-col items-center justify-center">
   <div class="text-gray-800">TODOLIST</div>
-  <section class="flex w-1/2 flex-col items-start justify-center bg-pink-300 p-4">
-    <div>task</div>
-    <div>task2</div>
+
+  <section class="flex w-1/2 flex-col items-start justify-center gap-2 bg-pink-300 p-4">
+    @for (task of todoLists.value(); track $index) {
+      <lib-task-component [task]="task"></lib-task-component>
+    }
   </section>
 </div>
