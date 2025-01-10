@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'uis-web-uis',
+  selector: 'uis-web-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './web-uis.component.html',
-  styleUrl: './web-uis.component.css',
+  templateUrl: './web-button.component.html',
+  styleUrl: './web-button.component.scss',
 })
-export class WebUisComponent {}
+export class WebButtonComponent {}

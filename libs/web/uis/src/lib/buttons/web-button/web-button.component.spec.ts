@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WebUisComponent } from './web-uis.component';
+import { WebButtonComponent } from './web-button.component';
 
-describe('WebUisComponent', () => {
-  let component: WebUisComponent;
-  let fixture: ComponentFixture<WebUisComponent>;
+describe('WebButtonComponent', () => {
+  let component: WebButtonComponent;
+  let fixture: ComponentFixture<WebButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WebUisComponent],
+      imports: [WebButtonComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(WebUisComponent);
+    fixture = TestBed.createComponent(WebButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
