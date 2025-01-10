@@ -1,12 +1,33 @@
 <div class="mb-2 flex items-center justify-between rounded-md bg-gray-100 px-4 py-2">
-  <div>
+  <div class="flex items-center">
     <input type="checkbox" class="mr-2" />
+    <!-- Task Name -->
+    @if (isEditing()) {
+      <input
+        *ngIf="isEditing()"
+        type="text"
+        [(ngModel)]="task().name"
+        (blur)="saveEdit()"
+        (keyup.enter)="saveEdit()"
+        class="w-40 rounded-md border border-gray-300 px-2 py-1 text-gray-700"
+      />
+    } @else {
+      <div class="ml-3 w-40 cursor-pointer font-medium text-gray-700" (dblclick)="enableEdit()">
+        {{ task().name }}
+      </div>
+    }
+
+    <!-- Task Timestamp -->
+    <small class="ml-2 text-gray-400">
+      {{ task().ts | date: 'short' }}
+    </small>
+    <!--
     <span [class.line-through]="task().complete" class="font-medium text-gray-700">
       {{ task().name }}
     </span>
     <small class="ml-2 text-gray-400">
       {{ task().ts | date: 'short' }}
-    </small>
+    </small>-->
   </div>
   <button class="text-red-500 hover:underline" (click)="onDeleteTask()">Delete</button>
 </div>
