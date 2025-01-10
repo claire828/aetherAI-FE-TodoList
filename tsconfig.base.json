@@ -27,7 +27,8 @@
       "shared": ["libs/shared/src/index.ts"],
       "shared-store": ["libs/stores/shared-store/src/index.ts"],
       "todolist-store": ["libs/stores/todolist-store/src/index.ts"],
-      "web/features/dialog": ["libs/web/features/dialog/src/index.ts"]
+      "web/features/dialog": ["libs/web/features/dialog/src/index.ts"],
+      "web/uis": ["libs/web/uis/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
