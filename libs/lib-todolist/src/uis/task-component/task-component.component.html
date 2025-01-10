@@ -23,6 +23,7 @@
     <small class="ml-2 text-gray-400">
       {{ task().ts | date: 'short' }}
     </small>
-    <button class="text-red-500 hover:underline" (click)="onDeleteTask()">Delete</button>
+    <uis-web-button class="ml-3" [buttonName]="'Delete'" (click)="onDeleteTask()" />
+    <!--  <button class="text-red-500 hover:underline" (click)="onDeleteTask()">Delete</button>-->
   </div>
 </div>

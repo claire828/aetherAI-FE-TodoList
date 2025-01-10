@@ -1,1 +1,1 @@
-export * from './lib/web-uis/web-uis.component';
+export * from './lib/buttons/web-button/web-button.component';

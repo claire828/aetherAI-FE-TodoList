@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,4 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './web-button.component.html',
   styleUrl: './web-button.component.scss',
 })
-export class WebButtonComponent {}
+export class WebButtonComponent {
+  buttonName = input.required<string>();
+  isFontBold = input<boolean>(false);
+}
