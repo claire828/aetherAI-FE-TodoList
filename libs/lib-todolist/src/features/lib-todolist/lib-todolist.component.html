@@ -19,6 +19,24 @@
     @for (task of todoLists.value(); track $index) {
       <lib-task-component [task]="task"></lib-task-component>
     }
+    <!-- Action Buttons -->
+    <div class="mt-4 flex justify-between text-sm">
+      <button class="rounded-md bg-gray-500 px-2 py-2 text-white hover:bg-gray-600">
+        Select All
+      </button>
+      <div class="flex gap-2">
+        <button
+          class="rounded-md border border-green-500 px-2 py-1 text-green-500 hover:bg-green-100 hover:text-green-600"
+        >
+          Complete
+        </button>
+        <button
+          class="rounded-md border border-gray-500 px-2 py-1 text-gray-500 hover:bg-gray-100 hover:text-gray-600"
+        >
+          Incomplete
+        </button>
+      </div>
+    </div>
   } @else {
     <p class="text-center text-gray-500">No tasks available. Add your first task!</p>
   }

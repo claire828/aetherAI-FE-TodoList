@@ -1,6 +1,6 @@
 <div class="mb-2 flex items-center justify-between rounded-md bg-gray-100 px-4 py-2">
   <div>
-    <input type="checkbox" class="mr-2" [checked]="task().complete" (change)="onToggleComplete()" />
+    <input type="checkbox" class="mr-2" />
     <span [class.line-through]="task().complete" class="font-medium text-gray-700">
       {{ task().name }}
     </span>
