@@ -1,6 +1,8 @@
 <div class="mb-2 flex items-center justify-between rounded-md bg-gray-100 px-4 py-2">
   <div class="flex items-center">
+    <!-- Task Select Checkbox -->
     <input type="checkbox" class="mr-2" />
+
     <!-- Task Name -->
     @if (isEditing()) {
       <input
@@ -21,13 +23,6 @@
     <small class="ml-2 text-gray-400">
       {{ task().ts | date: 'short' }}
     </small>
-    <!--
-    <span [class.line-through]="task().complete" class="font-medium text-gray-700">
-      {{ task().name }}
-    </span>
-    <small class="ml-2 text-gray-400">
-      {{ task().ts | date: 'short' }}
-    </small>-->
+    <button class="text-red-500 hover:underline" (click)="onDeleteTask()">Delete</button>
   </div>
-  <button class="text-red-500 hover:underline" (click)="onDeleteTask()">Delete</button>
 </div>

@@ -5,14 +5,14 @@ import { TaskEntity } from 'todolist-store';
 
 const url = 'http://localhost:3000/tasks';
 @Component({
-  selector: 'lib-todolist',
+  selector: 'todolist',
   standalone: true,
   imports: [CommonModule, TaskComponentComponent],
-  templateUrl: './lib-todolist.component.html',
-  styleUrl: './lib-todolist.component.css',
+  templateUrl: './todolist.component.html',
+  styleUrl: './todolist.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LibTodolistComponent {
+export class TodolistComponent {
   // resourceAPI 可以跟 input 綁一起使用
   // resource < responseType, requestType>
   public todoLists = resource<TaskEntity[], unknown>(
