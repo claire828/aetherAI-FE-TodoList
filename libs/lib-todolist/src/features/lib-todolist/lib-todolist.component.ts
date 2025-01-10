@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, Component, resource } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskComponentComponent } from '../../uis/task-component/task-component.component';
 import { TaskEntity } from 'todolist-store';
+
+const url = 'http://localhost:3000/tasks';
 @Component({
   selector: 'lib-todolist',
   standalone: true,
@@ -17,7 +19,7 @@ export class LibTodolistComponent {
     (
       {
         loader: async () => {
-          const data = await fetch('http://localhost:3000/tasks');
+          const data = await fetch(url);
           if (!data.ok) {
             throw Error('error');
           };
@@ -26,6 +28,7 @@ export class LibTodolistComponent {
       }
     )
   )
+
 
   constructor() {
     this.todoLists.reload();

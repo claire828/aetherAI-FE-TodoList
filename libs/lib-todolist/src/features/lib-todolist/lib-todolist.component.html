@@ -1,9 +1,25 @@
-<div class="flex flex-col items-center justify-center">
-  <div class="text-gray-800">TODOLIST</div>
+<div class="mx-auto mt-10 max-w-md rounded-md bg-white p-4 shadow-md">
+  <h1 class="mb-4 text-2xl font-bold text-gray-700">Todo List</h1>
 
-  <section class="flex w-1/2 flex-col items-start justify-center gap-2 bg-pink-300 p-4">
+  <!-- Add Task Section -->
+  <div class="mb-4 flex items-center">
+    <input
+      type="text"
+      placeholder="Add a new task"
+      class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <button class="ml-2 rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+      Add Task
+    </button>
+  </div>
+
+  <!-- Task List -->
+
+  @if (todoLists.value()?.length) {
     @for (task of todoLists.value(); track $index) {
       <lib-task-component [task]="task"></lib-task-component>
     }
-  </section>
+  } @else {
+    <p class="text-center text-gray-500">No tasks available. Add your first task!</p>
+  }
 </div>

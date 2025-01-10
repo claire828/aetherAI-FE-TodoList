@@ -3,9 +3,18 @@ import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { provideStore } from '@ngrx/store';
 import { todolistEntityReducer } from 'todolist-store';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+
+// TODO: 這邊應該要改成從環境變數取得
+const devMode = true;
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideStoreDevtools({
+      maxAge: 25,
+      logOnly: !devMode,
+      connectInZone: true
+    }),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
     provideStore({ todolistEntity: todolistEntityReducer }),

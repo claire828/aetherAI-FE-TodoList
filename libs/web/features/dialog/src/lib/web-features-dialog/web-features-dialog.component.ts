@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Inject, ViewChild, ViewContainerRef, AfterViewInit, viewChild, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DecorateOverlayRef } from '../utils';
-import { DefaultDialogConfig, DialogBtn, DialogEvent } from '../models';
+import { DefaultDialogConfig, DialogEvent } from '../models';
 import { DIALOG_DEFAULT_PROVIDER } from '../providers';
 
 @Component({
@@ -19,9 +19,6 @@ export class WebFeaturesDialogComponent implements AfterViewInit {
     private ref: DecorateOverlayRef,
     @Inject(DIALOG_DEFAULT_PROVIDER) public config: DefaultDialogConfig) { }
 
-  public get dialogBtnDisplay(): typeof DialogBtn {
-    return DialogBtn;
-  }
 
   public get dialogEvent(): typeof DialogEvent {
     return DialogEvent;
@@ -32,7 +29,6 @@ export class WebFeaturesDialogComponent implements AfterViewInit {
       this.viewContainerRef.createComponent(this.config.contentComponent());
     };
   }
-
 
   public sendEvent(event: DialogEvent) {
     this.ref.sendEvent(event);

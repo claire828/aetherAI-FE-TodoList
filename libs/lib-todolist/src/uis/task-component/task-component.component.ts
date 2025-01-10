@@ -1,4 +1,4 @@
-import { Component, computed, input, OnInit } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TaskEntity } from 'todolist-store';
@@ -11,16 +11,17 @@ import { TaskEntity } from 'todolist-store';
 })
 export class TaskComponentComponent {
   public task = input.required<TaskEntity>();
-  public completed = computed(() => this.task().complete);
+  public completed = computed(() => this.task().complete ? 'completed' : 'ongoing');
 
-  public formattedDate = computed(() => {
-    const date = new Date(this.task().ts);
-    return date.toLocaleDateString('en-GB', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    }).replace(/\//g, '-');
-  });
+
+
+  public onDeleteTask() {
+
+  }
+
+  public onToggleComplete() {
+
+  }
 
 
 }
