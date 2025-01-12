@@ -25,16 +25,18 @@
         Select All
       </button>
       <div class="flex gap-2">
-        <button
-          class="rounded-md border border-green-500 px-2 py-1 text-green-500 hover:bg-green-100 hover:text-green-600"
-        >
-          Complete
-        </button>
-        <button
-          class="rounded-md border border-gray-500 px-2 py-1 text-gray-500 hover:bg-gray-100 hover:text-gray-600"
-        >
-          Incomplete
-        </button>
+        <uis-web-border-button
+          [btnClasses]="
+            'rounded-md border border-green-500 px-2 py-1 text-green-500 hover:bg-green-100 hover:text-green-600'
+          "
+          [buttonName]="'Complete'"
+        ></uis-web-border-button>
+        <uis-web-border-button
+          [btnClasses]="
+            'rounded-md border border-gray-500 px-2 py-1 text-gray-500 hover:bg-gray-100 hover:text-gray-600'
+          "
+          [buttonName]="'Incomplete'"
+        ></uis-web-border-button>
       </div>
     </div>
   } @else {

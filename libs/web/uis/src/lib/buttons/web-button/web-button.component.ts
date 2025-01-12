@@ -15,7 +15,7 @@ export class WebButtonComponent {
   isFontBold = input<boolean>(false);
   isDisabled = input<boolean>(false);
 
-  public get defaultButtonClass(): string {
+  protected get defaultButtonClass(): string {
     return DEFAULT_BUTTON_CLASSES;
   }
 }

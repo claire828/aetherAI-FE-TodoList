@@ -1,0 +1,7 @@
+<button
+  [class.fontBold]="isFontBold()"
+  [disabled]="isDisabled()"
+  class="{{ defaultButtonClass }} {{ btnClasses() }}"
+>
+  {{ buttonName() }}
+</button>
