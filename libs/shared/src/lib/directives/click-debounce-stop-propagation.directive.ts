@@ -3,6 +3,7 @@ import { debounceTime, Subject } from 'rxjs';
 import { SubSink } from 'subsink';
 
 @Directive({
+  standalone: true,
   selector: '[sharedClickDebounceStopPropagation]',
 })
 export class ClickDebounceStopPropagationDirective implements OnDestroy {

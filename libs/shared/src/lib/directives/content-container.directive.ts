@@ -1,6 +1,7 @@
 import { Directive, Input, ViewContainerRef } from '@angular/core';
 
 @Directive({
+  standalone: true,
   selector: '[sharedContentContainer]',
 })
 export class ContentContainerDirective {

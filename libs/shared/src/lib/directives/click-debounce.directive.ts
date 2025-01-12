@@ -4,6 +4,7 @@ import { SubSink } from 'subsink';
 import { WebEvent } from '../events';
 
 @Directive({
+  standalone: true,
   selector: '[sharedClickDebounce]',
 })
 export class ClickDebounceDirective implements OnDestroy {
