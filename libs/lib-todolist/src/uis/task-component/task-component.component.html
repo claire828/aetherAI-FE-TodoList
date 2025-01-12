@@ -1,7 +1,10 @@
-<div class="mb-2 flex items-center justify-between rounded-md bg-gray-100 px-4 py-2">
-  <div class="flex w-full items-center justify-between">
+<article class="mb-2 flex items-center justify-between rounded-md bg-gray-100 px-4 py-2">
+  <!-- Checkbox + Task Details -->
+  <section class="flex w-full items-center justify-between">
     <!-- Task Select Checkbox -->
-    <input type="checkbox" class="mr-2" />
+    <label class="flex items-center">
+      <input type="checkbox" class="mr-2" />
+    </label>
 
     <!-- Task Name -->
     @if (isEditing()) {
@@ -12,18 +15,29 @@
         (blur)="saveEdit()"
         (keyup.enter)="saveEdit()"
         class="w-40 rounded-md border border-gray-300 px-2 py-1 text-gray-700"
+        aria-label="Edit task name"
       />
     } @else {
-      <div class="ml-3 w-40 cursor-pointer font-medium text-gray-700" (dblclick)="enableEdit()">
+      <div
+        class="ml-3 w-40 cursor-pointer font-medium text-gray-700"
+        (dblclick)="enableEdit()"
+        title="Double click to edit"
+      >
         {{ task().name }}
       </div>
     }
 
     <!-- Task Timestamp -->
-    <small class="ml-2 text-gray-400">
+    <time class="ml-2 text-gray-400" [attr.datetime]="task().ts">
       {{ task().ts | date: 'short' }}
-    </small>
-    <uis-web-button class="ml-3" [buttonName]="'Delete'" (click)="onDeleteTask()" />
-    <!--  <button class="text-red-500 hover:underline" (click)="onDeleteTask()">Delete</button>-->
-  </div>
-</div>
+    </time>
+
+    <!-- Delete Button -->
+    <uis-web-button
+      class="ml-3"
+      [buttonName]="'Delete'"
+      (click)="onDeleteTask()"
+      aria-label="Delete task"
+    />
+  </section>
+</article>

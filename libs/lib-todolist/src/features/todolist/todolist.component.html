@@ -1,41 +1,51 @@
-<div class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
-  <h1 class="mb-4 text-2xl font-bold text-gray-700">Todo List</h1>
+<section class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
+  <header class="mb-4">
+    <h1 class="text-2xl font-bold text-gray-700">Todo List</h1>
+  </header>
 
   <!-- Add Task Section -->
-  <div class="mb-4 flex items-center gap-2">
-    <input
-      type="text"
-      placeholder="Add a new task"
-      class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-    />
-    <uis-web-button [buttonName]="'Add Task'"></uis-web-button>
-  </div>
+  <section class="mb-4">
+    <form class="flex items-center gap-2">
+      <input
+        type="text"
+        placeholder="Add a new task"
+        class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <uis-web-button [buttonName]="'Add Task'"></uis-web-button>
+    </form>
+  </section>
 
-  <!-- Task List -->
+  <!-- Task List Section -->
+  <section>
+    @if (todoLists.value()?.length) {
+      <ul class="space-y-2">
+        @for (task of todoLists.value(); track $index) {
+          <li>
+            <lib-task-component [task]="task"></lib-task-component>
+          </li>
+        }
+      </ul>
 
-  @if (todoLists.value()?.length) {
-    @for (task of todoLists.value(); track $index) {
-      <lib-task-component [task]="task"></lib-task-component>
+      <!-- Action Buttons Section -->
+      <footer class="mt-4 flex justify-between text-sm">
+        <uis-web-button
+          [btnClasses]="'bg-gray-500 hover:bg-gray-600'"
+          [buttonName]="'Select All'"
+        ></uis-web-button>
+
+        <div class="flex gap-2">
+          <uis-web-border-button
+            [btnClasses]="'border-green-500 text-green-500 hover:bg-green-100 hover:text-green-600'"
+            [buttonName]="'Complete'"
+          ></uis-web-border-button>
+          <uis-web-border-button
+            [btnClasses]="'border-gray-500 text-gray-500 hover:bg-gray-100 hover:text-gray-600'"
+            [buttonName]="'Incomplete'"
+          ></uis-web-border-button>
+        </div>
+      </footer>
+    } @else {
+      <p class="text-center text-gray-500">No tasks available. Add your first task!</p>
     }
-    <!-- Action Buttons -->
-    <div class="mt-4 flex justify-between text-sm">
-      <uis-web-button
-        [btnClasses]="'bg-gray-500 hover:bg-gray-600'"
-        [buttonName]="'Select All'"
-      ></uis-web-button>
-
-      <div class="flex gap-2">
-        <uis-web-border-button
-          [btnClasses]="'border-green-500 text-green-500 hover:bg-green-100 hover:text-green-600'"
-          [buttonName]="'Complete'"
-        ></uis-web-border-button>
-        <uis-web-border-button
-          [btnClasses]="'border-gray-500text-gray-500 hover:bg-gray-100 hover:text-gray-600'"
-          [buttonName]="'Incomplete'"
-        ></uis-web-border-button>
-      </div>
-    </div>
-  } @else {
-    <p class="text-center text-gray-500">No tasks available. Add your first task!</p>
-  }
-</div>
+  </section>
+</section>
