@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, EventEmitter, input, Output, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DEFAULT_CHECKBOX_CLASSES } from '../styles';
@@ -13,25 +13,16 @@ type color = 'default' | 'red' | 'yellow' | 'green' | 'blue';
   styleUrl: './checkbox.component.scss',
 })
 export class CheckboxComponent {
-  checked = input<boolean>();
+  @Output() checkedChange = new EventEmitter<boolean>();
+  @Input() checked = false;
   uniqId = input.required<string>()
-  color = input<color>();
-  bgClass = computed(() => {
-    switch (this.color()) {
-      case 'red':
-        return 'bg-red-500';
-      case 'yellow':
-        return 'bg-yellow-500';
-      case 'green':
-        return 'bg-green-500';
-      case 'blue':
-        return 'bg-blue-500';
-      default:
-        return 'bg-black';
-    }
-  });
 
   protected get defaultClasses() {
     return DEFAULT_CHECKBOX_CLASSES;
+  }
+
+  protected checkedChangeHandler() {
+    this.checked = !this.checked;
+    this.checkedChange.emit(this.checked);
   }
 }

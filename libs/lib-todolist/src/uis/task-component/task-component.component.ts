@@ -40,5 +40,9 @@ export class TaskComponentComponent {
   }
 
 
+  public selectChanged(event: boolean) {
+    this.selected.set(event);
+  }
+
 
 }
