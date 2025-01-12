@@ -12,6 +12,7 @@ describe('WebButtonComponent', () => {
 
     fixture = TestBed.createComponent(WebButtonComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('buttonName', 'Test');
     fixture.detectChanges();
   });
 

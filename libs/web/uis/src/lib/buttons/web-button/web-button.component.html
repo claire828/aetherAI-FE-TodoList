@@ -1,7 +1,8 @@
 <!-- Simple -->
 <button
-  class="rounded bg-blue-500 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700"
+  class="{{ defaultButtonClass }} {{ btnClasses() }}"
   [class.fontBold]="isFontBold()"
+  [class.disabled]="isDisabled()"
 >
   {{ buttonName() }}
 </button>

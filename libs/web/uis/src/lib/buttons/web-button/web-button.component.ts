@@ -1,6 +1,7 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ClassType } from 'shared';
+import { DEFAULT_BUTTON_CLASSES } from '../../default-style';
 @Component({
   selector: 'uis-web-button',
   standalone: true,
@@ -10,5 +11,11 @@ import { CommonModule } from '@angular/common';
 })
 export class WebButtonComponent {
   buttonName = input.required<string>();
+  btnClasses = input<ClassType>();
   isFontBold = input<boolean>(false);
+  isDisabled = input<boolean>(false);
+
+  public get defaultButtonClass(): string {
+    return DEFAULT_BUTTON_CLASSES;
+  }
 }
