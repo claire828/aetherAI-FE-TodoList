@@ -17,9 +17,9 @@
 
   <!-- Task List Section -->
   <section>
-    @if (todoLists.value()?.length) {
+    @if (todoLists.length) {
       <ul class="space-y-2">
-        @for (task of todoLists.value(); track $index) {
+        @for (task of todoLists; track $index) {
           <li>
             <lib-task-component [task]="task"></lib-task-component>
           </li>

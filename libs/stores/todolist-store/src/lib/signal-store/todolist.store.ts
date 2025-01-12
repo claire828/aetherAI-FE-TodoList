@@ -1,4 +1,4 @@
-import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
+import { patchState, signalStore, withHooks, withMethods, withState } from '@ngrx/signals';
 import {
   addEntities,
   addEntity,
@@ -18,13 +18,22 @@ const initialState: TodolistState = {
 
 export const TodolistSignalStore = signalStore(
   { providedIn: 'root' },
-  // withHooks (life cycle)
+
   // withEffects (effects)
   // withComputed (selector)
   withState(initialState),
   withEntities<TaskEntity>(),
   withMethods(
     (store) => ({
+      fetchAllTask: async () => {
+        const url = 'http://localhost:3000/tasks';
+        const data = await fetch(url);
+        if (!data.ok) {
+          throw Error('error');
+        }
+        return await data.json() as TaskEntity[];
+      },
+
       // addEntity: Adds an entity to the collection.
       // If the entity collection has an entity with the same ID, it is not overridden and no error is thrown.
       addTodo(todo: TaskEntity): void {
@@ -72,9 +81,19 @@ export const TodolistSignalStore = signalStore(
       completeAllTodos(completed: boolean): void {
         patchState(store, updateAllEntities({ completed }));
       },
+    }),
 
-    })
-  )
+  ),
+  withHooks({
+    onInit(store) {
+      console.log('TodolistSignalStore onInit', store);
+      store.fetchAllTask().then(tasks => {
+        store.addTodos(tasks);
+      }).catch(error => {
+        console.error('Failed to fetch tasks:', error);
+      });
+    }
+  }),
 );
 
 
