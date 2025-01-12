@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TaskEntity } from 'todolist-store';
-import { WebButtonComponent } from 'web/uis';
+import { WebButtonComponent, CheckboxComponent } from 'web/uis';
 @Component({
   selector: 'lib-task-component',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, WebButtonComponent],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, WebButtonComponent, CheckboxComponent],
   templateUrl: './task-component.component.html',
   styleUrl: './task-component.component.scss',
 })
@@ -16,6 +16,7 @@ export class TaskComponentComponent {
   public task = input.required<TaskEntity>();
   public completed = computed(() => this.task().complete ? 'completed' : 'ongoing');
   public isEditing = signal(false);
+  public selected = signal(false);
 
   onUpdateTask() {
     this.updateTask.emit(this.task());

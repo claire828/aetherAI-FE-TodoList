@@ -1,10 +1,7 @@
 <article class="mb-2 flex items-center justify-between rounded-md bg-gray-100 px-4 py-2">
-  <!-- Checkbox + Task Details -->
   <section class="flex w-full items-center justify-between">
     <!-- Task Select Checkbox -->
-    <label class="flex items-center">
-      <input type="checkbox" class="mr-2" />
-    </label>
+    <uis-checkbox [uniqId]="task().id"></uis-checkbox>
 
     <!-- Task Name -->
     @if (isEditing()) {
