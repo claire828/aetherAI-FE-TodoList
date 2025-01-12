@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClassType } from 'shared';
-import { DEFAULT_BUTTON_CLASSES } from '../../default-style';
+import { DEFAULT_BUTTON_CLASSES } from '../../styles';
 @Component({
   selector: 'uis-web-button',
   standalone: true,

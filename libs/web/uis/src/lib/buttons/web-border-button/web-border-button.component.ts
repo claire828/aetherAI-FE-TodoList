@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WebButtonComponent } from '../web-button/web-button.component';
-import { DEFAULT_BORDER_BUTTON_CLASSES } from '../../default-style';
+import { DEFAULT_BORDER_BUTTON_CLASSES } from '../../styles';
 
 @Component({
   selector: 'uis-web-border-button',

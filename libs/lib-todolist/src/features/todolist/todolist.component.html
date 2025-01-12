@@ -1,16 +1,14 @@
-<div class="mx-auto mt-10 max-w-md rounded-md bg-white p-4 shadow-md">
+<div class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
   <h1 class="mb-4 text-2xl font-bold text-gray-700">Todo List</h1>
 
   <!-- Add Task Section -->
-  <div class="mb-4 flex items-center">
+  <div class="mb-4 flex items-center gap-2">
     <input
       type="text"
       placeholder="Add a new task"
       class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
     />
-    <button class="ml-2 rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
-      Add Task
-    </button>
+    <uis-web-button [buttonName]="'Add Task'"></uis-web-button>
   </div>
 
   <!-- Task List -->
@@ -21,20 +19,18 @@
     }
     <!-- Action Buttons -->
     <div class="mt-4 flex justify-between text-sm">
-      <button class="rounded-md bg-gray-500 px-2 py-2 text-white hover:bg-gray-600">
-        Select All
-      </button>
+      <uis-web-button
+        [btnClasses]="'bg-gray-500 hover:bg-gray-600'"
+        [buttonName]="'Select All'"
+      ></uis-web-button>
+
       <div class="flex gap-2">
         <uis-web-border-button
-          [btnClasses]="
-            'rounded-md border border-green-500 px-2 py-1 text-green-500 hover:bg-green-100 hover:text-green-600'
-          "
+          [btnClasses]="'border-green-500 text-green-500 hover:bg-green-100 hover:text-green-600'"
           [buttonName]="'Complete'"
         ></uis-web-border-button>
         <uis-web-border-button
-          [btnClasses]="
-            'rounded-md border border-gray-500 px-2 py-1 text-gray-500 hover:bg-gray-100 hover:text-gray-600'
-          "
+          [btnClasses]="'border-gray-500text-gray-500 hover:bg-gray-100 hover:text-gray-600'"
           [buttonName]="'Incomplete'"
         ></uis-web-border-button>
       </div>

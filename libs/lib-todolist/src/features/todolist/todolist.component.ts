@@ -2,13 +2,13 @@ import { ChangeDetectionStrategy, Component, resource } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskComponentComponent } from '../../uis/task-component/task-component.component';
 import { TaskEntity } from 'todolist-store';
-import { WebBorderButtonComponent } from 'web/uis';
+import { WebBorderButtonComponent, WebButtonComponent } from 'web/uis';
 
 const url = 'http://localhost:3000/tasks';
 @Component({
   selector: 'todolist',
   standalone: true,
-  imports: [CommonModule, TaskComponentComponent, WebBorderButtonComponent],
+  imports: [CommonModule, TaskComponentComponent, WebButtonComponent, WebBorderButtonComponent],
   templateUrl: './todolist.component.html',
   styleUrl: './todolist.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
