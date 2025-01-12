@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './badge.component.html',
   styleUrl: './badge.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BadgeComponent {
   color = input.required<string>();

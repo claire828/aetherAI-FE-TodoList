@@ -1,9 +1,9 @@
-import { Component, EventEmitter, input, Output, Input } from '@angular/core';
+import { Component, EventEmitter, input, Output, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DEFAULT_CHECKBOX_CLASSES } from '../styles';
 
-type color = 'default' | 'red' | 'yellow' | 'green' | 'blue';
+// type color = 'default' | 'red' | 'yellow' | 'green' | 'blue';
 
 @Component({
   selector: 'uis-checkbox',
@@ -11,6 +11,7 @@ type color = 'default' | 'red' | 'yellow' | 'green' | 'blue';
   imports: [CommonModule, FormsModule],
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxComponent {
   @Output() checkedChange = new EventEmitter<boolean>();
