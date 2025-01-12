@@ -1,6 +1,6 @@
 export interface TaskEntity {
   id: string;
   name: string;
-  complete: boolean;
+  completed: boolean;
   ts: string; // createdAt timestamp
 }

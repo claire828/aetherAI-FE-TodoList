@@ -16,7 +16,7 @@ const initialState: TodolistState = {
   selectedIds: [],
 }
 
-export const TodolistStore = signalStore(
+export const TodolistSignalStore = signalStore(
   { providedIn: 'root' },
   // withHooks (life cycle)
   // withEffects (effects)

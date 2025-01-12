@@ -14,7 +14,7 @@ import { WebButtonComponent, CheckboxComponent } from 'web/uis';
 export class TaskComponentComponent {
   @Output() updateTask = new EventEmitter<TaskEntity>();
   public task = input.required<TaskEntity>();
-  public completed = computed(() => this.task().complete ? 'completed' : 'ongoing');
+  public completed = computed(() => this.task().completed ? 'completed' : 'ongoing');
   public isEditing = signal(false);
   public selected = signal(false);
 
@@ -42,6 +42,7 @@ export class TaskComponentComponent {
 
   public selectChanged(event: boolean) {
     this.selected.set(event);
+    // todo: update to selected
   }
 
 
