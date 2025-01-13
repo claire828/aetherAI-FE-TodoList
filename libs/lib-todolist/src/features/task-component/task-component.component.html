@@ -21,8 +21,8 @@
     } @else {
       <div
         class="ml-3 w-40 cursor-pointer font-medium text-gray-700"
+        [class.line-through]="task().completed"
         (dblclick)="enableEdit()"
-        title="Double click to edit"
       >
         {{ task().name }}
       </div>

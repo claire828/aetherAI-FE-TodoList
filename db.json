@@ -3,25 +3,25 @@
     {
       "id": "45a1e84f-4fd0-42f0-86a2-b0b97eb1f99f",
       "name": "tidying up kitchen",
-      "complete": false,
+      "completed": false,
       "ts": 1665572675964
     },
     {
       "id": "e13d4e97-3103-4a25-ac7c-758803b79277",
       "name": "washing dishes",
-      "complete": true,
+      "completed": true,
       "ts": 1665573070164
     },
     {
       "id": "d06bb22d-aed0-41fe-bdbb-37f7d96dc54d",
       "name": "love",
-      "complete": false,
+      "completed": false,
       "ts": 1665637534362
     },
     {
       "id": "e193c7c6-8342-4f4f-80fd-866fcb61c9f5",
       "name": "hey",
-      "complete": false,
+      "completed": false,
       "ts": 1730787209579
     }
   ]
