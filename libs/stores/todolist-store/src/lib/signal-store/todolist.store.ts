@@ -48,7 +48,7 @@ export const TodolistSignalStore = signalStore(
       },
 
       // setEntity: Adds or replaces an entity in the collection.
-      setTodo(todo: TaskEntity): void {
+      Todo(todo: TaskEntity): void {
         patchState(store, setEntity(todo));
       },
 
@@ -56,16 +56,6 @@ export const TodolistSignalStore = signalStore(
         patchState(store, setEntities(todos));
       },
 
-      // updateEntity: Updates an entity in the collection.
-      // No error is thrown if an entity doesn't exist.
-      updateTodo(todo: TaskEntity): void {
-        patchState(store, updateEntity({
-          id: todo.id,
-          changes: () => ({ ...todo })
-        }));
-      },
-
-      // TODO: 這邊可以調整，變得更加泛型
       updateTodoName(updateTodo: TaskEntity): void {
         patchState(store, updateEntity({
           id: updateTodo.id,
@@ -88,7 +78,6 @@ export const TodolistSignalStore = signalStore(
           ids: store.selectedIds(),
           changes: { completed }
         }));
-        patchState(store, { selectedIds: [] });
       },
 
       addSelected(id: string): void {
@@ -108,7 +97,6 @@ export const TodolistSignalStore = signalStore(
   // withEffects (effects)
   withHooks({
     onInit(store) {
-      console.log('TodolistSignalStore onInit');
       store.fetchAllTask().then(tasks => {
         store.addTodos(tasks);
       }).catch(error => {

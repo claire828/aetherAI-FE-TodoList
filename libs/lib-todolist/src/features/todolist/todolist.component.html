@@ -1,19 +1,15 @@
 <section class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
-  <!-- Header Section -->
-  <header class="mb-4">
-    <h1 class="text-2xl font-bold text-gray-700">Todo List</h1>
-  </header>
+  <header class="mb-4 text-2xl font-bold text-gray-700">Todo List</header>
 
   <!-- Add Task Section -->
-  <section class="mb-4">
-    <form class="flex items-center gap-2">
-      <input
-        type="text"
-        placeholder="Add a new task"
-        class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
-      />
-      <uis-web-button [buttonName]="'Add Task'"></uis-web-button>
-    </form>
+  <section class="mb-4 flex items-center gap-2">
+    <input
+      [(ngModel)]="taskModel"
+      type="text"
+      placeholder="Add a new task"
+      class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
+    />
+    <uis-web-button [buttonName]="'Add Task'" (click)="addTaskHandler()"></uis-web-button>
   </section>
 
   <!-- Task List Section -->
@@ -29,7 +25,6 @@
     }
   </section>
 
-  <!-- Footer Section -->
   <lib-todolist-footer
     [showCompletedArea]="!!store.selectedIds().length"
     (completeTodos)="completeHandler($event)"
