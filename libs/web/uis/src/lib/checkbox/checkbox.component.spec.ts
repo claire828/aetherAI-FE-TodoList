@@ -12,6 +12,7 @@ describe('CheckboxComponent', () => {
 
     fixture = TestBed.createComponent(CheckboxComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('uniqId', '124')
     fixture.detectChanges();
   });
 

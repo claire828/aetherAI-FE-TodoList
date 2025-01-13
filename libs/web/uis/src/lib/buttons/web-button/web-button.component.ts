@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClassType } from 'shared';
-import { DEFAULT_BUTTON_CLASSES } from '../../styles';
+import { Color, DEFAULT_BUTTON_CLASSES } from '../../styles';
+import { colorTransform } from '../../utils';
 @Component({
   selector: 'uis-web-button',
   standalone: true,
@@ -14,6 +15,9 @@ export class WebButtonComponent {
   btnClasses = input<ClassType>();
   isFontBold = input<boolean>(false);
   isDisabled = input<boolean>(false);
+  color = input<Color>('blue');
+  // FIXME: This is a bug, the colorStyle should be a computed property, the tailwind remove the color
+  protected colorStyle = computed(() => colorTransform(this.color()));
 
   protected get defaultButtonClass(): string {
     return DEFAULT_BUTTON_CLASSES;

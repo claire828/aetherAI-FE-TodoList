@@ -17,9 +17,9 @@
 
   <!-- Task List Section -->
   <section>
-    @if (todoLists.length) {
+    @if (todoLists().length > 0) {
       <ul class="space-y-2">
-        @for (task of todoLists; track $index) {
+        @for (task of todoLists(); track $index) {
           <li>
             <lib-task-component [task]="task"></lib-task-component>
           </li>
@@ -33,16 +33,20 @@
           [buttonName]="'Select All'"
         ></uis-web-button>
 
-        <div class="flex gap-2">
-          <uis-web-border-button
-            [btnClasses]="'border-green-500 text-green-500 hover:bg-green-100 hover:text-green-600'"
-            [buttonName]="'Complete'"
-          ></uis-web-border-button>
-          <uis-web-border-button
-            [btnClasses]="'border-gray-500 text-gray-500 hover:bg-gray-100 hover:text-gray-600'"
-            [buttonName]="'Incomplete'"
-          ></uis-web-border-button>
-        </div>
+        @if (!this.selectedIds.length) {
+          <div class="flex gap-2">
+            <uis-web-border-button
+              [btnClasses]="
+                'border-green-500 text-green-500 hover:bg-green-100 hover:text-green-600'
+              "
+              [buttonName]="'Complete'"
+            ></uis-web-border-button>
+            <uis-web-border-button
+              [btnClasses]="'hover:bg-gray-100 hover:text-gray-600'"
+              [buttonName]="'Incomplete'"
+            ></uis-web-border-button>
+          </div>
+        }
       </footer>
     } @else {
       <p class="text-center text-gray-500">No tasks available. Add your first task!</p>

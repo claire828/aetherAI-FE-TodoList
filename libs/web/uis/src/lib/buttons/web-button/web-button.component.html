@@ -1,6 +1,8 @@
 <!-- Simple -->
 <button
-  class="shared-button-outlook  {{ defaultButtonClass }} {{ btnClasses() }}"
+  class="shared-button-outlook {{ defaultButtonClass }} {{ colorStyle().bg }}  {{
+    colorStyle().hoverBg
+  }} {{ btnClasses() }} "
   [class.fontBold]="isFontBold()"
   [disabled]="isDisabled()"
 >

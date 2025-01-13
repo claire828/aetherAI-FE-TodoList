@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskComponentComponent } from '../../uis/task-component/task-component.component';
 import { TaskEntity } from 'todolist-store';
@@ -24,20 +24,8 @@ export const allTaskLoader = async () => {
   styleUrl: './todolist.component.css',
 })
 export class TodolistComponent {
-  private todolistStore = inject(TodolistSignalStore);
+  protected store = inject(TodolistSignalStore);
+  protected todoLists = computed(() => this.store.entities());
+  protected selectedIds = computed(() => this.store.selectedIds());
 
-  // resourceAPI 可以跟 input 綁一起使用
-  // resource < responseType, requestType>
-  // public todoLists = resource<TaskEntity[], unknown>({ loader: allTaskLoader })
-
-  // public todoLists = signal<TaskEntity[]>([]);
-
-  constructor() {
-
-    //  this.todoLists.reload();
-  }
-
-  public get todoLists() {
-    return this.todolistStore.entities()
-  }
 }
