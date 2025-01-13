@@ -1,4 +1,4 @@
-import { Component, model, output, input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, model, output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DEFAULT_CHECKBOX_CLASSES } from '../styles';
@@ -11,7 +11,6 @@ import { DEFAULT_CHECKBOX_CLASSES } from '../styles';
   imports: [CommonModule, FormsModule],
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxComponent {
   checkedChange = output<boolean>();

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskComponentComponent } from '../../uis/task-component/task-component.component';
 import { TaskEntity } from 'todolist-store';
@@ -22,7 +22,6 @@ export const allTaskLoader = async () => {
   providers: [TodolistSignalStore],
   templateUrl: './todolist.component.html',
   styleUrl: './todolist.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodolistComponent {
   private todolistStore = inject(TodolistSignalStore);
