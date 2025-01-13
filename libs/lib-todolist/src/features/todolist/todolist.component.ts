@@ -29,6 +29,13 @@ export class TodolistComponent {
   protected store = inject(TodolistSignalStore);
   protected taskModel = model<string>('');
 
+  constructor() {
+    // 可以註冊 taskModel 的監聽事件, angular 會自動註銷
+    // this.taskModel.subscribe((value) => {
+    //   console.log('TaskModel', value);
+    // })
+  }
+
   protected addTaskHandler(): void {
     if (this.taskModel().length === 0 || this.taskModel().trim() === '') {
       return;
