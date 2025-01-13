@@ -1,4 +1,4 @@
-import { Component, inject, signal, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskComponentComponent } from '../task-component/task-component.component';
 import { TaskEntity } from 'todolist-store';
