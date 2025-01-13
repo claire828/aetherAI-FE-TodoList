@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskComponentComponent } from '../task-component/task-component.component';
 import { TaskEntity } from 'todolist-store';
@@ -26,8 +26,6 @@ export const allTaskLoader = async () => {
 })
 export class TodolistComponent {
   protected store = inject(TodolistSignalStore);
-  protected todoLists = computed(() => this.store.entities());
-  protected selectedIds = computed(() => this.store.selectedIds());
 
   protected completeHandler(completed: boolean): void {
     this.store.completeAllTodos(completed);

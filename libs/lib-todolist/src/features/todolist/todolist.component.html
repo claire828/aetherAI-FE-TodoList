@@ -18,9 +18,9 @@
 
   <!-- Task List Section -->
   <section>
-    @if (todoLists().length > 0) {
+    @if (store.todoLists().length > 0) {
       <div class="space-y-2">
-        @for (task of todoLists(); track $index) {
+        @for (task of store.todoLists(); track $index) {
           <lib-task-component [task]="task"></lib-task-component>
         }
       </div>
@@ -31,7 +31,7 @@
 
   <!-- Footer Section -->
   <lib-todolist-footer
-    [showCompletedArea]="!!selectedIds().length"
+    [showCompletedArea]="!!store.selectedIds().length"
     (completeTodos)="completeHandler($event)"
   ></lib-todolist-footer>
 </section>

@@ -1,4 +1,4 @@
-import { patchState, signalStore, withHooks, withMethods, withState } from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import {
   addEntities,
   addEntity,
@@ -6,13 +6,13 @@ import {
   removeEntity,
   setEntities,
   setEntity,
-  updateAllEntities,
   updateEntities,
   updateEntity,
   withEntities
 } from '@ngrx/signals/entities';
 import { TaskEntity } from '../models';
 import { TodolistState } from '../models/todolist.state';
+import { computed } from '@angular/core';
 
 const initialState: TodolistState = {
   selectedIds: [],
@@ -20,11 +20,11 @@ const initialState: TodolistState = {
 
 export const TodolistSignalStore = signalStore(
   { providedIn: 'root' },
-
-  // withEffects (effects)
-  // withComputed (selector)
   withState(initialState),
   withEntities<TaskEntity>(),
+  withComputed((store) => ({
+    todoLists: computed(() => store.entities())
+  })),
   withMethods(
     (store) => ({
       fetchAllTask: async () => {
@@ -105,6 +105,7 @@ export const TodolistSignalStore = signalStore(
     }),
 
   ),
+  // withEffects (effects)
   withHooks({
     onInit(store) {
       console.log('TodolistSignalStore onInit');
