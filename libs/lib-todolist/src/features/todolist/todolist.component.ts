@@ -4,7 +4,7 @@ import { TaskComponentComponent } from '../task-component/task-component.compone
 import { TaskEntity } from 'todolist-store';
 import { WebButtonComponent } from 'web/uis';
 import { TodolistSignalStore } from 'todolist-store';
-import { TodolistFooterComponent } from '../todolist-footer/todolist-footer.component';
+import { TodolistFooterComponent } from '../../uis/todolist-footer/todolist-footer.component';
 
 const url = 'http://localhost:3000/tasks';
 export const allTaskLoader = async () => {
