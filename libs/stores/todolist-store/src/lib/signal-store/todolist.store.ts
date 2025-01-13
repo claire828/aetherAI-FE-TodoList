@@ -41,6 +41,7 @@ export const TodolistSignalStore = signalStore(
       },
 
       addTodos(todos: TaskEntity[]): void {
+        console.log('AddTodos', todos);
         patchState(store, addEntities(todos));
       },
 
@@ -70,8 +71,6 @@ export const TodolistSignalStore = signalStore(
         }));
       },
 
-
-
       // remove all todos that are empty
       removeEmptyTodos(): void {
         patchState(store, removeEntities(({ name }) => !name));
@@ -81,12 +80,24 @@ export const TodolistSignalStore = signalStore(
       completeAllTodos(completed: boolean): void {
         patchState(store, updateAllEntities({ completed }));
       },
+
+      addSelected(id: string): void {
+        patchState(store, {
+          selectedIds: [...store.selectedIds(), id]
+        });
+      },
+      removeSelected(id: string): void {
+        patchState(store, {
+          selectedIds: [...store.selectedIds().filter((selectedId) => selectedId !== id)]
+        });
+      },
+
     }),
 
   ),
   withHooks({
     onInit(store) {
-      console.log('TodolistSignalStore onInit', store);
+      console.log('TodolistSignalStore onInit');
       store.fetchAllTask().then(tasks => {
         store.addTodos(tasks);
       }).catch(error => {

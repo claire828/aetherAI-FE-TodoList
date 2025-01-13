@@ -1,6 +1,6 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, computed, inject, input, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TaskEntity } from 'todolist-store';
+import { TaskEntity, TodolistSignalStore } from 'todolist-store';
 import { WebButtonComponent, CheckboxComponent } from 'web/uis';
 @Component({
   selector: 'lib-task-component',
@@ -13,7 +13,9 @@ export class TaskComponentComponent {
   public updateTask = output<TaskEntity>();
   public task = input.required<TaskEntity>();
   public isEditing = signal(false);
-  public selected = signal(false);
+  protected store = inject(TodolistSignalStore);
+  protected selected = computed(() => this.store.selectedIds().includes(this.task().id));
+
 
   onUpdateTask() {
     this.updateTask.emit(this.task());
@@ -36,11 +38,12 @@ export class TaskComponentComponent {
     this.updateTask.emit(this.task()); // Emit the updated task back to the parent
   }
 
-
-  public selectChanged(event: boolean) {
-    this.selected.set(event);
-    // todo: update to selected
+  public selectChanged(isSelected: boolean) {
+    if (isSelected) {
+      this.store.addSelected(this.task().id);
+      return;
+    }
+    this.store.removeSelected(this.task().id);
   }
-
 
 }
