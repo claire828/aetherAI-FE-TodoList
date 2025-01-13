@@ -1,6 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TaskComponentComponent } from '../../uis/task-component/task-component.component';
+import { TaskComponentComponent } from '../task-component/task-component.component';
 import { TaskEntity } from 'todolist-store';
 import { WebButtonComponent } from 'web/uis';
 import { TodolistSignalStore } from 'todolist-store';

@@ -15,8 +15,6 @@ export class TaskComponentComponent {
   public isEditing = signal(false);
   protected store = inject(TodolistSignalStore);
   protected selected = computed(() => this.store.selectedIds().includes(this.task().id));
-
-
   onUpdateTask() {
     this.updateTask.emit(this.task());
   }
