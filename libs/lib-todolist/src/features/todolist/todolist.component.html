@@ -33,7 +33,7 @@
           [buttonName]="'Select All'"
         ></uis-web-button>
 
-        @if (!this.selectedIds.length) {
+        @if (this.selectedIds().length) {
           <div class="flex gap-2">
             <uis-web-border-button
               [btnClasses]="
