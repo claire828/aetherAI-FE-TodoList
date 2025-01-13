@@ -9,10 +9,12 @@
       <uis-web-border-button
         [btnClasses]="'border-green-500 text-green-500 hover:bg-green-100 hover:text-green-600'"
         [buttonName]="'Complete'"
+        (click)="completeAllTodos()"
       ></uis-web-border-button>
       <uis-web-border-button
         [btnClasses]="'hover:bg-gray-100 hover:text-gray-600'"
         [buttonName]="'Incomplete'"
+        (click)="incompleteAllTodos()"
       ></uis-web-border-button>
     </div>
   }

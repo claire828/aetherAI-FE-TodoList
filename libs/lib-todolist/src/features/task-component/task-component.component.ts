@@ -20,11 +20,7 @@ export class TaskComponentComponent {
   }
 
   public onDeleteTask() {
-
-  }
-
-  public onToggleComplete() {
-
+    this.store.deleteTodo(this.task());
   }
 
   enableEdit() {

@@ -29,4 +29,7 @@ export class TodolistComponent {
   protected todoLists = computed(() => this.store.entities());
   protected selectedIds = computed(() => this.store.selectedIds());
 
+  protected completeHandler(completed: boolean): void {
+    this.store.completeAllTodos(completed);
+  }
 }

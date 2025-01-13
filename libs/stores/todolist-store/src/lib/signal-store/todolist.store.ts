@@ -3,9 +3,11 @@ import {
   addEntities,
   addEntity,
   removeEntities,
+  removeEntity,
   setEntities,
   setEntity,
   updateAllEntities,
+  updateEntities,
   updateEntity,
   withEntities
 } from '@ngrx/signals/entities';
@@ -71,6 +73,10 @@ export const TodolistSignalStore = signalStore(
         }));
       },
 
+      deleteTodo(todo: TaskEntity): void {
+        patchState(store, removeEntity(todo.id));
+      },
+
       // remove all todos that are empty
       removeEmptyTodos(): void {
         patchState(store, removeEntities(({ name }) => !name));
@@ -78,7 +84,11 @@ export const TodolistSignalStore = signalStore(
 
       // complete all todos
       completeAllTodos(completed: boolean): void {
-        patchState(store, updateAllEntities({ completed }));
+        patchState(store, updateEntities({
+          ids: store.selectedIds(),
+          changes: { completed }
+        }));
+        patchState(store, { selectedIds: [] });
       },
 
       addSelected(id: string): void {

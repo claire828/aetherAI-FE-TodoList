@@ -30,5 +30,8 @@
   </section>
 
   <!-- Footer Section -->
-  <lib-todolist-footer></lib-todolist-footer>
+  <lib-todolist-footer
+    [showCompletedArea]="!!selectedIds().length"
+    (completeTodos)="completeHandler($event)"
+  ></lib-todolist-footer>
 </section>

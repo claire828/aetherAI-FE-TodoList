@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WebBorderButtonComponent, WebButtonComponent } from 'web/uis';
 
@@ -10,5 +10,14 @@ import { WebBorderButtonComponent, WebButtonComponent } from 'web/uis';
   styleUrl: './todolist-footer.component.scss',
 })
 export class TodolistFooterComponent {
-  protected showCompletedArea = signal(true);
+  public completeTodos = output<boolean>();
+  public showCompletedArea = input.required<boolean>();
+
+  public completeAllTodos(): void {
+    this.completeTodos.emit(true);
+  }
+
+  public incompleteAllTodos(): void {
+    this.completeTodos.emit(false);
+  }
 }
