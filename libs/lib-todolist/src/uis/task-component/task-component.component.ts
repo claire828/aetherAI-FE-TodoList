@@ -1,20 +1,17 @@
-import { Component, computed, EventEmitter, input, Output, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 import { TaskEntity } from 'todolist-store';
 import { WebButtonComponent, CheckboxComponent } from 'web/uis';
 @Component({
   selector: 'lib-task-component',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, WebButtonComponent, CheckboxComponent],
+  imports: [CommonModule, WebButtonComponent, CheckboxComponent],
   templateUrl: './task-component.component.html',
   styleUrl: './task-component.component.scss',
 })
 export class TaskComponentComponent {
-  @Output() updateTask = new EventEmitter<TaskEntity>();
+  public updateTask = output<TaskEntity>();
   public task = input.required<TaskEntity>();
-  public completed = computed(() => this.task().completed ? 'completed' : 'ongoing');
   public isEditing = signal(false);
   public selected = signal(false);
 

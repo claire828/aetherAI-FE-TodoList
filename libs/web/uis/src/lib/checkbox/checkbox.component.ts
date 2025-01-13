@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, Output, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, model, output, input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DEFAULT_CHECKBOX_CLASSES } from '../styles';
@@ -14,8 +14,8 @@ import { DEFAULT_CHECKBOX_CLASSES } from '../styles';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxComponent {
-  @Output() checkedChange = new EventEmitter<boolean>();
-  @Input() checked = false;
+  checkedChange = output<boolean>();
+  checked = model<boolean>(false);
   uniqId = input.required<string>()
 
   protected get defaultClasses() {
@@ -23,7 +23,7 @@ export class CheckboxComponent {
   }
 
   protected checkedChangeHandler() {
-    this.checked = !this.checked;
-    this.checkedChange.emit(this.checked);
+    this.checked.set(!this.checked());
+    this.checkedChange.emit(this.checked());
   }
 }

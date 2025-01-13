@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, resource, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskComponentComponent } from '../../uis/task-component/task-component.component';
 import { TaskEntity } from 'todolist-store';

@@ -7,6 +7,7 @@ import { SubSink } from 'subsink';
   selector: '[sharedClickDebounceStopPropagation]',
 })
 export class ClickDebounceStopPropagationDirective implements OnDestroy {
+  // TODO: 改成新的
   @Output() clickDebounceStopPropagation = new EventEmitter();
   private subSink = new SubSink();
   private click$ = new Subject<unknown>();

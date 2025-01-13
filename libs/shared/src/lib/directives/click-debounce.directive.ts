@@ -8,6 +8,7 @@ import { WebEvent } from '../events';
   selector: '[sharedClickDebounce]',
 })
 export class ClickDebounceDirective implements OnDestroy {
+  // TODO: 改成新的
   @Output() monorepoClickDebounce = new EventEmitter();
   private subSink = new SubSink();
 

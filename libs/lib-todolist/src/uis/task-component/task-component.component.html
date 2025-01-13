@@ -12,7 +12,7 @@
       <input
         *ngIf="isEditing()"
         type="text"
-        [(ngModel)]="task().name"
+        [(value)]="task().name"
         (blur)="saveEdit()"
         (keyup.enter)="saveEdit()"
         class="w-40 rounded-md border border-gray-300 px-2 py-1 text-gray-700"
