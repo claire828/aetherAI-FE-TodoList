@@ -2,8 +2,9 @@ import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskComponentComponent } from '../../uis/task-component/task-component.component';
 import { TaskEntity } from 'todolist-store';
-import { WebBorderButtonComponent, WebButtonComponent } from 'web/uis';
+import { WebButtonComponent } from 'web/uis';
 import { TodolistSignalStore } from 'todolist-store';
+import { TodolistFooterComponent } from '../todolist-footer/todolist-footer.component';
 
 const url = 'http://localhost:3000/tasks';
 export const allTaskLoader = async () => {
@@ -18,7 +19,7 @@ export const allTaskLoader = async () => {
 @Component({
   selector: 'todolist',
   standalone: true,
-  imports: [CommonModule, TaskComponentComponent, WebButtonComponent, WebBorderButtonComponent],
+  imports: [CommonModule, TaskComponentComponent, WebButtonComponent, TodolistFooterComponent],
   providers: [TodolistSignalStore],
   templateUrl: './todolist.component.html',
   styleUrl: './todolist.component.css',

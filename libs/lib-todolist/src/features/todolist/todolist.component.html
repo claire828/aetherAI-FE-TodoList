@@ -1,4 +1,5 @@
 <section class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
+  <!-- Header Section -->
   <header class="mb-4">
     <h1 class="text-2xl font-bold text-gray-700">Todo List</h1>
   </header>
@@ -18,38 +19,16 @@
   <!-- Task List Section -->
   <section>
     @if (todoLists().length > 0) {
-      <ul class="space-y-2">
+      <div class="space-y-2">
         @for (task of todoLists(); track $index) {
-          <li>
-            <lib-task-component [task]="task"></lib-task-component>
-          </li>
+          <lib-task-component [task]="task"></lib-task-component>
         }
-      </ul>
-
-      <!-- Action Buttons Section -->
-      <footer class="mt-4 flex justify-between text-sm">
-        <uis-web-button
-          [btnClasses]="'bg-gray-500 hover:bg-gray-600'"
-          [buttonName]="'Select All'"
-        ></uis-web-button>
-
-        @if (this.selectedIds().length) {
-          <div class="flex gap-2">
-            <uis-web-border-button
-              [btnClasses]="
-                'border-green-500 text-green-500 hover:bg-green-100 hover:text-green-600'
-              "
-              [buttonName]="'Complete'"
-            ></uis-web-border-button>
-            <uis-web-border-button
-              [btnClasses]="'hover:bg-gray-100 hover:text-gray-600'"
-              [buttonName]="'Incomplete'"
-            ></uis-web-border-button>
-          </div>
-        }
-      </footer>
+      </div>
     } @else {
       <p class="text-center text-gray-500">No tasks available. Add your first task!</p>
     }
   </section>
+
+  <!-- Footer Section -->
+  <lib-todolist-footer></lib-todolist-footer>
 </section>
