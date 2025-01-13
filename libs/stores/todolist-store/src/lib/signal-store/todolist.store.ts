@@ -64,7 +64,13 @@ export const TodolistSignalStore = signalStore(
       },
 
       deleteTodo(todo: TaskEntity): void {
-        patchState(store, removeEntity(todo.id));
+        // patchState(store, removeEntity(todo.id));
+        patchState(store, (state) => {
+          return {
+            ...removeEntity(todo.id)(state),
+            selectedIds: state.selectedIds.filter((selectedId) => selectedId !== todo.id),
+          };
+        });
       },
 
       // remove all todos that are empty
