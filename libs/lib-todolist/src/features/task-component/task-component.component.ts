@@ -19,7 +19,6 @@ export class TaskComponentComponent {
     this.updateTask.emit(this.task());
   }
   public onDeleteTask() {
-    this.store.removeSelected(this.task().id);
     this.store.deleteTodo(this.task());
   }
 
