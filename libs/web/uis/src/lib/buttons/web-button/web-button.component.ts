@@ -9,9 +9,7 @@ import { colorTransform } from '../../utils';
   imports: [CommonModule],
   template: `
     <button
-      class="shared-button-outlook {{ defaultButtonClass }} {{ colorStyle().bg }}  {{
-        colorStyle().hoverBg
-      }} {{ btnClasses() }} "
+      class="shared-button-outlook {{ defaultButtonClass }} {{ colorStyle().bg }} {{colorStyle().hoverBg}} {{ btnClasses() }} "
       [class.fontBold]="isFontBold()"
       [disabled]="isDisabled()"
     >
