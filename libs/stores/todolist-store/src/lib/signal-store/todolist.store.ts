@@ -13,13 +13,14 @@ import {
 import { TaskEntity } from '../models';
 import { TodolistState } from '../models/todolist.state';
 import { computed } from '@angular/core';
+import { withDevtools } from '@angular-architects/ngrx-toolkit';
 
 const initialState: TodolistState = {
   selectedIds: [],
 }
 
 export const TodolistSignalStore = signalStore(
-  { providedIn: 'root' },
+  withDevtools('todolist'),
   withState(initialState),
   withEntities<TaskEntity>(),
   withComputed((store) => ({
