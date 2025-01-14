@@ -13,15 +13,19 @@ import {
 import { TaskEntity } from '../models';
 import { TodolistState } from '../models/todolist.state';
 import { computed } from '@angular/core';
-import { withDevtools } from '@angular-architects/ngrx-toolkit';
+import { updateState, withCallState, withDevtools, withGlitchTracking, withUndoRedo } from '@angular-architects/ngrx-toolkit';
 
 const initialState: TodolistState = {
   selectedIds: [],
 }
 
 export const TodolistSignalStore = signalStore(
-  withDevtools('todolist'),
+  // withDevtools is a helper function that adds the devtools to the store
+  withDevtools('todolist', withGlitchTracking()),
   withState(initialState),
+  withUndoRedo(),
+  // withCallState is a helper function that adds a call state to the store
+  withCallState(),
   withEntities<TaskEntity>(),
   withComputed((store) => ({
     todoLists: computed(() => store.entities())
@@ -44,8 +48,8 @@ export const TodolistSignalStore = signalStore(
       },
 
       addTodos(todos: TaskEntity[]): void {
-        console.log('AddTodos', todos);
-        patchState(store, addEntities(todos));
+        // updateState is a wrapper around patchState and has an action name as second parameter
+        updateState(store, 'AddTodos', addEntities(todos));
       },
 
       // setEntity: Adds or replaces an entity in the collection.
