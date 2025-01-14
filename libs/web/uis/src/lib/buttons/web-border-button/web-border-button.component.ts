@@ -7,8 +7,15 @@ import { DEFAULT_BORDER_BUTTON_CLASSES } from '../../styles';
   selector: 'uis-web-border-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './web-border-button.component.html',
-  styleUrl: './web-border-button.component.scss',
+  template: `
+    <button
+      [class.fontBold]="isFontBold()"
+      [disabled]="isDisabled()"
+      class="{{ defaultButtonClass }} {{ btnClasses() }}"
+      >
+      {{ buttonName() }}
+      </button>
+  `
 })
 export class WebBorderButtonComponent extends WebButtonComponent {
   protected override get defaultButtonClass(): string {

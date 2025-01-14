@@ -7,7 +7,6 @@ import { WebButtonComponent, CheckboxComponent } from 'web/uis';
   standalone: true,
   imports: [CommonModule, WebButtonComponent, CheckboxComponent],
   templateUrl: './task-component.component.html',
-  styleUrl: './task-component.component.scss',
 })
 export class TaskComponentComponent {
   public updateTask = output<TaskEntity>();

@@ -7,8 +7,18 @@ import { colorTransform } from '../../utils';
   selector: 'uis-web-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './web-button.component.html',
-  styleUrl: './web-button.component.scss',
+  template: `
+    <button
+      class="shared-button-outlook {{ defaultButtonClass }} {{ colorStyle().bg }}  {{
+        colorStyle().hoverBg
+      }} {{ btnClasses() }} "
+      [class.fontBold]="isFontBold()"
+      [disabled]="isDisabled()"
+    >
+      {{ buttonName() }}
+    </button>
+
+  `
 })
 export class WebButtonComponent {
   buttonName = input.required<string>();
