@@ -1,0 +1,9 @@
+{
+  "editor.codeActions.triggerOnFocusChange": true,
+  "eslint.codeActionsOnSave.rules": null,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "source.addMissingImports": "explicit"
+  }
+}
