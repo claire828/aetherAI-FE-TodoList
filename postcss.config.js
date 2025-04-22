@@ -2,7 +2,6 @@
 // This file will be used by all the libraries and applications within the workspace.
 module.exports = {
   plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
+    '@tailwindcss/postcss': {},
   },
 };
