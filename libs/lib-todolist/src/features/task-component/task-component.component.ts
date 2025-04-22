@@ -1,7 +1,7 @@
-import { Component, computed, inject, input, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TaskEntity, TodolistSignalStore } from 'todolist-store';
-import { WebButtonComponent, CheckboxComponent } from 'web/uis';
+import { Component, computed, inject, input, output, signal } from '@angular/core';
+import { CheckboxComponent, WebButtonComponent } from 'web/uis';
+import { TaskEntity, TodolistSignalStore } from '../../stores';
 @Component({
   selector: 'lib-task-component',
   standalone: true,

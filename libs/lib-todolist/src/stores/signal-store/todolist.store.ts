@@ -1,3 +1,5 @@
+import { updateState, withCallState, withDevtools, withGlitchTracking, withUndoRedo } from '@angular-architects/ngrx-toolkit';
+import { computed } from '@angular/core';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import {
   addEntities,
@@ -12,8 +14,6 @@ import {
 } from '@ngrx/signals/entities';
 import { TaskEntity } from '../models';
 import { TodolistState } from '../models/todolist.state';
-import { computed } from '@angular/core';
-import { updateState, withCallState, withDevtools, withGlitchTracking, withUndoRedo } from '@angular-architects/ngrx-toolkit';
 
 const initialState: TodolistState = {
   selectedIds: [],
@@ -21,7 +21,7 @@ const initialState: TodolistState = {
 
 export const TodolistSignalStore = signalStore(
   // withDevtools is a helper function that adds the devtools to the store
-  withDevtools('todolist', withGlitchTracking()),
+  withDevtools('todolistRoot', withGlitchTracking()),
   withState(initialState),
   withUndoRedo(),
   // withCallState is a helper function that adds a call state to the store

@@ -1,12 +1,11 @@
-import { Component, inject, model } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TaskComponentComponent } from '../task-component/task-component.component';
-import { TaskEntity } from 'todolist-store';
-import { WebButtonComponent } from 'web/uis';
-import { TodolistSignalStore } from 'todolist-store';
-import { TodolistFooterComponent } from '../../uis/todolist-footer/todolist-footer.component';
-import * as uuid from 'uuid';
+import { Component, inject, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import * as uuid from 'uuid';
+import { WebButtonComponent } from 'web/uis';
+import { TaskEntity, TodolistSignalStore } from '../../stores';
+import { TodolistFooterComponent } from '../../uis/todolist-footer/todolist-footer.component';
+import { TaskComponentComponent } from '../task-component/task-component.component';
 const url = 'http://localhost:3000/tasks';
 export const allTaskLoader = async () => {
   const data = await fetch(url);

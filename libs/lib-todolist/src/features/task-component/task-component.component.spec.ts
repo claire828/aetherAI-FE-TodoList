@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TaskComponentComponent } from './task-component.component';
-import { WebButtonComponent } from 'web/uis';
 import { TaskEntity } from 'todolist-store';
+import { WebButtonComponent } from 'web/uis';
+import { TodolistSignalStore } from '../../stores';
+import { TaskComponentComponent } from './task-component.component';
 
 describe('TaskComponent', () => {
   let component: TaskComponentComponent;
@@ -10,6 +11,7 @@ describe('TaskComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [WebButtonComponent],
+      providers: [TodolistSignalStore],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TaskComponentComponent);
@@ -21,7 +23,7 @@ describe('TaskComponent', () => {
     const mockTask: TaskEntity = {
       id: '1',
       name: 'Test Task',
-      complete: false,
+      completed: false,
       ts: new Date().toISOString()
     };
 
