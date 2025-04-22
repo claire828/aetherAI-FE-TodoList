@@ -236,4 +236,5 @@ module.exports = [
       '@angular-eslint/template/no-negated-async': 'error',
     },
   },
+  { ignores: ['**/vite.config.*.timestamp*', '**/vitest.config.*.timestamp*'] },
 ];
