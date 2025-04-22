@@ -9,7 +9,7 @@
     "build": "nx build",
     "test": "npx nx affected:test",
     "skeleton": "ng serve skeleton --port 4300 --hmr=true ",
-    "todolist": "ng serve todolist --port 4305 --hmr=true ",
+    "todolist": "ng serve todolist --port 4305 --hmr=true --verbose",
     "json-server": "json-server --watch db.json",
     "generate-icons": "svg-generator",
     "graph": "nx graph",
@@ -73,6 +73,7 @@
     "@nrwl/workspace": "19.8.4",
     "@nx/jest": "20.8.0",
     "@nx/js": "20.8.0",
+    "@nx/vite": "^20.8.0",
     "@nx/web": "20.8.0",
     "@schematics/angular": "19.0.2",
     "@swc-node/register": "~1.9.1",
@@ -83,6 +84,7 @@
     "@typescript-eslint/eslint-plugin": "~8.13.0",
     "@typescript-eslint/parser": "~8.13.0",
     "@typescript-eslint/utils": "^8.0.0",
+    "@vitest/ui": "^3.0.0",
     "angular-eslint": "19.0.2",
     "cypress": "^13.15.1",
     "eslint": "~9.14.0",
@@ -91,6 +93,7 @@
     "jest": "29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-preset-angular": "~14.4.0",
+    "jiti": "2.4.2",
     "nx": "20.8.0",
     "postcss": "^8.5.3",
     "prettier": "^3.3.3",
@@ -100,6 +103,8 @@
     "ts-node": "~10.9.2",
     "typescript": "5.7.3",
     "typescript-eslint": "^8.0.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0",
     "webpack": "^5.96.1"
   }
 }

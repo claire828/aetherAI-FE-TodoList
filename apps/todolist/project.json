@@ -7,12 +7,12 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/todolist",
         "index": "apps/todolist/src/index.html",
-        "browser": "apps/todolist/src/main.ts",
+        "main": "apps/todolist/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/todolist/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
