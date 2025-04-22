@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DialogService, MOCK_CONFIG, MOCK_CONFIG2 } from 'web/features/dialog';
+import { DialogService, MOCK_CONFIG } from 'web/features/dialog';
 
 @Component({
   standalone: true,
@@ -11,7 +11,7 @@ import { DialogService, MOCK_CONFIG, MOCK_CONFIG2 } from 'web/features/dialog';
 })
 export class AppComponent {
 
-  constructor() { }
+  constructor() { this.showDialog(); }
 
   public showDialog() {
     const service = inject(DialogService);
@@ -21,6 +21,6 @@ export class AppComponent {
       // ref.close();
       subscription.unsubscribe();
     });
-    service.openComponentDialog(MOCK_CONFIG2);
+    // service.openComponentDialog(MOCK_CONFIG2);
   }
 }
