@@ -1,8 +1,8 @@
-import { Component, ChangeDetectionStrategy, Inject, ViewChild, ViewContainerRef, AfterViewInit, viewChild, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DecorateOverlayRef } from '../utils';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Inject, ViewChild, ViewContainerRef } from '@angular/core';
 import { DefaultDialogConfig, DialogEvent } from '../models';
 import { DIALOG_DEFAULT_PROVIDER } from '../providers';
+import { DecorateOverlayRef } from '../utils';
 
 @Component({
   selector: 'web-features-dialog',

@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DecorateOverlayRef } from '../utils';
+import { DialogEvent } from '../models';
 import { DIALOG_DEFAULT_PROVIDER } from '../providers';
+import { DecorateOverlayRef } from '../utils';
 import { WebFeaturesDialogComponent } from './web-features-dialog.component';
-import { DialogBtn } from '../models';
 
 describe('WebFeaturesDialogComponent', () => {
   let component: WebFeaturesDialogComponent;
@@ -20,7 +20,7 @@ describe('WebFeaturesDialogComponent', () => {
             name: 'test-dialog',
             title: 'Test Dialog Title',
             content: 'Test Dialog Content',
-            btns: [{ type: DialogBtn.Enter, displayName: 'Enter' }, { type: DialogBtn.Cancel, displayName: 'Close' }],
+            btns: [{ type: DialogEvent.Enter, displayName: 'Enter' }, { type: DialogEvent.Cancel, displayName: 'Close' }],
             overlayConfig: {
               hasBackdrop: true,
               backdropClass: ['bg-gray-500/30'],
