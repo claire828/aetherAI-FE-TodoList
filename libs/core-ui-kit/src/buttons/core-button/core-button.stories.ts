@@ -3,7 +3,11 @@ import { CoreButtonComponent } from './core-button.component';
 
 export default {
   title: 'Buttons/CoreButton',
-  component: CoreButtonComponent, // Directly reference the standalone component
+  component: CoreButtonComponent,
+  argTypes: {
+    label: { control: 'text' },
+    variant: { control: 'text' },
+  },
 } as Meta;
 
 const Template: Story = (args) => ({
