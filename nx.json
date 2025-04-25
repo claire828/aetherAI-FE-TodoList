@@ -40,6 +40,15 @@
     },
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
+    },
+    "build-storybook": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        "{projectRoot}/.storybook/**/*",
+        "{projectRoot}/tsconfig.storybook.json"
+      ]
     }
   },
   "generators": {

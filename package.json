@@ -14,7 +14,8 @@
     "generate-icons": "svg-generator",
     "graph": "nx graph",
     "lint": "eslint . --ext .ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "storybook": "npx start-storybook -p 6006 -c libs/core-ui-kit/.storybook"
   },
   "private": true,
   "dependencies": {
@@ -63,6 +64,7 @@
     "@angular/compiler-cli": "19.2.7",
     "@angular/language-service": "19.2.7",
     "@angularclass/hmr": "^3.0.0",
+    "@chromatic-com/storybook": "^3.2.6",
     "@eslint/eslintrc": "^2.1.1",
     "@ngneat/svg-generator": "^7.0.3",
     "@ngrx/signals": "^19.0.0",
@@ -77,6 +79,10 @@
     "@nx/vite": "^20.8.0",
     "@nx/web": "20.8.0",
     "@schematics/angular": "19.0.2",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/angular": "^8.6.12",
+    "@storybook/builder-vite": "^8.6.12",
+    "@storybook/core-server": "^8.6.12",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
