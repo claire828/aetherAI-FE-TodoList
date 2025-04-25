@@ -1,11 +1,12 @@
 <article class="mb-2 flex items-center justify-between rounded-md bg-gray-100 px-4 py-2">
   <section class="flex w-full items-center justify-between">
     <!-- Task Select Checkbox -->
-    <uis-checkbox
+    <core-checkbox
       [uniqId]="task().id"
       [checked]="selected()"
       (checkedChange)="selectChanged($event)"
-    ></uis-checkbox>
+      [color]="'black'"
+    />
 
     <!-- Task Name -->
     @if (isEditing()) {

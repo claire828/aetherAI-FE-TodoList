@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TaskEntity } from 'todolist-store';
 import { TodolistSignalStore } from '../../stores';
 import { TaskComponentComponent } from './task-component.component';
-import { CoreButtonComponent} from 'core-ui-kit';
+import { CoreButtonComponent, CoreCheckboxComponent} from 'core-ui-kit';
 
 describe('TaskComponent', () => {
   let component: TaskComponentComponent;
@@ -10,7 +10,7 @@ describe('TaskComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ CoreButtonComponent],
+      imports: [ CoreButtonComponent, CoreCheckboxComponent],
       providers: [TodolistSignalStore],
     }).compileComponents();
 
