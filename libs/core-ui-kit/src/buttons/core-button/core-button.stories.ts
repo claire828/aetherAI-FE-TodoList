@@ -6,7 +6,9 @@ export default {
   component: CoreButtonComponent,
   argTypes: {
     label: { control: 'text' },
-    variant: { control: 'text' },
+    color: { control: { type: 'select' }, options: ['blue', 'red', 'green', 'gray'] },
+    size: { control: { type: 'select' }, options: ['small', 'medium', 'large'] },
+    disabled: { control: 'boolean' },
   },
 } as Meta;
 
@@ -14,14 +16,34 @@ const Template: Story = (args) => ({
   props: args,
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
-  label: 'Primary Button',
-  variant: 'primary',
+export const Default = Template.bind({});
+Default.args = {
+  label: 'Default Button',
+  color: 'blue',
+  size: 'medium',
+  disabled: false,
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Secondary Button',
-  variant: 'secondary',
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: 'Disabled Button',
+  color: 'gray',
+  size: 'medium',
+  disabled: true,
+};
+
+export const LargeRed = Template.bind({});
+LargeRed.args = {
+  label: 'Large Red Button',
+  color: 'red',
+  size: 'large',
+  disabled: false,
+};
+
+export const SmallGreen = Template.bind({});
+SmallGreen.args = {
+  label: 'Small Green Button',
+  color: 'green',
+  size: 'small',
+  disabled: false,
 };
