@@ -1,1 +1,1 @@
-export * from './lib/core-button/core-button.component';
+export * from './buttons/core-button/core-button.component'; // Ensure CoreButtonComponent is exported

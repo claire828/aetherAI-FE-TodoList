@@ -28,7 +28,8 @@
       "shared-store": ["libs/stores/shared-store/src/index.ts"],
       "todolist-store": ["libs/stores/todolist-store/src/index.ts"],
       "web/features/dialog": ["libs/web/features/dialog/src/index.ts"],
-      "web/uis": ["libs/web/uis/src/index.ts"]
+      "web/uis": ["libs/web/uis/src/index.ts"],
+      "core-ui-kit": ["libs/core-ui-kit/src/index.ts"] // Ensure this points to the correct index file
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'core-button',
+  imports: [CommonModule],
   template: `
     <button
       [class]="[

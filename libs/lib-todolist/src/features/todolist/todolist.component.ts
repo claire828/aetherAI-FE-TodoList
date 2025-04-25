@@ -3,23 +3,25 @@ import { Component, inject, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as uuid from 'uuid';
 import { WebButtonComponent } from 'web/uis';
-import { TaskEntity, TodolistSignalStore } from '../../stores';
+import { TodolistSignalStore } from '../../stores';
 import { TodolistFooterComponent } from '../../uis/todolist-footer/todolist-footer.component';
 import { TaskComponentComponent } from '../task-component/task-component.component';
-const url = 'http://localhost:3000/tasks';
-export const allTaskLoader = async () => {
-  const data = await fetch(url);
-  if (!data.ok) {
-    throw Error('error');
-  }
-  return await data.json() as TaskEntity[];
-}
+import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches the alias in tsconfig
+
+// const url = 'http://localhost:3000/tasks';
+// export const allTaskLoader = async () => {
+//   const data = await fetch(url);
+//   if (!data.ok) {
+//     throw Error('error');
+//   }
+//   return await data.json() as TaskEntity[];
+// }
 
 
 @Component({
   selector: 'todolist',
   standalone: true,
-  imports: [CommonModule, FormsModule, TaskComponentComponent, WebButtonComponent, TodolistFooterComponent],
+  imports: [CommonModule, FormsModule, TaskComponentComponent, WebButtonComponent, TodolistFooterComponent, CoreButtonComponent],
   providers: [TodolistSignalStore],
   template: `<section class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
   <header class="mb-4 text-2xl font-bold text-gray-700">Todo List</header>
@@ -34,7 +36,7 @@ export const allTaskLoader = async () => {
       class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
       (keydown.enter)="test(addTaskInput)"
     />
-    <uis-web-button [buttonName]="'Add Task'" (click)="addTaskHandler()"></uis-web-button>
+    <core-button [label]="'Add Task'" (click)="addTaskHandler()"></core-button>
   </section>
 
   <!-- Task List Section -->

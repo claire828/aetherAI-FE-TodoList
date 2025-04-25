@@ -1,4 +1,4 @@
-import { updateState, withCallState, withDevtools, withGlitchTracking, withUndoRedo } from '@angular-architects/ngrx-toolkit';
+import { updateState, withDevtools, withGlitchTracking } from '@angular-architects/ngrx-toolkit';
 import { computed } from '@angular/core';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import {
@@ -21,17 +21,29 @@ const initialState: TodolistState = {
 
 export const TodolistSignalStore = signalStore(
   // withDevtools is a helper function that adds the devtools to the store
-  withDevtools('todolistRoot', withGlitchTracking()),
+  withDevtools('todolistLocal', withGlitchTracking()),
   withState(initialState),
-  withUndoRedo(),
+  // withUndoRedo(),
   // withCallState is a helper function that adds a call state to the store
-  withCallState(),
+  // withCallState(),
   withEntities<TaskEntity>(),
+
   withComputed((store) => ({
     todoLists: computed(() => store.entities())
   })),
   withMethods(
     (store) => ({
+      // fetchAllTask: () => resource<TaskEntity[], void>({
+      //   loader: () => {
+      //     const url = 'http://localhost:3000/tasks';
+      //     return fetch(url).then((response) => {
+      //       if (!response.ok) {
+      //         throw Error('error');
+      //       }
+      //       return response.json();
+      //     });
+      //   }
+      // }),
       fetchAllTask: async () => {
         const url = 'http://localhost:3000/tasks';
         const data = await fetch(url);
@@ -105,7 +117,6 @@ export const TodolistSignalStore = signalStore(
     }),
 
   ),
-  // withEffects (effects)
   withHooks({
     onInit(store) {
       store.fetchAllTask().then(tasks => {
@@ -116,39 +127,3 @@ export const TodolistSignalStore = signalStore(
     }
   }),
 );
-
-
-/*
- https://ngrx.io/guide/signals/signal-store/entity-management
-  // update entities by IDs
-patchState(
-  store,
-  updateEntities({ ids: [1, 2], changes: { completed: true } })
-);
-
-patchState(
-  store,
-  updateEntities({
-    ids: [1, 2],
-    changes: (todo) => ({ completed: !todo.completed }),
-  })
-);
-
-// update entities by predicate
-patchState(
-  store,
-  updateEntities({
-    predicate: ({ text }) => text.endsWith('✅'),
-    changes: { text: '' },
-  })
-);
-
-patchState(
-  store,
-  updateEntities({
-    predicate: ({ text }) => text.endsWith('❓'),
-    changes: (todo) => ({ text: todo.text.slice(0, -1) }),
-  })
-);
-
-*/

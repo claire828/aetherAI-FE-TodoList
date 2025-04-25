@@ -3,6 +3,7 @@ import { TaskEntity } from 'todolist-store';
 import { WebButtonComponent } from 'web/uis';
 import { TodolistSignalStore } from '../../stores';
 import { TaskComponentComponent } from './task-component.component';
+import {CoreButtonComponent} from 'core-ui-kit';
 
 describe('TaskComponent', () => {
   let component: TaskComponentComponent;
@@ -10,7 +11,7 @@ describe('TaskComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WebButtonComponent],
+      imports: [WebButtonComponent, CoreButtonComponent],
       providers: [TodolistSignalStore],
     }).compileComponents();
 
