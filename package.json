@@ -15,7 +15,7 @@
     "graph": "nx graph",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
-    "storybook": "npx start-storybook -p 6006 -c libs/core-ui-kit/.storybook"
+    "storybook": "npx storybook dev -p 6006 -c libs/core-ui-kit/.storybook"
   },
   "private": true,
   "dependencies": {
