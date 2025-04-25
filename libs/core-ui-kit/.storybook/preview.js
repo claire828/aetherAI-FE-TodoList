@@ -1,9 +1,7 @@
-// import { Preview } from '@storybook/angular';
+import 'zone.js'; // Import Zone.js for Angular's change detection
 
-// 👇 Add these
-import { setCompodocJson } from '@storybook/addon-docs/angular';
-import docJson from './documentation.json';
-setCompodocJson(docJson);
-
-const preview = {};
-export default preview;
+export const decorators = [
+  (Story) => ({
+    template: '<div class="story-wrapper"><story /></div>',
+  }),
+];

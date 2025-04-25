@@ -1,49 +1,23 @@
-// core-button.stories.ts
-import { Meta, StoryObj, applicationConfig } from '@storybook/angular';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { importProvidersFrom } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { Meta, Story } from '@storybook/angular';
 import { CoreButtonComponent } from './core-button.component';
 
-const meta: Meta<CoreButtonComponent> = {
-  title: 'CoreButton',
-  component: CoreButtonComponent,
-  decorators: [
-    applicationConfig({
-      providers: [
-        importProvidersFrom(CommonModule),
-        provideAnimations(),
-      ],
-    }),
-  ],
-  argTypes: {
-    label: { control: 'text' },
-    variant: { control: 'select', options: ['primary', 'secondary', 'danger'] },
-  },
+export default {
+  title: 'Buttons/CoreButton',
+  component: CoreButtonComponent, // Directly reference the standalone component
+} as Meta;
+
+const Template: Story = (args) => ({
+  props: args,
+});
+
+export const Primary = Template.bind({});
+Primary.args = {
+  label: 'Primary Button',
+  variant: 'primary',
 };
 
-export default meta;
-
-type Story = StoryObj<CoreButtonComponent>;
-
-export const Primary: Story = {
-  args: {
-    label: 'Primary Button',
-    variant: 'primary',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: 'Secondary Button',
-    variant: 'secondary',
-  },
-};
-
-export const Danger: Story = {
-  args: {
-    label: 'Danger Button',
-    variant: 'danger',
-  },
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: 'Secondary Button',
+  variant: 'secondary',
 };

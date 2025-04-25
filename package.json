@@ -82,6 +82,7 @@
     "@nx/web": "20.8.0",
     "@schematics/angular": "19.0.2",
     "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
     "@storybook/angular": "^8.6.12",
     "@storybook/builder-vite": "^8.6.12",
     "@storybook/core-server": "^8.6.12",

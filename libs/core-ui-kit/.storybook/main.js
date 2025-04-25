@@ -1,38 +1,55 @@
-// .storybook/main.js
+const { resolve } = require('path');
 
+/** @type { import('@storybook/angular-vite').StorybookConfig } */
 module.exports = {
-  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-  ],
+  stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+  addons: ['@storybook/addon-essentials', '@chromatic-com/storybook'],
+
   framework: {
     name: '@storybook/angular',
-    options: {},
+    options: {
+      enableIvy: true,
+      strictInjectionParameters: true,
+      strictTemplates: true,
+    },
   },
+
   core: {
     builder: '@storybook/builder-vite',
+    disableTelemetry: true,
   },
+
   async viteFinal(config) {
     const { mergeConfig } = await import('vite');
 
     return mergeConfig(config, {
       optimizeDeps: {
-        include: ['storybook-dark-mode'],
+        include: [
+          'storybook-dark-mode',
+          '@angular/core',
+          '@angular/common',
+          '@angular/platform-browser',
+          '@angular/platform-browser-dynamic',
+          '@angular/forms',
+          'zone.js', // Ensure Zone.js is included
+        ],
       },
       resolve: {
         alias: {
           '@': '/src',
         },
       },
+      define: {
+        STORYBOOK_ANGULAR_OPTIONS: JSON.stringify({
+          enableIvy: true,
+          strictInjectionParameters: true,
+          strictTemplates: true,
+        }),
+      },
     });
   },
-  decorators: [
-    (Story) => {
-      return {
-        template: '<div class="story-wrapper"><story /></div>',
-      };
-    },
-  ],
+
+  docs: {
+    autodocs: true,
+  },
 };
