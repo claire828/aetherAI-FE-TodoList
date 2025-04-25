@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as uuid from 'uuid';
-import { WebButtonComponent } from 'web/uis';
 import { TodolistSignalStore } from '../../stores';
 import { TodolistFooterComponent } from '../../uis/todolist-footer/todolist-footer.component';
 import { TaskComponentComponent } from '../task-component/task-component.component';
@@ -21,7 +20,7 @@ import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches
 @Component({
   selector: 'todolist',
   standalone: true,
-  imports: [CommonModule, FormsModule, TaskComponentComponent, WebButtonComponent, TodolistFooterComponent, CoreButtonComponent],
+  imports: [CommonModule, FormsModule, TaskComponentComponent, TodolistFooterComponent, CoreButtonComponent],
   providers: [TodolistSignalStore],
   template: `<section class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
   <header class="mb-4 text-2xl font-bold text-gray-700">Todo List</header>

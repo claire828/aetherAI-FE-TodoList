@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, inject, input, output, signal } from '@angular/core';
-import { CheckboxComponent, WebButtonComponent } from 'web/uis';
+import { CheckboxComponent } from 'web/uis';
 import { TaskEntity, TodolistSignalStore } from '../../stores';
 import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches the alias in tsconfig
 
 @Component({
   selector: 'lib-task-component',
   standalone: true,
-  imports: [CommonModule, WebButtonComponent, CheckboxComponent, CoreButtonComponent],
+  imports: [CommonModule, CheckboxComponent, CoreButtonComponent],
   templateUrl: './task-component.component.html',
 })
 export class TaskComponentComponent {

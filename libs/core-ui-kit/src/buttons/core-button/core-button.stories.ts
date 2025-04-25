@@ -8,6 +8,7 @@ export default {
     label: { control: 'text' },
     color: { control: { type: 'select' }, options: ['blue', 'red', 'green', 'gray'] },
     size: { control: { type: 'select' }, options: ['small', 'medium', 'large'] },
+    mode: { control: { type: 'select' }, options: ['default', 'border'] }, // New control for mode
     disabled: { control: 'boolean' },
   },
 } as Meta;
@@ -21,6 +22,16 @@ Default.args = {
   label: 'Default Button',
   color: 'blue',
   size: 'medium',
+  mode: 'default', // Default mode
+  disabled: false,
+};
+
+export const BorderMode = Template.bind({});
+BorderMode.args = {
+  label: 'Border Mode Button',
+  color: 'red',
+  size: 'medium',
+  mode: 'border', // Border mode
   disabled: false,
 };
 
@@ -29,21 +40,6 @@ Disabled.args = {
   label: 'Disabled Button',
   color: 'gray',
   size: 'medium',
+  mode: 'default',
   disabled: true,
-};
-
-export const LargeRed = Template.bind({});
-LargeRed.args = {
-  label: 'Large Red Button',
-  color: 'red',
-  size: 'large',
-  disabled: false,
-};
-
-export const SmallGreen = Template.bind({});
-SmallGreen.args = {
-  label: 'Small Green Button',
-  color: 'green',
-  size: 'small',
-  disabled: false,
 };

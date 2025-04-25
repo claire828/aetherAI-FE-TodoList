@@ -1,27 +1,28 @@
 import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WebBorderButtonComponent, WebButtonComponent } from 'web/uis';
 import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches the alias in tsconfig
 
 @Component({
   selector: 'lib-todolist-footer',
   standalone: true,
-  imports: [CommonModule, WebBorderButtonComponent, WebButtonComponent, CoreButtonComponent],
+  imports: [CommonModule, CoreButtonComponent],
   template: `<footer class="mt-4 flex justify-between text-sm">
     <core-button [color]="'gray'" [label]="'Select All'"></core-button>
 
     @if (this.showCompletedArea()) {
       <div class="flex gap-2">
-        <uis-web-border-button
-          [btnClasses]="'border-green-500 text-green-500 hover:bg-green-100 hover:text-green-600'"
-          [buttonName]="'Complete'"
+        <core-button
+          [color]="'green'"
+          [mode]='"border"'
+          [label]="'Complete'"
           (click)="completeAllTodos()"
-        ></uis-web-border-button>
-        <uis-web-border-button
-          [btnClasses]="'hover:bg-gray-100 hover:text-gray-600'"
-          [buttonName]="'Incomplete'"
+        />
+        <core-button
+          [color]="'gray'"
+          [mode]='"border"'
+          [label]="'Incomplete'"
           (click)="incompleteAllTodos()"
-        ></uis-web-border-button>
+        />
       </div>
     }
   </footer>`,
