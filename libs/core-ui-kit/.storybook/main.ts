@@ -2,17 +2,26 @@ import type { StorybookConfig } from '@storybook/angular';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@chromatic-com/storybook',
+    '@chromatic-com/storybook'
   ],
+
   framework: {
     name: '@storybook/angular',
     options: {},
   },
-  tags: ['autodocs'], // ✅ 新寫法，保留這段
+
+  // ✅ 新寫法，保留這段
+  tags: ['autodocs'],
+
+  docs: {
+    autodocs: true
+  }
 };
 
 export default config;

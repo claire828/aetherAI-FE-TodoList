@@ -3,13 +3,13 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    '@storybook/addon-interactions',
   ],
   framework: {
     name: '@storybook/angular',
-    options: {}
+    options: {},
   },
   core: {
-    builder: '@storybook/builder-vite'
-  }
+    builder: '@storybook/builder-vite',
+  },
 };
