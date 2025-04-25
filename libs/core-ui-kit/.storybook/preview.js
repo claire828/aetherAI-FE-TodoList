@@ -1,8 +1,9 @@
-const preview = {
-  parameters: {
-    // 可以在這裡加入全域參數設置
-  },
-  tags: ['autodocs'],
-};
+// import { Preview } from '@storybook/angular';
 
+// 👇 Add these
+import { setCompodocJson } from '@storybook/addon-docs/angular';
+import docJson from './documentation.json';
+setCompodocJson(docJson);
+
+const preview = {};
 export default preview;
