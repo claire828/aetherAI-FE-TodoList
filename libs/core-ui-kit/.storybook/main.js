@@ -31,7 +31,9 @@ module.exports = {
           '@angular/platform-browser',
           '@angular/platform-browser-dynamic',
           '@angular/forms',
-          'zone.js', // Ensure Zone.js is included
+          'zone.js',
+          '@angular/cdk/portal',
+          '@angular/cdk/overlay',
         ],
       },
       resolve: {

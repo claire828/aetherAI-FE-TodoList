@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DialogService, MOCK_CONFIG } from 'web/features/dialog';
+import { CoreDialogService } from 'core-ui-kit/src/dialog/dialog.service';
 
 @Component({
   standalone: true,
@@ -10,17 +10,20 @@ import { DialogService, MOCK_CONFIG } from 'web/features/dialog';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-
   constructor() { this.showDialog(); }
 
   public showDialog() {
-    const service = inject(DialogService);
-    const ref = service.openDefaultDialog(MOCK_CONFIG);
+    const service = inject(CoreDialogService);
+    const ref = service.openDefaultDialog({
+      injectorID: 'example-dialog',
+      title: 'Example Dialog',
+      content: 'This is an example dialog.',
+      overlayConfig: {},
+      autoClose: true,
+    });
     const subscription = ref.event$.subscribe((event) => {
       console.log(event);
-      // ref.close();
       subscription.unsubscribe();
     });
-    // service.openComponentDialog(MOCK_CONFIG2);
   }
 }
