@@ -34,7 +34,7 @@ import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches
       class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
       (keydown.enter)="addTaskHandler()"
     />
-    <core-button [label]="'Add Task'" (click)="addTaskHandler()"></core-button>
+    <core-button [label]="'Add Task'" (click)="addTaskHandler()" />
   </section>
 
   <!-- Task List Section -->
@@ -42,7 +42,7 @@ import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches
     @if (store.todoLists().length > 0) {
       <div class="space-y-2">
         @for (task of store.todoLists(); track $index) {
-          <lib-task-component [task]="task"></lib-task-component>
+          <lib-task-component [task]="task" />
         }
       </div>
     } @else {
@@ -50,10 +50,7 @@ import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches
     }
   </section>
 
-  <lib-todolist-footer
-    [showCompletedArea]="!!store.selectedIds().length"
-    (completeTodos)="completeHandler($event)"
-  ></lib-todolist-footer>
+  <lib-todolist-footer [showCompletedArea]="!!store.selectedIds().length" (completeTodos)="completeHandler($event)" />
 </section>
 `,
 })
