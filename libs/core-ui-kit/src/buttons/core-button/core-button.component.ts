@@ -46,9 +46,9 @@ export class CoreButtonComponent {
   private get defaultModeClasses(): string {
     switch (this.color) {
       case 'red':
-        return 'bg-red-500 text-white hover:bg-transparent hover:border-red-500 hover:text-red-500';
+        return 'bg-red-800 text-white hover:bg-transparent hover:border-red-800 hover:text-red-800';
       case 'green':
-        return 'bg-green-500 text-white hover:bg-transparent hover:border-green-500 hover:text-green-500';
+        return 'bg-green-800 text-white hover:bg-transparent hover:border-green-800 hover:text-green-800';
       case 'gray':
         return 'bg-gray-500 text-white hover:bg-transparent hover:border-gray-500 hover:text-gray-500';
       default:

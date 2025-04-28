@@ -52,9 +52,9 @@ export class CoreCheckboxComponent {
       case 'blue':
         return 'bg-blue-500 border-blue-500';
       case 'red':
-        return 'bg-red-500 border-red-500';
+        return 'bg-red-800 border-red-800';
       case 'green':
-        return 'bg-green-500 border-green-500';
+        return 'bg-green-800 border-green-800';
       case 'gray':
         return 'bg-gray-500 border-gray-500';
       default:
@@ -67,9 +67,9 @@ export class CoreCheckboxComponent {
       case 'blue':
         return 'border-blue-500';
       case 'red':
-        return 'border-red-500';
+        return 'border-red-800';
       case 'green':
-        return 'border-green-500';
+        return 'border-green-800';
       case 'gray':
         return 'border-gray-500';
       default:
