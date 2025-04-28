@@ -28,12 +28,11 @@ import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches
   <!-- Add Task Section -->
   <section class="mb-4 flex items-center gap-2">
     <input
-      #addTaskInput
       [(ngModel)]="taskModel"
       type="text"
       placeholder="Add a new task"
       class="flex-1 rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
-      (keydown.enter)="test(addTaskInput)"
+      (keydown.enter)="addTaskHandler()"
     />
     <core-button [label]="'Add Task'" (click)="addTaskHandler()"></core-button>
   </section>
@@ -62,27 +61,6 @@ export class TodolistComponent {
   protected store = inject(TodolistSignalStore);
   protected taskModel = model<string>('');
 
-
-  // Method 1: 不需要Model, pass Input from template
-  protected test(inputElem: HTMLInputElement): void {
-    if (inputElem.value.length === 0 || inputElem.value.trim() === '') {
-      return;
-    }
-    this.store.addTodo({
-      id: uuid.v4(),
-      name: inputElem.value,
-      completed: false,
-      ts: new Date().getTime().toString()
-    });
-    inputElem.value = '';
-    this.taskModel.set('');
-  }
-
-  // Method 2: 使用Model, 透過Model取得資料
-  // 可以註冊 taskModel 的監聽事件, angular 會自動註銷
-  // this.taskModel.subscribe((value) => {
-  //  console.log('TaskModel', value);
-  // })
   protected addTaskHandler(): void {
     if (this.taskModel().length === 0 || this.taskModel().trim() === '') {
       return;
@@ -95,7 +73,6 @@ export class TodolistComponent {
     });
     this.taskModel.set('');
   }
-
 
   protected completeHandler(completed: boolean): void {
     this.store.completeAllTodos(completed);
