@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import { CoreButtonComponent } from './core-button.component';
 
 export default {
@@ -11,35 +11,34 @@ export default {
     mode: { control: { type: 'select' }, options: ['default', 'border'] }, // New control for mode
     disabled: { control: 'boolean' },
   },
-} as Meta;
+} as Meta<CoreButtonComponent>;
 
-const Template: Story = (args) => ({
-  props: args, // Pass args to the component
-});
-
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Default Button',
-  color: 'blue',
-  size: 'medium',
-  mode: 'default', // Default mode
-  disabled: false,
+export const Default = {
+  args: {
+    label: 'Default Button',
+    color: 'blue',
+    size: 'medium',
+    mode: 'default', // Default mode
+    disabled: false,
+  },
 };
 
-export const BorderMode = Template.bind({});
-BorderMode.args = {
-  label: 'Border Mode Button',
-  color: 'red',
-  size: 'medium',
-  mode: 'border', // Border mode
-  disabled: false,
+export const BorderMode = {
+  args: {
+    label: 'Border Mode Button',
+    color: 'red',
+    size: 'medium',
+    mode: 'border', // Border mode
+    disabled: false,
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  label: 'Disabled Button',
-  color: 'gray',
-  size: 'medium',
-  mode: 'default',
-  disabled: true,
+export const Disabled = {
+  args: {
+    label: 'Disabled Button',
+    color: 'gray',
+    size: 'medium',
+    mode: 'default',
+    disabled: true,
+  },
 };

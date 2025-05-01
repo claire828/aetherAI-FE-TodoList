@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/angular';
+import { Meta } from '@storybook/angular';
 import { CoreCheckboxComponent } from './core-checkbox.component';
 
 export default {
@@ -7,38 +7,38 @@ export default {
   argTypes: {
     checked: { control: 'boolean' },
     uniqId: { control: 'text' },
-    color: { control: { type: 'select' }, options: ['black', 'blue', 'red', 'green', 'gray'] }, // Added color control
+    color: { control: { type: 'select' }, options: ['black', 'blue', 'red', 'green', 'gray'] },
   },
-} as Meta;
+} as Meta<CoreCheckboxComponent>;
 
-const Template: Story = (args) => ({
-  props: args,
-});
-
-export const Default = Template.bind({});
-Default.args = {
-  checked: false,
-  uniqId: 'default-checkbox',
-  color: 'black', // Default color
+export const Default = {
+  args: {
+    checked: false,
+    uniqId: 'default-checkbox',
+    color: 'black',
+  },
 };
 
-export const Checked = Template.bind({});
-Checked.args = {
-  checked: true,
-  uniqId: 'checked-checkbox',
-  color: 'blue', // Example with blue color
+export const Checked = {
+  args: {
+    checked: true,
+    uniqId: 'checked-checkbox',
+    color: 'blue',
+  },
 };
 
-export const RedCheckbox = Template.bind({});
-RedCheckbox.args = {
-  checked: false,
-  uniqId: 'red-checkbox',
-  color: 'red', // Example with red color
+export const RedCheckbox = {
+  args: {
+    checked: false,
+    uniqId: 'red-checkbox',
+    color: 'red',
+  },
 };
 
-export const GreenCheckbox = Template.bind({});
-GreenCheckbox.args = {
-  checked: true,
-  uniqId: 'green-checkbox',
-  color: 'green', // Example with green color
+export const GreenCheckbox = {
+  args: {
+    checked: true,
+    uniqId: 'green-checkbox',
+    color: 'green',
+  },
 };
