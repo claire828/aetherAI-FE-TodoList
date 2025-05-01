@@ -23,6 +23,7 @@ module.exports = {
     const { mergeConfig } = await import('vite');
 
     return mergeConfig(config, {
+      logLevel: 'info',
       optimizeDeps: {
         include: [
           'storybook-dark-mode',
