@@ -9,6 +9,6 @@ export const appRoutes: Route[] = [
   {
     title: 'TodoList with RXResource',
     path: '2',
-    loadComponent: () => import('lib-todolist').then((m) => m.TodolistComponent),
+    loadComponent: () => import('lib-todolist').then((m) => m.TodolistHttpResourceComponent),
   }
 ];
