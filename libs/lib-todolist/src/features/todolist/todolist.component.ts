@@ -1,26 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { httpResource } from '@angular/common/http';
 import { Component, inject, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches the alias in tsconfig
 import * as uuid from 'uuid';
-import { TaskEntity, TodolistSignalStore } from '../../stores';
+import { TodolistSignalStore } from '../../stores';
 import { TodolistFooterComponent } from '../../uis/todolist-footer/todolist-footer.component';
 import { TaskComponentComponent } from '../task-component/task-component.component';
-
-// const url = 'http://localhost:3000/tasks';
-// export const allTaskLoader = async () => {
-//   const data = await fetch(url);
-//   if (!data.ok) {
-//     throw Error('error');
-//   }
-//   return await data.json() as TaskEntity[];
-// }
 
 
 @Component({
   selector: 'todolist',
-  standalone: true,
   imports: [CommonModule, FormsModule, TaskComponentComponent, TodolistFooterComponent, CoreButtonComponent],
   providers: [TodolistSignalStore],
   template: `<section class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
@@ -58,16 +47,10 @@ import { TaskComponentComponent } from '../task-component/task-component.compone
 export class TodolistComponent {
   protected store = inject(TodolistSignalStore);
   protected taskModel = model<string>('');
-  private url = 'http://localhost:3000/tasks'
-  // FIXME: httpHandler requires provider, but why
-  private taskResource = httpResource<TaskEntity[]>(this.url); // 直接給網址的寫法
-  // Parse & defaultValue 都屬於Option config.
 
-  constructor() {
-    console.log("🚀 ~ TodolistComponent ~ taskResource:", this.taskResource)
-  }
-  // 這邊要改成HTTP Resource取得，並且解析為json
-  //  protected fetchAllTasks:
+  // httpResource 比較不適合todolist的情境
+  // private taskResource = httpResource<TaskEntity[]>('http://localhost:3000/tasks', { defaultValue: [] }); // 直接給網址的寫法
+
 
   protected addTaskHandler(): void {
     if (this.taskModel().length === 0 || this.taskModel().trim() === '') {

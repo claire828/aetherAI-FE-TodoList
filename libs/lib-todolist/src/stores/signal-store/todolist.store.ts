@@ -1,9 +1,7 @@
-import { updateState, withDevtools, withGlitchTracking } from '@angular-architects/ngrx-toolkit';
+import { withDevtools, withGlitchTracking } from '@angular-architects/ngrx-toolkit';
 import { computed } from '@angular/core';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import {
-  addEntities,
-  addEntity,
   removeEntities,
   removeEntity,
   setEntities,
@@ -53,26 +51,22 @@ export const TodolistSignalStore = signalStore(
         return await data.json() as TaskEntity[];
       },
 
-      // addEntity: Adds an entity to the collection.
-      // If the entity collection has an entity with the same ID, it is not overridden and no error is thrown.
       addTodo(todo: TaskEntity): void {
-        patchState(store, addEntity(todo));
-      },
+        // addEntity: Adds an entity to the collection.
+        // If the entity collection has an entity with the same ID, it is not overridden and no error is thrown.
+        // patchState(store, addEntity(todo));
 
-      addTodos(todos: TaskEntity[]): void {
-        // updateState is a wrapper around patchState and has an action name as second parameter
-        updateState(store, 'AddTodos', addEntities(todos));
-      },
-
-      // setEntity: Adds or replaces an entity in the collection.
-      Todo(todo: TaskEntity): void {
+        // setEntity: Adds or replaces an entity in the collection.
         patchState(store, setEntity(todo));
       },
 
+      // addTodos(todos: TaskEntity[]): void {
+      //   // updateState is a wrapper around patchState and has an action name as second parameter
+      //   updateState(store, 'AddTodos', addEntities(todos));
+      // },
       setTodos(todos: TaskEntity[]): void {
-        patchState(store, setEntities(todos));
+        patchState(store, setEntities(todos)); // Adds or replaces an entity in the collection.//
       },
-
       updateTodoName(updateTodo: TaskEntity): void {
         patchState(store, updateEntity({
           id: updateTodo.id,
@@ -120,7 +114,7 @@ export const TodolistSignalStore = signalStore(
   withHooks({
     onInit(store) {
       store.fetchAllTask().then(tasks => {
-        store.addTodos(tasks);
+        store.setTodos(tasks);
       }).catch(error => {
         console.error('Failed to fetch tasks:', error);
       });
