@@ -1,37 +1,33 @@
 {
   "name": "core-ui-kit",
-  "projects": {
-    "core-ui-kit": {
-      "architect": {
-        "storybook": {
-          "builder": "@storybook/angular:start-storybook",
-          "options": {
-            "compodoc": true,
-            "compodocArgs": ["-e", "json", "-d", "."],
-            "storybookConfig": "libs/core-ui-kit/.storybook",
-            "port": 6006
-          },
-          "configurations": {
-            "production": {
-              "quiet": true
-            }
-          }
-        },
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "compodoc": true,
-            "compodocArgs": ["-e", "json", "-d", "."],
-            "outputPath": "dist/core-ui-kit",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
-            "scripts": []
-          }
+  "architect": {
+    "storybook": {
+      "builder": "@storybook/angular:start-storybook",
+      "options": {
+        "compodoc": true,
+        "compodocArgs": ["-e", "json", "-d", "."],
+        "storybookConfig": "libs/core-ui-kit/.storybook",
+        "port": 6006
+      },
+      "configurations": {
+        "production": {
+          "quiet": true
         }
+      }
+    },
+    "build": {
+      "builder": "@angular-devkit/build-angular:browser",
+      "options": {
+        "compodoc": true,
+        "compodocArgs": ["-e", "json", "-d", "."],
+        "outputPath": "dist/core-ui-kit",
+        "index": "src/index.html",
+        "main": "src/main.ts",
+        "polyfills": "src/polyfills.ts",
+        "tsConfig": "tsconfig.app.json",
+        "assets": ["src/favicon.ico", "src/assets"],
+        "styles": ["src/styles.css"],
+        "scripts": []
       }
     }
   }

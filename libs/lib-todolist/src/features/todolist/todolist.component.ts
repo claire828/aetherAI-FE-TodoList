@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
+import { httpResource } from '@angular/common/http';
 import { Component, inject, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches the alias in tsconfig
 import * as uuid from 'uuid';
-import { TodolistSignalStore } from '../../stores';
+import { TaskEntity, TodolistSignalStore } from '../../stores';
 import { TodolistFooterComponent } from '../../uis/todolist-footer/todolist-footer.component';
 import { TaskComponentComponent } from '../task-component/task-component.component';
-import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches the alias in tsconfig
 
 // const url = 'http://localhost:3000/tasks';
 // export const allTaskLoader = async () => {
@@ -57,6 +58,16 @@ import { CoreButtonComponent } from 'core-ui-kit'; // Ensure this import matches
 export class TodolistComponent {
   protected store = inject(TodolistSignalStore);
   protected taskModel = model<string>('');
+  private url = 'http://localhost:3000/tasks'
+  // FIXME: httpHandler requires provider, but why
+  private taskResource = httpResource<TaskEntity[]>(this.url); // 直接給網址的寫法
+  // Parse & defaultValue 都屬於Option config.
+
+  constructor() {
+    console.log("🚀 ~ TodolistComponent ~ taskResource:", this.taskResource)
+  }
+  // 這邊要改成HTTP Resource取得，並且解析為json
+  //  protected fetchAllTasks:
 
   protected addTaskHandler(): void {
     if (this.taskModel().length === 0 || this.taskModel().trim() === '') {
@@ -69,6 +80,7 @@ export class TodolistComponent {
       ts: new Date().getTime().toString()
     });
     this.taskModel.set('');
+
   }
 
   protected completeHandler(completed: boolean): void {
