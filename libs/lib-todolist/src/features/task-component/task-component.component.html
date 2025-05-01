@@ -11,9 +11,8 @@
     <!-- Task Name -->
     @if (isEditing()) {
       <input
-        *ngIf="isEditing()"
         type="text"
-        [(value)]="task().name"
+        [(ngModel)]="editNameModel"
         (blur)="saveEdit()"
         (keyup.enter)="saveEdit()"
         class="w-40 rounded-md border border-gray-300 px-2 py-1 text-gray-700"
