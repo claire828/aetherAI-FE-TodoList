@@ -1,6 +1,7 @@
 import { withDevtools, withGlitchTracking } from '@angular-architects/ngrx-toolkit';
-import { computed } from '@angular/core';
-import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
+import { HttpClient } from '@angular/common/http';
+import { computed, inject } from '@angular/core';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withProps, withState } from '@ngrx/signals';
 import {
   removeEntities,
   removeEntity,
@@ -25,7 +26,11 @@ export const TodolistSignalStore = signalStore(
   // withCallState is a helper function that adds a call state to the store
   // withCallState(),
   withEntities<TaskEntity>(),
-
+  withProps(() => {
+    const httpClient = inject(HttpClient);
+    const url = 'http://localhost:3000/tasks';
+    return { httpClient, url };
+  }),
   withComputed((store) => ({
     todoLists: computed(() => store.entities())
   })),
@@ -43,60 +48,48 @@ export const TodolistSignalStore = signalStore(
       //   }
       // }),
       fetchAllTask: async () => {
-        const url = 'http://localhost:3000/tasks';
-        const data = await fetch(url);
+        const data = await fetch(store.url);
         if (!data.ok) {
           throw Error('error');
         }
         return await data.json() as TaskEntity[];
       },
-
       addTodo(todo: TaskEntity): void {
-        // addEntity: Adds an entity to the collection.
         // If the entity collection has an entity with the same ID, it is not overridden and no error is thrown.
-        // patchState(store, addEntity(todo));
-
-        // setEntity: Adds or replaces an entity in the collection.
-        patchState(store, setEntity(todo));
+        store.httpClient.post(store.url, todo).subscribe(() => {
+          patchState(store, setEntity(todo));
+        });
       },
-
-      // addTodos(todos: TaskEntity[]): void {
-      //   // updateState is a wrapper around patchState and has an action name as second parameter
-      //   updateState(store, 'AddTodos', addEntities(todos));
-      // },
       setTodos(todos: TaskEntity[]): void {
         patchState(store, setEntities(todos)); // Adds or replaces an entity in the collection.//
       },
       updateTodoName(updateTodo: TaskEntity): void {
-        patchState(store, updateEntity({
-          id: updateTodo.id,
-          changes: (todo) => ({ ...todo, name: updateTodo.name })
-        }));
+        store.httpClient.patch(`${store.url}/${updateTodo.id}`, updateTodo).subscribe(() => {
+          patchState(store, updateEntity({
+            id: updateTodo.id,
+            changes: (todo) => ({ ...todo, name: updateTodo.name })
+          }));
+        })
       },
-
       deleteTodo(todo: TaskEntity): void {
-        // patchState(store, removeEntity(todo.id));
-        patchState(store, (state) => {
-          return {
-            ...removeEntity(todo.id)(state),
-            selectedIds: state.selectedIds.filter((selectedId) => selectedId !== todo.id),
-          };
+        store.httpClient.delete(`${store.url}/${todo.id}`).subscribe(() => {
+          patchState(store, (state) => {
+            return {
+              ...removeEntity(todo.id)(state),
+              selectedIds: state.selectedIds.filter((selectedId) => selectedId !== todo.id),
+            };
+          });
         });
       },
-
-      // remove all todos that are empty
       removeEmptyTodos(): void {
         patchState(store, removeEntities(({ name }) => !name));
       },
-
-      // complete all todos
       completeAllTodos(completed: boolean): void {
         patchState(store, updateEntities({
           ids: store.selectedIds(),
           changes: { completed }
         }));
       },
-
       addSelected(id: string): void {
         patchState(store, {
           selectedIds: [...store.selectedIds(), id]
