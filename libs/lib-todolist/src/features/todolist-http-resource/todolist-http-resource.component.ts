@@ -13,7 +13,7 @@ import { TaskComponentComponent } from '../task-component/task-component.compone
   imports: [CommonModule, FormsModule, TaskComponentComponent, TodolistFooterComponent, CoreButtonComponent],
   providers: [TodolistSignalStore],
   template: `<section class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
-  <header class="mb-4 text-2xl font-bold text-gray-700">Todo List HttpResource</header>
+  <header class="mb-4 text-2xl font-bold text-gray-700">TodoList HttpResource</header>
 
   <!-- Add Task Section -->
   <section class="mb-4 flex items-center gap-2">
@@ -84,7 +84,5 @@ export class TodolistHttpResourceComponent {
   protected resetTask(): void {
     this.taskResource.reload();
   }
-  // protected completeHandler(completed: boolean): void {
-  //   // this.store.completeAllTodos(completed);
-  // }
+
 }

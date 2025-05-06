@@ -1,7 +1,7 @@
 import { withDevtools, withGlitchTracking } from '@angular-architects/ngrx-toolkit';
 import { HttpClient } from '@angular/common/http';
-import { computed, inject } from '@angular/core';
-import { patchState, signalStore, withComputed, withHooks, withMethods, withProps, withState } from '@ngrx/signals';
+import { inject } from '@angular/core';
+import { patchState, signalStore, withHooks, withMethods, withProps, withState } from '@ngrx/signals';
 import {
   removeEntities,
   removeEntity,
@@ -19,34 +19,17 @@ const initialState: TodolistState = {
 }
 
 export const TodolistSignalStore = signalStore(
-  // withDevtools is a helper function that adds the devtools to the store
   withDevtools('todolistLocal', withGlitchTracking()),
   withState(initialState),
-  // withUndoRedo(),
-  // withCallState is a helper function that adds a call state to the store
-  // withCallState(),
+  // withCallState() is a helper function that adds a call state to the store
   withEntities<TaskEntity>(),
   withProps(() => {
     const httpClient = inject(HttpClient);
     const url = 'http://localhost:3000/tasks';
     return { httpClient, url };
   }),
-  withComputed((store) => ({
-    todoLists: computed(() => store.entities())
-  })),
   withMethods(
     (store) => ({
-      // fetchAllTask: () => resource<TaskEntity[], void>({
-      //   loader: () => {
-      //     const url = 'http://localhost:3000/tasks';
-      //     return fetch(url).then((response) => {
-      //       if (!response.ok) {
-      //         throw Error('error');
-      //       }
-      //       return response.json();
-      //     });
-      //   }
-      // }),
       fetchAllTask: async () => {
         const data = await fetch(store.url);
         if (!data.ok) {

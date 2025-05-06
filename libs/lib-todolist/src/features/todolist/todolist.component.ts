@@ -13,7 +13,7 @@ import { TaskComponentComponent } from '../task-component/task-component.compone
   imports: [CommonModule, FormsModule, TaskComponentComponent, TodolistFooterComponent, CoreButtonComponent],
   providers: [TodolistSignalStore],
   template: `<section class="mx-auto mt-10 max-w-lg rounded-md bg-white p-4 shadow-md">
-  <header class="mb-4 text-2xl font-bold text-gray-700">Todo List</header>
+  <header class="mb-4 text-2xl font-bold text-gray-700">TodoList with SignalStore</header>
 
   <!-- Add Task Section -->
   <section class="mb-4 flex items-center gap-2">
@@ -29,9 +29,9 @@ import { TaskComponentComponent } from '../task-component/task-component.compone
 
   <!-- Task List Section -->
   <section>
-    @if (store.todoLists().length > 0) {
+    @if (store.entities().length > 0) {
       <div class="space-y-2">
-        @for (task of store.todoLists(); track $index) {
+        @for (task of store.entities(); track $index) {
           <lib-task-component [task]="task" />
         }
       </div>
@@ -47,10 +47,6 @@ import { TaskComponentComponent } from '../task-component/task-component.compone
 export class TodolistComponent {
   protected store = inject(TodolistSignalStore);
   protected taskModel = model<string>('');
-
-  // httpResource 比較不適合todolist的情境
-  // private taskResource = httpResource<TaskEntity[]>('http://localhost:3000/tasks', { defaultValue: [] }); // 直接給網址的寫法
-
 
   protected addTaskHandler(): void {
     if (this.taskModel().length === 0 || this.taskModel().trim() === '') {
