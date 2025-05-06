@@ -32,15 +32,26 @@ import { TaskComponentComponent } from '../task-component/task-component.compone
     @if (this.taskResource.value().length > 0) {
       <div class="space-y-2">
         @for (task of this.taskResource.value(); track $index) {
-          <lib-task-component [task]="task" />
+          <section class="flex justify-between items-center gap-2">
+            <div
+                class="ml-3 w-40 cursor-pointer font-medium"
+                [class.line-through]="task.completed"
+                [class.text-gray-700]="!task.completed"
+                [class.text-gray-500]="task.completed"
+              >
+                {{ task.name }}
+            </div>
+            <core-button [label]="'Delete'" [color]="'red'" [size]="'small'" (click)="deleteTaskHandler(task)"  />
+          </section>
         }
       </div>
+      <core-button [label]="'Reset'" [color]="'green'" [mode]="'border'" [size]="'small'" (click)="resetTask()" />
     } @else {
       <p class="text-center text-gray-500">No tasks available. Add your first task!</p>
     }
   </section>
 
-  <!-- <lib-todolist-footer [showCompletedArea]="false" (completeTodos)="completeHandler($event)" /> -->
+ 
 </section>
 `,
 })
@@ -60,9 +71,19 @@ export class TodolistHttpResourceComponent {
         ts: new Date().getTime().toString()
       }];
     })
-
+    this.taskModel.set('');
   }
 
+  protected deleteTaskHandler(task: TaskEntity): void {
+    this.taskResource.update((tasks) => {
+      return tasks.filter((t) => t.id !== task.id);
+    })
+  }
+
+
+  protected resetTask(): void {
+    this.taskResource.reload();
+  }
   // protected completeHandler(completed: boolean): void {
   //   // this.store.completeAllTodos(completed);
   // }
