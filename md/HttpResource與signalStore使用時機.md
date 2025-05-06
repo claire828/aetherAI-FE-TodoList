@@ -15,24 +15,22 @@ tags: Signal Dependency
 - **HttpResource**：適用於簡單的資料讀取需求，提供自動處理載入狀態與錯誤的功能。
 - **signalStore**：適用於需要集中管理應用狀態、共享狀態或進行複雜狀態計算的情境。
 - **結合使用**：在某些情境下，將 HttpResource 納入 signalStore 中，可以提高靈活性和可維護性。
-    
-    
-    | **模式** | **適用情境** |
-    | --- | --- |
-    | HttpResource 於 Component 中使用 | 用於簡單的資料讀取與 UI 狀態管理 |
-    | HttpResource 於 signalStore 中使用 | 當需要從遠端資料派生出複雜的 UI 狀態時使用 |
-    | HttpClient 於 withMethods 中使用 | 需要完全控制 fetch、patch、delete 等操作時使用 |
-    | 結合 HttpResource + signalStore | ✅ 可行 — 只需清晰劃分狀態擁有權與責任範圍 |
+  | **模式** | **適用情境** |
+  | ---------------------------------- | ---------------------------------------------- |
+  | HttpResource 於 Component 中使用 | 用於簡單的資料讀取與 UI 狀態管理 |
+  | HttpResource 於 signalStore 中使用 | 當需要從遠端資料派生出複雜的 UI 狀態時使用 |
+  | HttpClient 於 withMethods 中使用 | 需要完全控制 fetch、patch、delete 等操作時使用 |
+  | 結合 HttpResource + signalStore | ✅ 可行 — 只需清晰劃分狀態擁有權與責任範圍 |
 
 ## **🛠️ 核心工具比較**
 
-| **工具** | **主要用途** | **最適用情境** |
-| --- | --- | --- |
-| signalStore | 集中式狀態管理 | 複雜的應用程式狀態管理與更新 |
-| HttpClient | 原始 HTTP 請求 | 需要手動處理狀態的 API 呼叫 |
+| **工具**     | **主要用途**                 | **最適用情境**                        |
+| ------------ | ---------------------------- | ------------------------------------- |
+| signalStore  | 集中式狀態管理               | 複雜的應用程式狀態管理與更新          |
+| HttpClient   | 原始 HTTP 請求               | 需要手動處理狀態的 API 呼叫           |
 | HttpResource | 宣告式、自動管理的 HTTP 狀態 | 簡單的資料讀取，內建載入/錯誤狀態管理 |
-| resource() | 一般化的反應式資源 | 自訂資料來源與手動觸發的資料操作 |
-| rxResource() | 整合 RxJS 的反應式資源 | 需要 RxJS 模式的專案 |
+| resource()   | 一般化的反應式資源           | 自訂資料來源與手動觸發的資料操作      |
+| rxResource() | 整合 RxJS 的反應式資源       | 需要 RxJS 模式的專案                  |
 
 ---
 
@@ -85,7 +83,7 @@ export const TodoStore = signalStore(
 <aside>
 <img src="https://www.notion.so/icons/notification_red.svg" alt="https://www.notion.so/icons/notification_red.svg" width="40px" />
 
-## **2：專用 API 服務 +  signalStore  (原專案模式)**
+## **2：專用 API 服務 +  signalStore (原專案模式)**
 
 **✅ 適用情境：**
 
@@ -241,9 +239,9 @@ import { httpResource } from '@angular/common/http';
   `,
 })
 export class TodoListComponent {
-// searchQuery 是一個 signal，用來儲存使用者輸入的搜尋關鍵字。
+  // searchQuery 是一個 signal，用來儲存使用者輸入的搜尋關鍵字。
   searchQuery = signal('');
-  
+
   // 是一個 httpResource，根據 searchQuery 的值動態生成 API URL。
   todosResource = httpResource(() => {
     const query = this.searchQuery();
@@ -270,10 +268,7 @@ export class MyComponent {
   searchQuery = signal('');
 
   // 將 signal 轉換為 Observable，並應用 debounceTime 和 distinctUntilChanged
-  debouncedQuery$ = toObservable(this.searchQuery).pipe(
-    debounceTime(300),
-    distinctUntilChanged()
-  );
+  debouncedQuery$ = toObservable(this.searchQuery).pipe(debounceTime(300), distinctUntilChanged());
 
   // 將處理過的 Observable 轉回 signal
   query = toSignal(this.debouncedQuery$);
@@ -367,6 +362,108 @@ export const TodoStore = signalStore(
 
 # **🧩 結合使用的情境**
 
+## **特定需求的最佳實現方式**
+
+- **✅ httpClient**: 需要將資料儲存回 state 時的首選方式，可完全控制資料流程
+- **✅ withProps**: 當您希望根據某些參數（例如搜尋關鍵字）自動重新載入資料時
+- **✅ withComputed**: 適合用於 rxResource，當您需要使用 RxJS 操作符處理複雜的資料轉換
+- **✅ withMethod / rxMethod**: 適合用於需要使用 RxJS 操作符來處理非同步流程的情境
+
+## **進階模式：withComputed / withProps + Resource + rxMethod**
+
+當您需要更複雜的資料處理和狀態管理時，可以組合使用多種技術：
+
+- **集中管理應用狀態**：當您希望將資料取得與狀態管理集中處理時，可以在 signalStore 中使用 resource 或 rxResource
+- **需要根據多個參數載入資料**：例如，根據多個搜尋條件載入資料時，可以在 signalStore 中使用 withComputed 來處理參數，然後傳遞給 resource 或 rxResource
+
+### 綜合範例：整合多種技術的 TodoStore
+
+```tsx
+import { signalStore, withState, withComputed, withMethods, withProps } from '@ngrx/signals';
+import { rxResource, resource } from '@angular/core/rxjs-interop';
+import { inject } from '@angular/core';
+import { debounceTime, distinctUntilChanged, switchMap, tap, pipe } from 'rxjs/operators';
+import { from } from 'rxjs';
+import { rxMethod } from '@ngrx/signals/rxjs-interop';
+
+export const TodoStore = signalStore(
+  // 基本狀態定義
+  withState({
+    filter: '',
+    searchTerm: '',
+    todos: [],
+    loading: false,
+    error: null,
+  }),
+
+  // 使用 withProps 定義基於參數的資源
+  withProps((store) => ({
+    // 使用 resource 處理簡單的資料載入
+    todosResource: resource({
+      request: store.searchTerm,
+      loader: (term) => fetch(`/api/todos?search=${term}`).then((res) => res.json()),
+    }),
+  })),
+
+  // 使用 withComputed 處理需要 RxJS 操作符的資料流
+  withComputed(({ filter }) => ({
+    // 使用 rxResource 處理需要 debounce 的資料流
+    filteredTodos: rxResource({
+      request: filter,
+      loader: (term) =>
+        from(fetch(`/api/todos?filter=${term}`).then((res) => res.json())).pipe(
+          debounceTime(300),
+          distinctUntilChanged(),
+          switchMap((data) => data)
+        ),
+    }),
+  })),
+
+  // 一般方法定義
+  withMethods((store) => ({
+    setFilter(newFilter: string) {
+      store.patchState({ filter: newFilter });
+    },
+
+    setSearchTerm(term: string) {
+      store.patchState({ searchTerm: term });
+    },
+  })),
+
+  // 使用 rxMethod 處理複雜的非同步操作
+  withMethods((store) => {
+    const http = inject(HttpClient);
+
+    return {
+      // rxMethod 用於處理複雜的 RxJS 流程
+      loadTodos: rxMethod<void>(
+        pipe(
+          switchMap(() => http.get<Todo[]>('/api/todos')),
+          tap((todos) => store.patchState({ todos }))
+        )
+      ),
+
+      // 組合使用 resource 和 rxMethod
+      refreshAndFilter: rxMethod<string>(
+        pipe(
+          tap((filter) => store.setFilter(filter)),
+          switchMap(() => store.filteredTodos.result$),
+          tap((todos) => store.patchState({ todos }))
+        )
+      ),
+    };
+  })
+);
+```
+
+這個綜合範例展示了如何在一個 store 中整合多種技術：
+
+- **withState** 定義基本狀態
+- **withProps** 使用 resource 處理簡單的資料載入
+- **withComputed** 使用 rxResource 處理需要 RxJS 操作符的資料流
+- **withMethods** (一般) 提供基本的狀態更新方法
+- **withMethods** (rxMethod) 處理複雜的非同步操作
+
 ### **1. 根據多個參數載入資料( HttpResource in withProps )**
 
 當資料的載入需要依賴多個參數時，可以將這些參數作為 signal，並在 signalStore 中使用 withComputed 進行處理，然後傳遞給 HttpResource。
@@ -396,7 +493,7 @@ export const TodoStore = signalStore(
 );
 ```
 
-### **2. 手動觸發資料重新載入  - reload()**
+### **2. 手動觸發資料重新載入 - reload()**
 
 - HttpResource 提供了 reload() 方法，讓您可以在需要時手動觸發資料重新載入。
 
@@ -415,10 +512,10 @@ withMethods((store) => ({
 
 ---
 
-| **#功能需求** | **#建議使用工具** |
-| --- | --- |
-| 僅讀取資料 | HttpResource |
-| 資料修改 | ApiService + HttpClient |
-| 複雜狀態管理 | signalStore |
-| 多元件共享狀態 | signalStore |
-| 根據參數自動重新載入 | HttpResource + signal |
+| **#功能需求**        | **#建議使用工具**       |
+| -------------------- | ----------------------- |
+| 僅讀取資料           | HttpResource            |
+| 資料修改             | ApiService + HttpClient |
+| 複雜狀態管理         | signalStore             |
+| 多元件共享狀態       | signalStore             |
+| 根據參數自動重新載入 | HttpResource + signal   |
