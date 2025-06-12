@@ -16,5 +16,12 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "none",
+      "changeDetection": "OnPush",
+      "standalone": true
+    }
   }
 }
